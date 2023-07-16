@@ -1,10 +1,9 @@
-# InlineResponse200
+# InlineResponse20010
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **bool** | Indicates whether the operation was successful | [optional] 
-**results** | [**\Swagger\Client\Model\InlineResponse200Results[]**](InlineResponse200Results.md) | Array of courses | [optional] 
+**results** | [**\Swagger\Client\Model\InlineResponse20010Results[]**](InlineResponse20010Results.md) | The list of all public available tokens | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

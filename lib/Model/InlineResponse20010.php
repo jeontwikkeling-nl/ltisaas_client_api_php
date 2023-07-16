@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2009
+ * InlineResponse20010
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * InlineResponse2009 Class Doc Comment
+ * InlineResponse20010 Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2009 implements ModelInterface, ArrayAccess
+class InlineResponse20010 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_9';
+    protected static $swaggerModelName = 'inline_response_200_10';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\InlineResponse2009Results[]'
+        'results' => '\Swagger\Client\Model\InlineResponse20010Results[]'
     ];
 
     /**
@@ -204,7 +204,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
     /**
      * Gets results
      *
-     * @return \Swagger\Client\Model\InlineResponse2009Results[]
+     * @return \Swagger\Client\Model\InlineResponse20010Results[]
      */
     public function getResults()
     {
@@ -214,7 +214,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
     /**
      * Sets results
      *
-     * @param \Swagger\Client\Model\InlineResponse2009Results[] $results The list of users
+     * @param \Swagger\Client\Model\InlineResponse20010Results[] $results The list of all public available tokens
      *
      * @return $this
      */

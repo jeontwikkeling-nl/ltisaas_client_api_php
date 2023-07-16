@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2009
+ * InlineResponse2009Results
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * InlineResponse2009 Class Doc Comment
+ * InlineResponse2009Results Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2009 implements ModelInterface, ArrayAccess
+class InlineResponse2009Results implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_9';
+    protected static $swaggerModelName = 'inline_response_200_9_results';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,14 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\InlineResponse2009Results[]'
+        'userid' => 'int',
+        'firstname' => 'string',
+        'lastname' => 'string',
+        'email' => 'string',
+        'lastip' => 'string',
+        'lti_lastgrade' => 'float',
+        'lti_lastaccess' => 'int',
+        'lti_timecreated' => 'int'
     ];
 
     /**
@@ -65,7 +72,14 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'userid' => null,
+        'firstname' => null,
+        'lastname' => null,
+        'email' => 'email',
+        'lastip' => null,
+        'lti_lastgrade' => null,
+        'lti_lastaccess' => null,
+        'lti_timecreated' => null
     ];
 
     /**
@@ -95,7 +109,14 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'userid' => 'userid',
+        'firstname' => 'firstname',
+        'lastname' => 'lastname',
+        'email' => 'email',
+        'lastip' => 'lastip',
+        'lti_lastgrade' => 'lti_lastgrade',
+        'lti_lastaccess' => 'lti_lastaccess',
+        'lti_timecreated' => 'lti_timecreated'
     ];
 
     /**
@@ -104,7 +125,14 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'userid' => 'setUserid',
+        'firstname' => 'setFirstname',
+        'lastname' => 'setLastname',
+        'email' => 'setEmail',
+        'lastip' => 'setLastip',
+        'lti_lastgrade' => 'setLtiLastgrade',
+        'lti_lastaccess' => 'setLtiLastaccess',
+        'lti_timecreated' => 'setLtiTimecreated'
     ];
 
     /**
@@ -113,7 +141,14 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'userid' => 'getUserid',
+        'firstname' => 'getFirstname',
+        'lastname' => 'getLastname',
+        'email' => 'getEmail',
+        'lastip' => 'getLastip',
+        'lti_lastgrade' => 'getLtiLastgrade',
+        'lti_lastaccess' => 'getLtiLastaccess',
+        'lti_timecreated' => 'getLtiTimecreated'
     ];
 
     /**
@@ -174,7 +209,14 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
+        $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
+        $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['lastip'] = isset($data['lastip']) ? $data['lastip'] : null;
+        $this->container['lti_lastgrade'] = isset($data['lti_lastgrade']) ? $data['lti_lastgrade'] : null;
+        $this->container['lti_lastaccess'] = isset($data['lti_lastaccess']) ? $data['lti_lastaccess'] : null;
+        $this->container['lti_timecreated'] = isset($data['lti_timecreated']) ? $data['lti_timecreated'] : null;
     }
 
     /**
@@ -202,25 +244,193 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets userid
      *
-     * @return \Swagger\Client\Model\InlineResponse2009Results[]
+     * @return int
      */
-    public function getResults()
+    public function getUserid()
     {
-        return $this->container['results'];
+        return $this->container['userid'];
     }
 
     /**
-     * Sets results
+     * Sets userid
      *
-     * @param \Swagger\Client\Model\InlineResponse2009Results[] $results The list of users
+     * @param int $userid userid
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setUserid($userid)
     {
-        $this->container['results'] = $results;
+        $this->container['userid'] = $userid;
+
+        return $this;
+    }
+
+    /**
+     * Gets firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->container['firstname'];
+    }
+
+    /**
+     * Sets firstname
+     *
+     * @param string $firstname firstname
+     *
+     * @return $this
+     */
+    public function setFirstname($firstname)
+    {
+        $this->container['firstname'] = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->container['lastname'];
+    }
+
+    /**
+     * Sets lastname
+     *
+     * @param string $lastname lastname
+     *
+     * @return $this
+     */
+    public function setLastname($lastname)
+    {
+        $this->container['lastname'] = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastip
+     *
+     * @return string
+     */
+    public function getLastip()
+    {
+        return $this->container['lastip'];
+    }
+
+    /**
+     * Sets lastip
+     *
+     * @param string $lastip lastip
+     *
+     * @return $this
+     */
+    public function setLastip($lastip)
+    {
+        $this->container['lastip'] = $lastip;
+
+        return $this;
+    }
+
+    /**
+     * Gets lti_lastgrade
+     *
+     * @return float
+     */
+    public function getLtiLastgrade()
+    {
+        return $this->container['lti_lastgrade'];
+    }
+
+    /**
+     * Sets lti_lastgrade
+     *
+     * @param float $lti_lastgrade lti_lastgrade
+     *
+     * @return $this
+     */
+    public function setLtiLastgrade($lti_lastgrade)
+    {
+        $this->container['lti_lastgrade'] = $lti_lastgrade;
+
+        return $this;
+    }
+
+    /**
+     * Gets lti_lastaccess
+     *
+     * @return int
+     */
+    public function getLtiLastaccess()
+    {
+        return $this->container['lti_lastaccess'];
+    }
+
+    /**
+     * Sets lti_lastaccess
+     *
+     * @param int $lti_lastaccess lti_lastaccess
+     *
+     * @return $this
+     */
+    public function setLtiLastaccess($lti_lastaccess)
+    {
+        $this->container['lti_lastaccess'] = $lti_lastaccess;
+
+        return $this;
+    }
+
+    /**
+     * Gets lti_timecreated
+     *
+     * @return int
+     */
+    public function getLtiTimecreated()
+    {
+        return $this->container['lti_timecreated'];
+    }
+
+    /**
+     * Sets lti_timecreated
+     *
+     * @param int $lti_timecreated lti_timecreated
+     *
+     * @return $this
+     */
+    public function setLtiTimecreated($lti_timecreated)
+    {
+        $this->container['lti_timecreated'] = $lti_timecreated;
 
         return $this;
     }

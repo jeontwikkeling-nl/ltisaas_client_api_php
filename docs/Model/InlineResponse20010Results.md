@@ -1,10 +1,13 @@
-# InlineResponse200
+# InlineResponse20010Results
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **bool** | Indicates whether the operation was successful | [optional] 
-**results** | [**\Swagger\Client\Model\InlineResponse200Results[]**](InlineResponse200Results.md) | Array of courses | [optional] 
+**token** | **string** |  | [optional] 
+**endpoint** | **string** |  | [optional] 
+**name** | **string** |  | [optional] 
+**lastaccess** | **int** |  | [optional] 
+**timecreated** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
