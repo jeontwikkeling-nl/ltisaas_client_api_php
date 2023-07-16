@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001Test
+ * InlineResponse2009ResultsTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace Swagger\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * InlineResponse2001Test Class Doc Comment
+ * InlineResponse2009ResultsTest Class Doc Comment
  *
  * @category    Class
- * @description InlineResponse2001
+ * @description InlineResponse2009Results
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2001Test extends TestCase
+class InlineResponse2009ResultsTest extends TestCase
 {
 
     /**
@@ -71,23 +71,65 @@ class InlineResponse2001Test extends TestCase
     }
 
     /**
-     * Test "InlineResponse2001"
+     * Test "InlineResponse2009Results"
      */
-    public function testInlineResponse2001()
+    public function testInlineResponse2009Results()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "userid"
      */
-    public function testPropertySuccess()
+    public function testPropertyUserid()
     {
     }
 
     /**
-     * Test attribute "courseid"
+     * Test attribute "firstname"
      */
-    public function testPropertyCourseid()
+    public function testPropertyFirstname()
+    {
+    }
+
+    /**
+     * Test attribute "lastname"
+     */
+    public function testPropertyLastname()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "lastip"
+     */
+    public function testPropertyLastip()
+    {
+    }
+
+    /**
+     * Test attribute "lti_lastgrade"
+     */
+    public function testPropertyLtiLastgrade()
+    {
+    }
+
+    /**
+     * Test attribute "lti_lastaccess"
+     */
+    public function testPropertyLtiLastaccess()
+    {
+    }
+
+    /**
+     * Test attribute "lti_timecreated"
+     */
+    public function testPropertyLtiTimecreated()
     {
     }
 }

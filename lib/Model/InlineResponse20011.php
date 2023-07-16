@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2009
+ * InlineResponse20011
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * InlineResponse2009 Class Doc Comment
+ * InlineResponse20011 Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2009 implements ModelInterface, ArrayAccess
+class InlineResponse20011 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_9';
+    protected static $swaggerModelName = 'inline_response_200_11';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\InlineResponse2009Results[]'
+        'succes' => 'bool',
+        'token' => 'string',
+        'endpoint' => 'string'
     ];
 
     /**
@@ -65,7 +67,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'succes' => null,
+        'token' => null,
+        'endpoint' => 'url'
     ];
 
     /**
@@ -95,7 +99,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'succes' => 'succes',
+        'token' => 'token',
+        'endpoint' => 'endpoint'
     ];
 
     /**
@@ -104,7 +110,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'succes' => 'setSucces',
+        'token' => 'setToken',
+        'endpoint' => 'setEndpoint'
     ];
 
     /**
@@ -113,7 +121,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'succes' => 'getSucces',
+        'token' => 'getToken',
+        'endpoint' => 'getEndpoint'
     ];
 
     /**
@@ -174,7 +184,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['succes'] = isset($data['succes']) ? $data['succes'] : null;
+        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
+        $this->container['endpoint'] = isset($data['endpoint']) ? $data['endpoint'] : null;
     }
 
     /**
@@ -202,25 +214,73 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets succes
      *
-     * @return \Swagger\Client\Model\InlineResponse2009Results[]
+     * @return bool
      */
-    public function getResults()
+    public function getSucces()
     {
-        return $this->container['results'];
+        return $this->container['succes'];
     }
 
     /**
-     * Sets results
+     * Sets succes
      *
-     * @param \Swagger\Client\Model\InlineResponse2009Results[] $results The list of users
+     * @param bool $succes succes
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setSucces($succes)
     {
-        $this->container['results'] = $results;
+        $this->container['succes'] = $succes;
+
+        return $this;
+    }
+
+    /**
+     * Gets token
+     *
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->container['token'];
+    }
+
+    /**
+     * Sets token
+     *
+     * @param string $token token
+     *
+     * @return $this
+     */
+    public function setToken($token)
+    {
+        $this->container['token'] = $token;
+
+        return $this;
+    }
+
+    /**
+     * Gets endpoint
+     *
+     * @return string
+     */
+    public function getEndpoint()
+    {
+        return $this->container['endpoint'];
+    }
+
+    /**
+     * Sets endpoint
+     *
+     * @param string $endpoint endpoint
+     *
+     * @return $this
+     */
+    public function setEndpoint($endpoint)
+    {
+        $this->container['endpoint'] = $endpoint;
 
         return $this;
     }

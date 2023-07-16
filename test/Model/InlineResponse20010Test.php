@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001Test
+ * InlineResponse20010Test
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace Swagger\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * InlineResponse2001Test Class Doc Comment
+ * InlineResponse20010Test Class Doc Comment
  *
  * @category    Class
- * @description InlineResponse2001
+ * @description InlineResponse20010
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2001Test extends TestCase
+class InlineResponse20010Test extends TestCase
 {
 
     /**
@@ -71,23 +71,16 @@ class InlineResponse2001Test extends TestCase
     }
 
     /**
-     * Test "InlineResponse2001"
+     * Test "InlineResponse20010"
      */
-    public function testInlineResponse2001()
+    public function testInlineResponse20010()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "results"
      */
-    public function testPropertySuccess()
-    {
-    }
-
-    /**
-     * Test attribute "courseid"
-     */
-    public function testPropertyCourseid()
+    public function testPropertyResults()
     {
     }
 }

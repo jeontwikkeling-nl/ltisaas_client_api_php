@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2009
+ * InlineResponse2006Results
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * InlineResponse2009 Class Doc Comment
+ * InlineResponse2006Results Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2009 implements ModelInterface, ArrayAccess
+class InlineResponse2006Results implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_9';
+    protected static $swaggerModelName = 'inline_response_200_6_results';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\InlineResponse2009Results[]'
+        'date' => '\DateTime',
+        'totalregistrations' => 'int'
     ];
 
     /**
@@ -65,7 +66,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'date' => 'date',
+        'totalregistrations' => null
     ];
 
     /**
@@ -95,7 +97,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'date' => 'date',
+        'totalregistrations' => 'totalregistrations'
     ];
 
     /**
@@ -104,7 +107,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'date' => 'setDate',
+        'totalregistrations' => 'setTotalregistrations'
     ];
 
     /**
@@ -113,7 +117,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'date' => 'getDate',
+        'totalregistrations' => 'getTotalregistrations'
     ];
 
     /**
@@ -174,7 +179,8 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['totalregistrations'] = isset($data['totalregistrations']) ? $data['totalregistrations'] : null;
     }
 
     /**
@@ -202,25 +208,49 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets date
      *
-     * @return \Swagger\Client\Model\InlineResponse2009Results[]
+     * @return \DateTime
      */
-    public function getResults()
+    public function getDate()
     {
-        return $this->container['results'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets results
+     * Sets date
      *
-     * @param \Swagger\Client\Model\InlineResponse2009Results[] $results The list of users
+     * @param \DateTime $date The date of the registrations (format: DD-MM-YYYY)
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setDate($date)
     {
-        $this->container['results'] = $results;
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalregistrations
+     *
+     * @return int
+     */
+    public function getTotalregistrations()
+    {
+        return $this->container['totalregistrations'];
+    }
+
+    /**
+     * Sets totalregistrations
+     *
+     * @param int $totalregistrations The total number of registrations
+     *
+     * @return $this
+     */
+    public function setTotalregistrations($totalregistrations)
+    {
+        $this->container['totalregistrations'] = $totalregistrations;
 
         return $this;
     }

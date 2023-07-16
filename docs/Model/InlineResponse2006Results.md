@@ -1,10 +1,10 @@
-# InlineResponse200
+# InlineResponse2006Results
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **bool** | Indicates whether the operation was successful | [optional] 
-**results** | [**\Swagger\Client\Model\InlineResponse200Results[]**](InlineResponse200Results.md) | Array of courses | [optional] 
+**date** | [**\DateTime**](\DateTime.md) | The date of the registrations (format: DD-MM-YYYY) | [optional] 
+**totalregistrations** | **int** | The total number of registrations | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

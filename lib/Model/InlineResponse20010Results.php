@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2009
+ * InlineResponse20010Results
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * InlineResponse2009 Class Doc Comment
+ * InlineResponse20010Results Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2009 implements ModelInterface, ArrayAccess
+class InlineResponse20010Results implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_9';
+    protected static $swaggerModelName = 'inline_response_200_10_results';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,11 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\InlineResponse2009Results[]'
+        'token' => 'string',
+        'endpoint' => 'string',
+        'name' => 'string',
+        'lastaccess' => 'int',
+        'timecreated' => 'int'
     ];
 
     /**
@@ -65,7 +69,11 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'token' => null,
+        'endpoint' => 'url',
+        'name' => null,
+        'lastaccess' => null,
+        'timecreated' => null
     ];
 
     /**
@@ -95,7 +103,11 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'token' => 'token',
+        'endpoint' => 'endpoint',
+        'name' => 'name',
+        'lastaccess' => 'lastaccess',
+        'timecreated' => 'timecreated'
     ];
 
     /**
@@ -104,7 +116,11 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'token' => 'setToken',
+        'endpoint' => 'setEndpoint',
+        'name' => 'setName',
+        'lastaccess' => 'setLastaccess',
+        'timecreated' => 'setTimecreated'
     ];
 
     /**
@@ -113,7 +129,11 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'token' => 'getToken',
+        'endpoint' => 'getEndpoint',
+        'name' => 'getName',
+        'lastaccess' => 'getLastaccess',
+        'timecreated' => 'getTimecreated'
     ];
 
     /**
@@ -174,7 +194,11 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
+        $this->container['endpoint'] = isset($data['endpoint']) ? $data['endpoint'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['lastaccess'] = isset($data['lastaccess']) ? $data['lastaccess'] : null;
+        $this->container['timecreated'] = isset($data['timecreated']) ? $data['timecreated'] : null;
     }
 
     /**
@@ -202,25 +226,121 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets token
      *
-     * @return \Swagger\Client\Model\InlineResponse2009Results[]
+     * @return string
      */
-    public function getResults()
+    public function getToken()
     {
-        return $this->container['results'];
+        return $this->container['token'];
     }
 
     /**
-     * Sets results
+     * Sets token
      *
-     * @param \Swagger\Client\Model\InlineResponse2009Results[] $results The list of users
+     * @param string $token token
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setToken($token)
     {
-        $this->container['results'] = $results;
+        $this->container['token'] = $token;
+
+        return $this;
+    }
+
+    /**
+     * Gets endpoint
+     *
+     * @return string
+     */
+    public function getEndpoint()
+    {
+        return $this->container['endpoint'];
+    }
+
+    /**
+     * Sets endpoint
+     *
+     * @param string $endpoint endpoint
+     *
+     * @return $this
+     */
+    public function setEndpoint($endpoint)
+    {
+        $this->container['endpoint'] = $endpoint;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastaccess
+     *
+     * @return int
+     */
+    public function getLastaccess()
+    {
+        return $this->container['lastaccess'];
+    }
+
+    /**
+     * Sets lastaccess
+     *
+     * @param int $lastaccess lastaccess
+     *
+     * @return $this
+     */
+    public function setLastaccess($lastaccess)
+    {
+        $this->container['lastaccess'] = $lastaccess;
+
+        return $this;
+    }
+
+    /**
+     * Gets timecreated
+     *
+     * @return int
+     */
+    public function getTimecreated()
+    {
+        return $this->container['timecreated'];
+    }
+
+    /**
+     * Sets timecreated
+     *
+     * @param int $timecreated timecreated
+     *
+     * @return $this
+     */
+    public function setTimecreated($timecreated)
+    {
+        $this->container['timecreated'] = $timecreated;
 
         return $this;
     }

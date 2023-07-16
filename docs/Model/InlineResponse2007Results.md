@@ -3,14 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userid** | **int** |  | [optional] 
-**firstname** | **string** |  | [optional] 
-**lastname** | **string** |  | [optional] 
-**email** | **string** |  | [optional] 
-**lastip** | **string** |  | [optional] 
-**lti_lastgrade** | **float** |  | [optional] 
-**lti_lastaccess** | **int** |  | [optional] 
-**lti_timecreated** | **int** |  | [optional] 
+**totalregistrations** | **int** | The total number of registrations | [optional] 
+**courseid** | **int** | The identifier of the course | [optional] 
+**coursename** | **string** | The name of the course | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
