@@ -13,7 +13,7 @@
 /**
  * LtiSaas API
  *
- * API versions description:  *     - v0: For testing purposes only. It serves mock data that won't be written to the database and there is no validation.  *     - v1: The official version of the LtiSaas API.  *     Note: For testing v0, use the HTTP `Access-Token` header with the value 'dummy'
+ * <p>A brief overview of the API versions:</p> <ul> <li><strong>v0:</strong> This version is solely for testing and does not interact with the database, nor does it involve any validation. It simply serves mock data.</li> <li><strong>v1:</strong> This is the official version of the LtiSaas API, intended for production use.</li> </ul> <p>Please be informed that when testing version v0, the HTTP <code>Access-Token</code> header should be set with the value 'dummy'.</p> <p>Also, please note that the API has a limit of 2500 results per response.</p> <p>Additionally, all webservices support both POST and GET requests. However, the POST method is required when uploading files.</p>
  *
  * OpenAPI spec version: 1.0
  * 
@@ -56,7 +56,8 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\InlineResponse20010Results[]'
+        'succes' => 'bool',
+        'toolid' => 'int'
     ];
 
     /**
@@ -65,7 +66,8 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'succes' => null,
+        'toolid' => null
     ];
 
     /**
@@ -95,7 +97,8 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'succes' => 'succes',
+        'toolid' => 'toolid'
     ];
 
     /**
@@ -104,7 +107,8 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'succes' => 'setSucces',
+        'toolid' => 'setToolid'
     ];
 
     /**
@@ -113,7 +117,8 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'succes' => 'getSucces',
+        'toolid' => 'getToolid'
     ];
 
     /**
@@ -174,7 +179,8 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['succes'] = isset($data['succes']) ? $data['succes'] : null;
+        $this->container['toolid'] = isset($data['toolid']) ? $data['toolid'] : null;
     }
 
     /**
@@ -202,25 +208,49 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets succes
      *
-     * @return \Swagger\Client\Model\InlineResponse20010Results[]
+     * @return bool
      */
-    public function getResults()
+    public function getSucces()
     {
-        return $this->container['results'];
+        return $this->container['succes'];
     }
 
     /**
-     * Sets results
+     * Sets succes
      *
-     * @param \Swagger\Client\Model\InlineResponse20010Results[] $results The list of all public available tokens
+     * @param bool $succes succes
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setSucces($succes)
     {
-        $this->container['results'] = $results;
+        $this->container['succes'] = $succes;
+
+        return $this;
+    }
+
+    /**
+     * Gets toolid
+     *
+     * @return int
+     */
+    public function getToolid()
+    {
+        return $this->container['toolid'];
+    }
+
+    /**
+     * Sets toolid
+     *
+     * @param int $toolid The identifier of the lti tool
+     *
+     * @return $this
+     */
+    public function setToolid($toolid)
+    {
+        $this->container['toolid'] = $toolid;
 
         return $this;
     }

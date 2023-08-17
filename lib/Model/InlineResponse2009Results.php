@@ -13,7 +13,7 @@
 /**
  * LtiSaas API
  *
- * API versions description:  *     - v0: For testing purposes only. It serves mock data that won't be written to the database and there is no validation.  *     - v1: The official version of the LtiSaas API.  *     Note: For testing v0, use the HTTP `Access-Token` header with the value 'dummy'
+ * <p>A brief overview of the API versions:</p> <ul> <li><strong>v0:</strong> This version is solely for testing and does not interact with the database, nor does it involve any validation. It simply serves mock data.</li> <li><strong>v1:</strong> This is the official version of the LtiSaas API, intended for production use.</li> </ul> <p>Please be informed that when testing version v0, the HTTP <code>Access-Token</code> header should be set with the value 'dummy'.</p> <p>Also, please note that the API has a limit of 2500 results per response.</p> <p>Additionally, all webservices support both POST and GET requests. However, the POST method is required when uploading files.</p>
  *
  * OpenAPI spec version: 1.0
  * 
@@ -56,14 +56,16 @@ class InlineResponse2009Results implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'userid' => 'int',
-        'firstname' => 'string',
-        'lastname' => 'string',
-        'email' => 'string',
-        'lastip' => 'string',
-        'lti_lastgrade' => 'float',
-        'lti_lastaccess' => 'int',
-        'lti_timecreated' => 'int'
+        'toolid' => 'int',
+        'name' => 'string',
+        'secret' => 'string',
+        'timecreated' => 'string',
+        'ltitype' => 'string',
+        'cartridgeurl' => 'string',
+        'launchurl' => 'string',
+        'registrationurl' => 'string',
+        'customproperties' => 'string',
+        'resourcetype' => 'string'
     ];
 
     /**
@@ -72,14 +74,16 @@ class InlineResponse2009Results implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'userid' => null,
-        'firstname' => null,
-        'lastname' => null,
-        'email' => 'email',
-        'lastip' => null,
-        'lti_lastgrade' => null,
-        'lti_lastaccess' => null,
-        'lti_timecreated' => null
+        'toolid' => null,
+        'name' => null,
+        'secret' => null,
+        'timecreated' => null,
+        'ltitype' => null,
+        'cartridgeurl' => null,
+        'launchurl' => null,
+        'registrationurl' => null,
+        'customproperties' => null,
+        'resourcetype' => null
     ];
 
     /**
@@ -109,14 +113,16 @@ class InlineResponse2009Results implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'userid' => 'userid',
-        'firstname' => 'firstname',
-        'lastname' => 'lastname',
-        'email' => 'email',
-        'lastip' => 'lastip',
-        'lti_lastgrade' => 'lti_lastgrade',
-        'lti_lastaccess' => 'lti_lastaccess',
-        'lti_timecreated' => 'lti_timecreated'
+        'toolid' => 'toolid',
+        'name' => 'name',
+        'secret' => 'secret',
+        'timecreated' => 'timecreated',
+        'ltitype' => 'ltitype',
+        'cartridgeurl' => 'cartridgeurl',
+        'launchurl' => 'launchurl',
+        'registrationurl' => 'registrationurl',
+        'customproperties' => 'customproperties',
+        'resourcetype' => 'resourcetype'
     ];
 
     /**
@@ -125,14 +131,16 @@ class InlineResponse2009Results implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'userid' => 'setUserid',
-        'firstname' => 'setFirstname',
-        'lastname' => 'setLastname',
-        'email' => 'setEmail',
-        'lastip' => 'setLastip',
-        'lti_lastgrade' => 'setLtiLastgrade',
-        'lti_lastaccess' => 'setLtiLastaccess',
-        'lti_timecreated' => 'setLtiTimecreated'
+        'toolid' => 'setToolid',
+        'name' => 'setName',
+        'secret' => 'setSecret',
+        'timecreated' => 'setTimecreated',
+        'ltitype' => 'setLtitype',
+        'cartridgeurl' => 'setCartridgeurl',
+        'launchurl' => 'setLaunchurl',
+        'registrationurl' => 'setRegistrationurl',
+        'customproperties' => 'setCustomproperties',
+        'resourcetype' => 'setResourcetype'
     ];
 
     /**
@@ -141,14 +149,16 @@ class InlineResponse2009Results implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'userid' => 'getUserid',
-        'firstname' => 'getFirstname',
-        'lastname' => 'getLastname',
-        'email' => 'getEmail',
-        'lastip' => 'getLastip',
-        'lti_lastgrade' => 'getLtiLastgrade',
-        'lti_lastaccess' => 'getLtiLastaccess',
-        'lti_timecreated' => 'getLtiTimecreated'
+        'toolid' => 'getToolid',
+        'name' => 'getName',
+        'secret' => 'getSecret',
+        'timecreated' => 'getTimecreated',
+        'ltitype' => 'getLtitype',
+        'cartridgeurl' => 'getCartridgeurl',
+        'launchurl' => 'getLaunchurl',
+        'registrationurl' => 'getRegistrationurl',
+        'customproperties' => 'getCustomproperties',
+        'resourcetype' => 'getResourcetype'
     ];
 
     /**
@@ -209,14 +219,16 @@ class InlineResponse2009Results implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
-        $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
-        $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['lastip'] = isset($data['lastip']) ? $data['lastip'] : null;
-        $this->container['lti_lastgrade'] = isset($data['lti_lastgrade']) ? $data['lti_lastgrade'] : null;
-        $this->container['lti_lastaccess'] = isset($data['lti_lastaccess']) ? $data['lti_lastaccess'] : null;
-        $this->container['lti_timecreated'] = isset($data['lti_timecreated']) ? $data['lti_timecreated'] : null;
+        $this->container['toolid'] = isset($data['toolid']) ? $data['toolid'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['secret'] = isset($data['secret']) ? $data['secret'] : null;
+        $this->container['timecreated'] = isset($data['timecreated']) ? $data['timecreated'] : null;
+        $this->container['ltitype'] = isset($data['ltitype']) ? $data['ltitype'] : null;
+        $this->container['cartridgeurl'] = isset($data['cartridgeurl']) ? $data['cartridgeurl'] : null;
+        $this->container['launchurl'] = isset($data['launchurl']) ? $data['launchurl'] : null;
+        $this->container['registrationurl'] = isset($data['registrationurl']) ? $data['registrationurl'] : null;
+        $this->container['customproperties'] = isset($data['customproperties']) ? $data['customproperties'] : null;
+        $this->container['resourcetype'] = isset($data['resourcetype']) ? $data['resourcetype'] : null;
     }
 
     /**
@@ -244,193 +256,241 @@ class InlineResponse2009Results implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets userid
+     * Gets toolid
      *
      * @return int
      */
-    public function getUserid()
+    public function getToolid()
     {
-        return $this->container['userid'];
+        return $this->container['toolid'];
     }
 
     /**
-     * Sets userid
+     * Sets toolid
      *
-     * @param int $userid userid
+     * @param int $toolid Unique ID of the tool.
      *
      * @return $this
      */
-    public function setUserid($userid)
+    public function setToolid($toolid)
     {
-        $this->container['userid'] = $userid;
+        $this->container['toolid'] = $toolid;
 
         return $this;
     }
 
     /**
-     * Gets firstname
+     * Gets name
      *
      * @return string
      */
-    public function getFirstname()
+    public function getName()
     {
-        return $this->container['firstname'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets firstname
+     * Sets name
      *
-     * @param string $firstname firstname
+     * @param string $name Name of the tool.
      *
      * @return $this
      */
-    public function setFirstname($firstname)
+    public function setName($name)
     {
-        $this->container['firstname'] = $firstname;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets lastname
+     * Gets secret
      *
      * @return string
      */
-    public function getLastname()
+    public function getSecret()
     {
-        return $this->container['lastname'];
+        return $this->container['secret'];
     }
 
     /**
-     * Sets lastname
+     * Sets secret
      *
-     * @param string $lastname lastname
+     * @param string $secret Secret key for the tool.
      *
      * @return $this
      */
-    public function setLastname($lastname)
+    public function setSecret($secret)
     {
-        $this->container['lastname'] = $lastname;
+        $this->container['secret'] = $secret;
 
         return $this;
     }
 
     /**
-     * Gets email
+     * Gets timecreated
      *
      * @return string
      */
-    public function getEmail()
+    public function getTimecreated()
     {
-        return $this->container['email'];
+        return $this->container['timecreated'];
     }
 
     /**
-     * Sets email
+     * Sets timecreated
      *
-     * @param string $email email
+     * @param string $timecreated Timestamp of when the tool was      *                                                             created.
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setTimecreated($timecreated)
     {
-        $this->container['email'] = $email;
+        $this->container['timecreated'] = $timecreated;
 
         return $this;
     }
 
     /**
-     * Gets lastip
+     * Gets ltitype
      *
      * @return string
      */
-    public function getLastip()
+    public function getLtitype()
     {
-        return $this->container['lastip'];
+        return $this->container['ltitype'];
     }
 
     /**
-     * Sets lastip
+     * Sets ltitype
      *
-     * @param string $lastip lastip
+     * @param string $ltitype Type of LTI.
      *
      * @return $this
      */
-    public function setLastip($lastip)
+    public function setLtitype($ltitype)
     {
-        $this->container['lastip'] = $lastip;
+        $this->container['ltitype'] = $ltitype;
 
         return $this;
     }
 
     /**
-     * Gets lti_lastgrade
+     * Gets cartridgeurl
      *
-     * @return float
+     * @return string
      */
-    public function getLtiLastgrade()
+    public function getCartridgeurl()
     {
-        return $this->container['lti_lastgrade'];
+        return $this->container['cartridgeurl'];
     }
 
     /**
-     * Sets lti_lastgrade
+     * Sets cartridgeurl
      *
-     * @param float $lti_lastgrade lti_lastgrade
+     * @param string $cartridgeurl URL for cartridge.
      *
      * @return $this
      */
-    public function setLtiLastgrade($lti_lastgrade)
+    public function setCartridgeurl($cartridgeurl)
     {
-        $this->container['lti_lastgrade'] = $lti_lastgrade;
+        $this->container['cartridgeurl'] = $cartridgeurl;
 
         return $this;
     }
 
     /**
-     * Gets lti_lastaccess
+     * Gets launchurl
      *
-     * @return int
+     * @return string
      */
-    public function getLtiLastaccess()
+    public function getLaunchurl()
     {
-        return $this->container['lti_lastaccess'];
+        return $this->container['launchurl'];
     }
 
     /**
-     * Sets lti_lastaccess
+     * Sets launchurl
      *
-     * @param int $lti_lastaccess lti_lastaccess
+     * @param string $launchurl URL to launch the tool.
      *
      * @return $this
      */
-    public function setLtiLastaccess($lti_lastaccess)
+    public function setLaunchurl($launchurl)
     {
-        $this->container['lti_lastaccess'] = $lti_lastaccess;
+        $this->container['launchurl'] = $launchurl;
 
         return $this;
     }
 
     /**
-     * Gets lti_timecreated
+     * Gets registrationurl
      *
-     * @return int
+     * @return string
      */
-    public function getLtiTimecreated()
+    public function getRegistrationurl()
     {
-        return $this->container['lti_timecreated'];
+        return $this->container['registrationurl'];
     }
 
     /**
-     * Sets lti_timecreated
+     * Sets registrationurl
      *
-     * @param int $lti_timecreated lti_timecreated
+     * @param string $registrationurl URL for registration.
      *
      * @return $this
      */
-    public function setLtiTimecreated($lti_timecreated)
+    public function setRegistrationurl($registrationurl)
     {
-        $this->container['lti_timecreated'] = $lti_timecreated;
+        $this->container['registrationurl'] = $registrationurl;
+
+        return $this;
+    }
+
+    /**
+     * Gets customproperties
+     *
+     * @return string
+     */
+    public function getCustomproperties()
+    {
+        return $this->container['customproperties'];
+    }
+
+    /**
+     * Sets customproperties
+     *
+     * @param string $customproperties Custom properties for the      *                                                                  tool.
+     *
+     * @return $this
+     */
+    public function setCustomproperties($customproperties)
+    {
+        $this->container['customproperties'] = $customproperties;
+
+        return $this;
+    }
+
+    /**
+     * Gets resourcetype
+     *
+     * @return string
+     */
+    public function getResourcetype()
+    {
+        return $this->container['resourcetype'];
+    }
+
+    /**
+     * Sets resourcetype
+     *
+     * @param string $resourcetype Type of the resource.
+     *
+     * @return $this
+     */
+    public function setResourcetype($resourcetype)
+    {
+        $this->container['resourcetype'] = $resourcetype;
 
         return $this;
     }

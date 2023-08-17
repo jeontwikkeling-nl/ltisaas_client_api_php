@@ -13,7 +13,7 @@
 /**
  * LtiSaas API
  *
- * API versions description:  *     - v0: For testing purposes only. It serves mock data that won't be written to the database and there is no validation.  *     - v1: The official version of the LtiSaas API.  *     Note: For testing v0, use the HTTP `Access-Token` header with the value 'dummy'
+ * <p>A brief overview of the API versions:</p> <ul> <li><strong>v0:</strong> This version is solely for testing and does not interact with the database, nor does it involve any validation. It simply serves mock data.</li> <li><strong>v1:</strong> This is the official version of the LtiSaas API, intended for production use.</li> </ul> <p>Please be informed that when testing version v0, the HTTP <code>Access-Token</code> header should be set with the value 'dummy'.</p> <p>Also, please note that the API has a limit of 2500 results per response.</p> <p>Additionally, all webservices support both POST and GET requests. However, the POST method is required when uploading files.</p>
  *
  * OpenAPI spec version: 1.0
  * 
@@ -56,8 +56,8 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'succes' => 'bool',
-        'loid' => 'int'
+        'success' => 'bool',
+        'results' => '\Swagger\Client\Model\InlineResponse2004Results[]'
     ];
 
     /**
@@ -66,8 +66,8 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'succes' => null,
-        'loid' => null
+        'success' => null,
+        'results' => null
     ];
 
     /**
@@ -97,8 +97,8 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'succes' => 'succes',
-        'loid' => 'loid'
+        'success' => 'success',
+        'results' => 'results'
     ];
 
     /**
@@ -107,8 +107,8 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'succes' => 'setSucces',
-        'loid' => 'setLoid'
+        'success' => 'setSuccess',
+        'results' => 'setResults'
     ];
 
     /**
@@ -117,8 +117,8 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'succes' => 'getSucces',
-        'loid' => 'getLoid'
+        'success' => 'getSuccess',
+        'results' => 'getResults'
     ];
 
     /**
@@ -179,8 +179,8 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['succes'] = isset($data['succes']) ? $data['succes'] : null;
-        $this->container['loid'] = isset($data['loid']) ? $data['loid'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
     }
 
     /**
@@ -208,49 +208,49 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets succes
+     * Gets success
      *
      * @return bool
      */
-    public function getSucces()
+    public function getSuccess()
     {
-        return $this->container['succes'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets succes
+     * Sets success
      *
-     * @param bool $succes succes
+     * @param bool $success The status of the request
      *
      * @return $this
      */
-    public function setSucces($succes)
+    public function setSuccess($success)
     {
-        $this->container['succes'] = $succes;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets loid
+     * Gets results
      *
-     * @return int
+     * @return \Swagger\Client\Model\InlineResponse2004Results[]
      */
-    public function getLoid()
+    public function getResults()
     {
-        return $this->container['loid'];
+        return $this->container['results'];
     }
 
     /**
-     * Sets loid
+     * Sets results
      *
-     * @param int $loid The unique identifier of the added learning object
+     * @param \Swagger\Client\Model\InlineResponse2004Results[] $results The list of learning objects associated with the specified course
      *
      * @return $this
      */
-    public function setLoid($loid)
+    public function setResults($results)
     {
-        $this->container['loid'] = $loid;
+        $this->container['results'] = $results;
 
         return $this;
     }

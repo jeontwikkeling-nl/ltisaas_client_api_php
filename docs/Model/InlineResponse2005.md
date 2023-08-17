@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**succes** | **bool** |  | [optional] 
+**success** | **bool** |  | [optional] 
+**learningobjectid** | **int** | The unique identifier of the added learning object | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
