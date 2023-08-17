@@ -522,7 +522,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://provider42luuk.web11.webv.nl/local/ltisaas/api.php/v0*
+All URIs are relative to *{domain}/local/ltisaas/api.php/v0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

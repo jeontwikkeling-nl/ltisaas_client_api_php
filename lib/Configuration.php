@@ -80,7 +80,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://provider42luuk.web11.webv.nl/local/ltisaas/api.php/v0';
+    protected $host = '{domain}/local/ltisaas/api.php/v0';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
