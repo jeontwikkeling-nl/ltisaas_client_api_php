@@ -13,7 +13,7 @@
 /**
  * LtiSaas API
  *
- * API versions description:  *     - v0: For testing purposes only. It serves mock data that won't be written to the database and there is no validation.  *     - v1: The official version of the LtiSaas API.  *     Note: For testing v0, use the HTTP `Access-Token` header with the value 'dummy'
+ * <p>A brief overview of the API versions:</p> <ul> <li><strong>v0:</strong> This version is solely for testing and does not interact with the database, nor does it involve any validation. It simply serves mock data.</li> <li><strong>v1:</strong> This is the official version of the LtiSaas API, intended for production use.</li> </ul> <p>Please be informed that when testing version v0, the HTTP <code>Access-Token</code> header should be set with the value 'dummy'.</p> <p>Also, please note that the API has a limit of 2500 results per response.</p> <p>Additionally, all webservices support both POST and GET requests. However, the POST method is required when uploading files.</p>
  *
  * OpenAPI spec version: 1.0
  * 
@@ -56,9 +56,7 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'succes' => 'bool',
-        'token' => 'string',
-        'endpoint' => 'string'
+        'results' => '\Swagger\Client\Model\InlineResponse20011Results[]'
     ];
 
     /**
@@ -67,9 +65,7 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'succes' => null,
-        'token' => null,
-        'endpoint' => 'url'
+        'results' => null
     ];
 
     /**
@@ -99,9 +95,7 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'succes' => 'succes',
-        'token' => 'token',
-        'endpoint' => 'endpoint'
+        'results' => 'results'
     ];
 
     /**
@@ -110,9 +104,7 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'succes' => 'setSucces',
-        'token' => 'setToken',
-        'endpoint' => 'setEndpoint'
+        'results' => 'setResults'
     ];
 
     /**
@@ -121,9 +113,7 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'succes' => 'getSucces',
-        'token' => 'getToken',
-        'endpoint' => 'getEndpoint'
+        'results' => 'getResults'
     ];
 
     /**
@@ -184,9 +174,7 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['succes'] = isset($data['succes']) ? $data['succes'] : null;
-        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['endpoint'] = isset($data['endpoint']) ? $data['endpoint'] : null;
+        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
     }
 
     /**
@@ -214,73 +202,25 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets succes
+     * Gets results
      *
-     * @return bool
+     * @return \Swagger\Client\Model\InlineResponse20011Results[]
      */
-    public function getSucces()
+    public function getResults()
     {
-        return $this->container['succes'];
+        return $this->container['results'];
     }
 
     /**
-     * Sets succes
+     * Sets results
      *
-     * @param bool $succes succes
+     * @param \Swagger\Client\Model\InlineResponse20011Results[] $results The list of users
      *
      * @return $this
      */
-    public function setSucces($succes)
+    public function setResults($results)
     {
-        $this->container['succes'] = $succes;
-
-        return $this;
-    }
-
-    /**
-     * Gets token
-     *
-     * @return string
-     */
-    public function getToken()
-    {
-        return $this->container['token'];
-    }
-
-    /**
-     * Sets token
-     *
-     * @param string $token token
-     *
-     * @return $this
-     */
-    public function setToken($token)
-    {
-        $this->container['token'] = $token;
-
-        return $this;
-    }
-
-    /**
-     * Gets endpoint
-     *
-     * @return string
-     */
-    public function getEndpoint()
-    {
-        return $this->container['endpoint'];
-    }
-
-    /**
-     * Sets endpoint
-     *
-     * @param string $endpoint endpoint
-     *
-     * @return $this
-     */
-    public function setEndpoint($endpoint)
-    {
-        $this->container['endpoint'] = $endpoint;
+        $this->container['results'] = $results;
 
         return $this;
     }

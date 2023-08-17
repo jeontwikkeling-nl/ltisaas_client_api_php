@@ -12,7 +12,7 @@
 /**
  * LtiSaas API
  *
- * API versions description:  *     - v0: For testing purposes only. It serves mock data that won't be written to the database and there is no validation.  *     - v1: The official version of the LtiSaas API.  *     Note: For testing v0, use the HTTP `Access-Token` header with the value 'dummy'
+ * <p>A brief overview of the API versions:</p> <ul> <li><strong>v0:</strong> This version is solely for testing and does not interact with the database, nor does it involve any validation. It simply serves mock data.</li> <li><strong>v1:</strong> This is the official version of the LtiSaas API, intended for production use.</li> </ul> <p>Please be informed that when testing version v0, the HTTP <code>Access-Token</code> header should be set with the value 'dummy'.</p> <p>Also, please note that the API has a limit of 2500 results per response.</p> <p>Additionally, all webservices support both POST and GET requests. However, the POST method is required when uploading files.</p>
  *
  * OpenAPI spec version: 1.0
  * 
@@ -374,7 +374,7 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2002
+     * @return \Swagger\Client\Model\InlineResponse2003
      */
     public function courseDelete($courseid)
     {
@@ -391,11 +391,11 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseDeleteWithHttpInfo($courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2002';
+        $returnType = '\Swagger\Client\Model\InlineResponse2003';
         $request = $this->courseDeleteRequest($courseid);
 
         try {
@@ -447,7 +447,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2002',
+                        '\Swagger\Client\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -505,7 +505,7 @@ class DefaultApi
      */
     public function courseDeleteAsyncWithHttpInfo($courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2002';
+        $returnType = '\Swagger\Client\Model\InlineResponse2003';
         $request = $this->courseDeleteRequest($courseid);
 
         return $this->client
@@ -649,15 +649,15 @@ class DefaultApi
      *
      * Delete a specific learning object
      *
-     * @param  int $id The identifier of the learning object (required)
+     * @param  int $learningobjectid The identifier of the learning object (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2005
+     * @return \Swagger\Client\Model\InlineResponse2006
      */
-    public function courseLearningObjectDelete($id)
+    public function courseLearningObjectDelete($learningobjectid)
     {
-        list($response) = $this->courseLearningObjectDeleteWithHttpInfo($id);
+        list($response) = $this->courseLearningObjectDeleteWithHttpInfo($learningobjectid);
         return $response;
     }
 
@@ -666,16 +666,16 @@ class DefaultApi
      *
      * Delete a specific learning object
      *
-     * @param  int $id The identifier of the learning object (required)
+     * @param  int $learningobjectid The identifier of the learning object (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseLearningObjectDeleteWithHttpInfo($id)
+    public function courseLearningObjectDeleteWithHttpInfo($learningobjectid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
-        $request = $this->courseLearningObjectDeleteRequest($id);
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $request = $this->courseLearningObjectDeleteRequest($learningobjectid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -726,7 +726,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2005',
+                        '\Swagger\Client\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -757,14 +757,14 @@ class DefaultApi
      *
      * Delete a specific learning object
      *
-     * @param  int $id The identifier of the learning object (required)
+     * @param  int $learningobjectid The identifier of the learning object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseLearningObjectDeleteAsync($id)
+    public function courseLearningObjectDeleteAsync($learningobjectid)
     {
-        return $this->courseLearningObjectDeleteAsyncWithHttpInfo($id)
+        return $this->courseLearningObjectDeleteAsyncWithHttpInfo($learningobjectid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -777,15 +777,15 @@ class DefaultApi
      *
      * Delete a specific learning object
      *
-     * @param  int $id The identifier of the learning object (required)
+     * @param  int $learningobjectid The identifier of the learning object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseLearningObjectDeleteAsyncWithHttpInfo($id)
+    public function courseLearningObjectDeleteAsyncWithHttpInfo($learningobjectid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
-        $request = $this->courseLearningObjectDeleteRequest($id);
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $request = $this->courseLearningObjectDeleteRequest($learningobjectid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -827,17 +827,17 @@ class DefaultApi
     /**
      * Create request for operation 'courseLearningObjectDelete'
      *
-     * @param  int $id The identifier of the learning object (required)
+     * @param  int $learningobjectid The identifier of the learning object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseLearningObjectDeleteRequest($id)
+    protected function courseLearningObjectDeleteRequest($learningobjectid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'learningobjectid' is set
+        if ($learningobjectid === null || (is_array($learningobjectid) && count($learningobjectid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling courseLearningObjectDelete'
+                'Missing the required parameter $learningobjectid when calling courseLearningObjectDelete'
             );
         }
 
@@ -849,8 +849,8 @@ class DefaultApi
         $multipart = false;
 
         // query params
-        if ($id !== null) {
-            $queryParams['id'] = ObjectSerializer::toQueryValue($id, null);
+        if ($learningobjectid !== null) {
+            $queryParams['learningobjectid'] = ObjectSerializer::toQueryValue($learningobjectid, null);
         }
 
 
@@ -928,26 +928,26 @@ class DefaultApi
      *
      * Add an SCORM package to a course
      *
-     * @param  int $courseid The unique identifier of the course (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
+     * @param  int $courseid courseid (required)
+     * @param  string $packagefile packagefile (required)
+     * @param  string $name name (required)
+     * @param  int $popup popup (required)
+     * @param  int $width width (required)
+     * @param  int $height height (required)
+     * @param  int $grademethod grademethod (required)
+     * @param  int $maxgrade maxgrade (required)
+     * @param  int $maxattempt maxattempt (required)
+     * @param  int $whatgrade whatgrade (required)
+     * @param  int $forcenewattempt forcenewattempt (required)
+     * @param  int $lastattemptlock lastattemptlock (required)
+     * @param  int $autocommit autocommit (required)
+     * @param  int $masteryoverride masteryoverride (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2004
+     * @return \Swagger\Client\Model\InlineResponse2005
      */
-    public function courseLearningObjectScromAdd($courseid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
+    public function courseLearningObjectScromAdd($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
         list($response) = $this->courseLearningObjectScromAddWithHttpInfo($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
         return $response;
@@ -958,29 +958,478 @@ class DefaultApi
      *
      * Add an SCORM package to a course
      *
+     * @param  int $courseid (required)
+     * @param  string $packagefile (required)
+     * @param  string $name (required)
+     * @param  int $popup (required)
+     * @param  int $width (required)
+     * @param  int $height (required)
+     * @param  int $grademethod (required)
+     * @param  int $maxgrade (required)
+     * @param  int $maxattempt (required)
+     * @param  int $whatgrade (required)
+     * @param  int $forcenewattempt (required)
+     * @param  int $lastattemptlock (required)
+     * @param  int $autocommit (required)
+     * @param  int $masteryoverride (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function courseLearningObjectScromAddWithHttpInfo($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    {
+        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $request = $this->courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\InlineResponse2005',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation courseLearningObjectScromAddAsync
+     *
+     * Add an SCORM package to a course
+     *
+     * @param  int $courseid (required)
+     * @param  string $packagefile (required)
+     * @param  string $name (required)
+     * @param  int $popup (required)
+     * @param  int $width (required)
+     * @param  int $height (required)
+     * @param  int $grademethod (required)
+     * @param  int $maxgrade (required)
+     * @param  int $maxattempt (required)
+     * @param  int $whatgrade (required)
+     * @param  int $forcenewattempt (required)
+     * @param  int $lastattemptlock (required)
+     * @param  int $autocommit (required)
+     * @param  int $masteryoverride (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function courseLearningObjectScromAddAsync($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    {
+        return $this->courseLearningObjectScromAddAsyncWithHttpInfo($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation courseLearningObjectScromAddAsyncWithHttpInfo
+     *
+     * Add an SCORM package to a course
+     *
+     * @param  int $courseid (required)
+     * @param  string $packagefile (required)
+     * @param  string $name (required)
+     * @param  int $popup (required)
+     * @param  int $width (required)
+     * @param  int $height (required)
+     * @param  int $grademethod (required)
+     * @param  int $maxgrade (required)
+     * @param  int $maxattempt (required)
+     * @param  int $whatgrade (required)
+     * @param  int $forcenewattempt (required)
+     * @param  int $lastattemptlock (required)
+     * @param  int $autocommit (required)
+     * @param  int $masteryoverride (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function courseLearningObjectScromAddAsyncWithHttpInfo($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    {
+        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $request = $this->courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'courseLearningObjectScromAdd'
+     *
+     * @param  int $courseid (required)
+     * @param  string $packagefile (required)
+     * @param  string $name (required)
+     * @param  int $popup (required)
+     * @param  int $width (required)
+     * @param  int $height (required)
+     * @param  int $grademethod (required)
+     * @param  int $maxgrade (required)
+     * @param  int $maxattempt (required)
+     * @param  int $whatgrade (required)
+     * @param  int $forcenewattempt (required)
+     * @param  int $lastattemptlock (required)
+     * @param  int $autocommit (required)
+     * @param  int $masteryoverride (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    {
+        // verify the required parameter 'courseid' is set
+        if ($courseid === null || (is_array($courseid) && count($courseid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $courseid when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'packagefile' is set
+        if ($packagefile === null || (is_array($packagefile) && count($packagefile) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $packagefile when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'name' is set
+        if ($name === null || (is_array($name) && count($name) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'popup' is set
+        if ($popup === null || (is_array($popup) && count($popup) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $popup when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'width' is set
+        if ($width === null || (is_array($width) && count($width) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $width when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'height' is set
+        if ($height === null || (is_array($height) && count($height) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $height when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'grademethod' is set
+        if ($grademethod === null || (is_array($grademethod) && count($grademethod) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $grademethod when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'maxgrade' is set
+        if ($maxgrade === null || (is_array($maxgrade) && count($maxgrade) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $maxgrade when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'maxattempt' is set
+        if ($maxattempt === null || (is_array($maxattempt) && count($maxattempt) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $maxattempt when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'whatgrade' is set
+        if ($whatgrade === null || (is_array($whatgrade) && count($whatgrade) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $whatgrade when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'forcenewattempt' is set
+        if ($forcenewattempt === null || (is_array($forcenewattempt) && count($forcenewattempt) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $forcenewattempt when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'lastattemptlock' is set
+        if ($lastattemptlock === null || (is_array($lastattemptlock) && count($lastattemptlock) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $lastattemptlock when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'autocommit' is set
+        if ($autocommit === null || (is_array($autocommit) && count($autocommit) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $autocommit when calling courseLearningObjectScromAdd'
+            );
+        }
+        // verify the required parameter 'masteryoverride' is set
+        if ($masteryoverride === null || (is_array($masteryoverride) && count($masteryoverride) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $masteryoverride when calling courseLearningObjectScromAdd'
+            );
+        }
+
+        $resourcePath = '/course/learningobject/scrom/add';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // form params
+        if ($courseid !== null) {
+            $formParams['courseid'] = ObjectSerializer::toFormValue($courseid);
+        }
+        // form params
+        if ($packagefile !== null) {
+            $multipart = true;
+            $formParams['packagefile'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($packagefile), 'rb');
+        }
+        // form params
+        if ($name !== null) {
+            $formParams['name'] = ObjectSerializer::toFormValue($name);
+        }
+        // form params
+        if ($popup !== null) {
+            $formParams['popup'] = ObjectSerializer::toFormValue($popup);
+        }
+        // form params
+        if ($width !== null) {
+            $formParams['width'] = ObjectSerializer::toFormValue($width);
+        }
+        // form params
+        if ($height !== null) {
+            $formParams['height'] = ObjectSerializer::toFormValue($height);
+        }
+        // form params
+        if ($grademethod !== null) {
+            $formParams['grademethod'] = ObjectSerializer::toFormValue($grademethod);
+        }
+        // form params
+        if ($maxgrade !== null) {
+            $formParams['maxgrade'] = ObjectSerializer::toFormValue($maxgrade);
+        }
+        // form params
+        if ($maxattempt !== null) {
+            $formParams['maxattempt'] = ObjectSerializer::toFormValue($maxattempt);
+        }
+        // form params
+        if ($whatgrade !== null) {
+            $formParams['whatgrade'] = ObjectSerializer::toFormValue($whatgrade);
+        }
+        // form params
+        if ($forcenewattempt !== null) {
+            $formParams['forcenewattempt'] = ObjectSerializer::toFormValue($forcenewattempt);
+        }
+        // form params
+        if ($lastattemptlock !== null) {
+            $formParams['lastattemptlock'] = ObjectSerializer::toFormValue($lastattemptlock);
+        }
+        // form params
+        if ($autocommit !== null) {
+            $formParams['autocommit'] = ObjectSerializer::toFormValue($autocommit);
+        }
+        // form params
+        if ($masteryoverride !== null) {
+            $formParams['masteryoverride'] = ObjectSerializer::toFormValue($masteryoverride);
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Access-Token');
+        if ($apiKey !== null) {
+            $headers['Access-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation courseLearningobjectList
+     *
+     * Get learning objects for a course
+     *
      * @param  int $courseid The unique identifier of the course (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\InlineResponse2004
+     */
+    public function courseLearningobjectList($courseid)
+    {
+        list($response) = $this->courseLearningobjectListWithHttpInfo($courseid);
+        return $response;
+    }
+
+    /**
+     * Operation courseLearningobjectListWithHttpInfo
+     *
+     * Get learning objects for a course
+     *
+     * @param  int $courseid The unique identifier of the course (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseLearningObjectScromAddWithHttpInfo($courseid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
+    public function courseLearningobjectListWithHttpInfo($courseid)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2004';
-        $request = $this->courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
+        $request = $this->courseLearningobjectListRequest($courseid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1058,388 +1507,6 @@ class DefaultApi
     }
 
     /**
-     * Operation courseLearningObjectScromAddAsync
-     *
-     * Add an SCORM package to a course
-     *
-     * @param  int $courseid The unique identifier of the course (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function courseLearningObjectScromAddAsync($courseid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
-    {
-        return $this->courseLearningObjectScromAddAsyncWithHttpInfo($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation courseLearningObjectScromAddAsyncWithHttpInfo
-     *
-     * Add an SCORM package to a course
-     *
-     * @param  int $courseid The unique identifier of the course (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function courseLearningObjectScromAddAsyncWithHttpInfo($courseid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
-    {
-        $returnType = '\Swagger\Client\Model\InlineResponse2004';
-        $request = $this->courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'courseLearningObjectScromAdd'
-     *
-     * @param  int $courseid The unique identifier of the course (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
-    {
-        // verify the required parameter 'courseid' is set
-        if ($courseid === null || (is_array($courseid) && count($courseid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $courseid when calling courseLearningObjectScromAdd'
-            );
-        }
-        // verify the required parameter 'packagefile' is set
-        if ($packagefile === null || (is_array($packagefile) && count($packagefile) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $packagefile when calling courseLearningObjectScromAdd'
-            );
-        }
-        // verify the required parameter 'name' is set
-        if ($name === null || (is_array($name) && count($name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling courseLearningObjectScromAdd'
-            );
-        }
-
-        $resourcePath = '/course/learningobject/scrom/add';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($courseid !== null) {
-            $queryParams['courseid'] = ObjectSerializer::toQueryValue($courseid, null);
-        }
-        // query params
-        if ($packagefile !== null) {
-            $queryParams['packagefile'] = ObjectSerializer::toQueryValue($packagefile, 'binary');
-        }
-        // query params
-        if ($name !== null) {
-            $queryParams['name'] = ObjectSerializer::toQueryValue($name, null);
-        }
-        // query params
-        if ($popup !== null) {
-            $queryParams['popup'] = ObjectSerializer::toQueryValue($popup, null);
-        }
-        // query params
-        if ($width !== null) {
-            $queryParams['width'] = ObjectSerializer::toQueryValue($width, null);
-        }
-        // query params
-        if ($height !== null) {
-            $queryParams['height'] = ObjectSerializer::toQueryValue($height, null);
-        }
-        // query params
-        if ($grademethod !== null) {
-            $queryParams['grademethod'] = ObjectSerializer::toQueryValue($grademethod, null);
-        }
-        // query params
-        if ($maxgrade !== null) {
-            $queryParams['maxgrade'] = ObjectSerializer::toQueryValue($maxgrade, null);
-        }
-        // query params
-        if ($maxattempt !== null) {
-            $queryParams['maxattempt'] = ObjectSerializer::toQueryValue($maxattempt, null);
-        }
-        // query params
-        if ($whatgrade !== null) {
-            $queryParams['whatgrade'] = ObjectSerializer::toQueryValue($whatgrade, null);
-        }
-        // query params
-        if ($forcenewattempt !== null) {
-            $queryParams['forcenewattempt'] = ObjectSerializer::toQueryValue($forcenewattempt, null);
-        }
-        // query params
-        if ($lastattemptlock !== null) {
-            $queryParams['lastattemptlock'] = ObjectSerializer::toQueryValue($lastattemptlock, null);
-        }
-        // query params
-        if ($autocommit !== null) {
-            $queryParams['autocommit'] = ObjectSerializer::toQueryValue($autocommit, null);
-        }
-        // query params
-        if ($masteryoverride !== null) {
-            $queryParams['masteryoverride'] = ObjectSerializer::toQueryValue($masteryoverride, null);
-        }
-
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Access-Token');
-        if ($apiKey !== null) {
-            $headers['Access-Token'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation courseLearningobjectList
-     *
-     * Get learning objects for a course
-     *
-     * @param  int $courseid The unique identifier of the course (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2003
-     */
-    public function courseLearningobjectList($courseid)
-    {
-        list($response) = $this->courseLearningobjectListWithHttpInfo($courseid);
-        return $response;
-    }
-
-    /**
-     * Operation courseLearningobjectListWithHttpInfo
-     *
-     * Get learning objects for a course
-     *
-     * @param  int $courseid The unique identifier of the course (required)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function courseLearningobjectListWithHttpInfo($courseid)
-    {
-        $returnType = '\Swagger\Client\Model\InlineResponse2003';
-        $request = $this->courseLearningobjectListRequest($courseid);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2003',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
      * Operation courseLearningobjectListAsync
      *
      * Get learning objects for a course
@@ -1471,7 +1538,7 @@ class DefaultApi
      */
     public function courseLearningobjectListAsyncWithHttpInfo($courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2003';
+        $returnType = '\Swagger\Client\Model\InlineResponse2004';
         $request = $this->courseLearningobjectListRequest($courseid);
 
         return $this->client
@@ -1615,28 +1682,28 @@ class DefaultApi
      *
      * Update SCORM Learning Object
      *
-     * @param  int $loid The ID of the learning object (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
+     * @param  int $learningobjectid learningobjectid (required)
+     * @param  string $packagefile packagefile (required)
+     * @param  string $name name (required)
+     * @param  int $popup popup (required)
+     * @param  int $width width (required)
+     * @param  int $height height (required)
+     * @param  int $grademethod grademethod (required)
+     * @param  int $maxgrade maxgrade (required)
+     * @param  int $maxattempt maxattempt (required)
+     * @param  int $whatgrade whatgrade (required)
+     * @param  int $forcenewattempt forcenewattempt (required)
+     * @param  int $lastattemptlock lastattemptlock (required)
+     * @param  int $autocommit autocommit (required)
+     * @param  int $masteryoverride masteryoverride (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2005
+     * @return \Swagger\Client\Model\InlineResponse2006
      */
-    public function courseLearningobjectScormUpdate($loid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
+    public function courseLearningobjectScormUpdate($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        list($response) = $this->courseLearningobjectScormUpdateWithHttpInfo($loid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
+        list($response) = $this->courseLearningobjectScormUpdateWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
         return $response;
     }
 
@@ -1645,29 +1712,29 @@ class DefaultApi
      *
      * Update SCORM Learning Object
      *
-     * @param  int $loid The ID of the learning object (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
+     * @param  int $learningobjectid (required)
+     * @param  string $packagefile (required)
+     * @param  string $name (required)
+     * @param  int $popup (required)
+     * @param  int $width (required)
+     * @param  int $height (required)
+     * @param  int $grademethod (required)
+     * @param  int $maxgrade (required)
+     * @param  int $maxattempt (required)
+     * @param  int $whatgrade (required)
+     * @param  int $forcenewattempt (required)
+     * @param  int $lastattemptlock (required)
+     * @param  int $autocommit (required)
+     * @param  int $masteryoverride (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseLearningobjectScormUpdateWithHttpInfo($loid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
+    public function courseLearningobjectScormUpdateWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
-        $request = $this->courseLearningobjectScormUpdateRequest($loid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $request = $this->courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1718,7 +1785,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2005',
+                        '\Swagger\Client\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1733,27 +1800,27 @@ class DefaultApi
      *
      * Update SCORM Learning Object
      *
-     * @param  int $loid The ID of the learning object (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
+     * @param  int $learningobjectid (required)
+     * @param  string $packagefile (required)
+     * @param  string $name (required)
+     * @param  int $popup (required)
+     * @param  int $width (required)
+     * @param  int $height (required)
+     * @param  int $grademethod (required)
+     * @param  int $maxgrade (required)
+     * @param  int $maxattempt (required)
+     * @param  int $whatgrade (required)
+     * @param  int $forcenewattempt (required)
+     * @param  int $lastattemptlock (required)
+     * @param  int $autocommit (required)
+     * @param  int $masteryoverride (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseLearningobjectScormUpdateAsync($loid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
+    public function courseLearningobjectScormUpdateAsync($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        return $this->courseLearningobjectScormUpdateAsyncWithHttpInfo($loid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+        return $this->courseLearningobjectScormUpdateAsyncWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1766,28 +1833,28 @@ class DefaultApi
      *
      * Update SCORM Learning Object
      *
-     * @param  int $loid The ID of the learning object (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
+     * @param  int $learningobjectid (required)
+     * @param  string $packagefile (required)
+     * @param  string $name (required)
+     * @param  int $popup (required)
+     * @param  int $width (required)
+     * @param  int $height (required)
+     * @param  int $grademethod (required)
+     * @param  int $maxgrade (required)
+     * @param  int $maxattempt (required)
+     * @param  int $whatgrade (required)
+     * @param  int $forcenewattempt (required)
+     * @param  int $lastattemptlock (required)
+     * @param  int $autocommit (required)
+     * @param  int $masteryoverride (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseLearningobjectScormUpdateAsyncWithHttpInfo($loid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
+    public function courseLearningobjectScormUpdateAsyncWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
-        $request = $this->courseLearningobjectScormUpdateRequest($loid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $request = $this->courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1829,30 +1896,30 @@ class DefaultApi
     /**
      * Create request for operation 'courseLearningobjectScormUpdate'
      *
-     * @param  int $loid The ID of the learning object (required)
-     * @param  string $packagefile The .zip file of the SCORM package (required)
-     * @param  string $name The name of the SCORM package (required)
-     * @param  int $popup Indicates if the SCORM package should open in a new window (1) or not (0) (optional)
-     * @param  int $width The display width for the SCORM package (optional)
-     * @param  int $height The display height for the SCORM package (optional)
-     * @param  int $grademethod The grading method for the SCORM package (0: learning objects, 1: highest grade, 2: average grade, 3:      *          sum grade) (optional)
-     * @param  int $maxgrade The maximum grade possible for the SCORM package (optional)
-     * @param  int $maxattempt The maximum number of attempts allowed for the SCORM package (optional)
-     * @param  int $whatgrade The grading strategy for multiple attempts (0: highest attempt, 1: average grade, 2: first attempt) (optional)
-     * @param  int $forcenewattempt Policy for forcing new attempts (0: no, 1: every new attempt is a new grade, 2: every new attempt      *          resets previous grades) (optional)
-     * @param  int $lastattemptlock Indicates if the SCORM package should be locked after the last attempt (0: no, 1: yes) (optional)
-     * @param  int $autocommit Indicates if the SCORM package grades should auto commit (0: no, 1: yes) (optional)
-     * @param  int $masteryoverride Indicates if the mastery grade overrides the max grade (0: no, 1: yes) (optional)
+     * @param  int $learningobjectid (required)
+     * @param  string $packagefile (required)
+     * @param  string $name (required)
+     * @param  int $popup (required)
+     * @param  int $width (required)
+     * @param  int $height (required)
+     * @param  int $grademethod (required)
+     * @param  int $maxgrade (required)
+     * @param  int $maxattempt (required)
+     * @param  int $whatgrade (required)
+     * @param  int $forcenewattempt (required)
+     * @param  int $lastattemptlock (required)
+     * @param  int $autocommit (required)
+     * @param  int $masteryoverride (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseLearningobjectScormUpdateRequest($loid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
+    protected function courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        // verify the required parameter 'loid' is set
-        if ($loid === null || (is_array($loid) && count($loid) === 0)) {
+        // verify the required parameter 'learningobjectid' is set
+        if ($learningobjectid === null || (is_array($learningobjectid) && count($learningobjectid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $loid when calling courseLearningobjectScormUpdate'
+                'Missing the required parameter $learningobjectid when calling courseLearningobjectScormUpdate'
             );
         }
         // verify the required parameter 'packagefile' is set
@@ -1867,6 +1934,72 @@ class DefaultApi
                 'Missing the required parameter $name when calling courseLearningobjectScormUpdate'
             );
         }
+        // verify the required parameter 'popup' is set
+        if ($popup === null || (is_array($popup) && count($popup) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $popup when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'width' is set
+        if ($width === null || (is_array($width) && count($width) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $width when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'height' is set
+        if ($height === null || (is_array($height) && count($height) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $height when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'grademethod' is set
+        if ($grademethod === null || (is_array($grademethod) && count($grademethod) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $grademethod when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'maxgrade' is set
+        if ($maxgrade === null || (is_array($maxgrade) && count($maxgrade) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $maxgrade when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'maxattempt' is set
+        if ($maxattempt === null || (is_array($maxattempt) && count($maxattempt) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $maxattempt when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'whatgrade' is set
+        if ($whatgrade === null || (is_array($whatgrade) && count($whatgrade) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $whatgrade when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'forcenewattempt' is set
+        if ($forcenewattempt === null || (is_array($forcenewattempt) && count($forcenewattempt) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $forcenewattempt when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'lastattemptlock' is set
+        if ($lastattemptlock === null || (is_array($lastattemptlock) && count($lastattemptlock) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $lastattemptlock when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'autocommit' is set
+        if ($autocommit === null || (is_array($autocommit) && count($autocommit) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $autocommit when calling courseLearningobjectScormUpdate'
+            );
+        }
+        // verify the required parameter 'masteryoverride' is set
+        if ($masteryoverride === null || (is_array($masteryoverride) && count($masteryoverride) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $masteryoverride when calling courseLearningobjectScormUpdate'
+            );
+        }
 
         $resourcePath = '/course/learningobject/scrom/update';
         $formParams = [];
@@ -1875,64 +2008,65 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($loid !== null) {
-            $queryParams['loid'] = ObjectSerializer::toQueryValue($loid, null);
+
+
+        // form params
+        if ($learningobjectid !== null) {
+            $formParams['learningobjectid'] = ObjectSerializer::toFormValue($learningobjectid);
         }
-        // query params
+        // form params
         if ($packagefile !== null) {
-            $queryParams['packagefile'] = ObjectSerializer::toQueryValue($packagefile, 'binary');
+            $multipart = true;
+            $formParams['packagefile'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($packagefile), 'rb');
         }
-        // query params
+        // form params
         if ($name !== null) {
-            $queryParams['name'] = ObjectSerializer::toQueryValue($name, null);
+            $formParams['name'] = ObjectSerializer::toFormValue($name);
         }
-        // query params
+        // form params
         if ($popup !== null) {
-            $queryParams['popup'] = ObjectSerializer::toQueryValue($popup, null);
+            $formParams['popup'] = ObjectSerializer::toFormValue($popup);
         }
-        // query params
+        // form params
         if ($width !== null) {
-            $queryParams['width'] = ObjectSerializer::toQueryValue($width, null);
+            $formParams['width'] = ObjectSerializer::toFormValue($width);
         }
-        // query params
+        // form params
         if ($height !== null) {
-            $queryParams['height'] = ObjectSerializer::toQueryValue($height, null);
+            $formParams['height'] = ObjectSerializer::toFormValue($height);
         }
-        // query params
+        // form params
         if ($grademethod !== null) {
-            $queryParams['grademethod'] = ObjectSerializer::toQueryValue($grademethod, null);
+            $formParams['grademethod'] = ObjectSerializer::toFormValue($grademethod);
         }
-        // query params
+        // form params
         if ($maxgrade !== null) {
-            $queryParams['maxgrade'] = ObjectSerializer::toQueryValue($maxgrade, null);
+            $formParams['maxgrade'] = ObjectSerializer::toFormValue($maxgrade);
         }
-        // query params
+        // form params
         if ($maxattempt !== null) {
-            $queryParams['maxattempt'] = ObjectSerializer::toQueryValue($maxattempt, null);
+            $formParams['maxattempt'] = ObjectSerializer::toFormValue($maxattempt);
         }
-        // query params
+        // form params
         if ($whatgrade !== null) {
-            $queryParams['whatgrade'] = ObjectSerializer::toQueryValue($whatgrade, null);
+            $formParams['whatgrade'] = ObjectSerializer::toFormValue($whatgrade);
         }
-        // query params
+        // form params
         if ($forcenewattempt !== null) {
-            $queryParams['forcenewattempt'] = ObjectSerializer::toQueryValue($forcenewattempt, null);
+            $formParams['forcenewattempt'] = ObjectSerializer::toFormValue($forcenewattempt);
         }
-        // query params
+        // form params
         if ($lastattemptlock !== null) {
-            $queryParams['lastattemptlock'] = ObjectSerializer::toQueryValue($lastattemptlock, null);
+            $formParams['lastattemptlock'] = ObjectSerializer::toFormValue($lastattemptlock);
         }
-        // query params
+        // form params
         if ($autocommit !== null) {
-            $queryParams['autocommit'] = ObjectSerializer::toQueryValue($autocommit, null);
+            $formParams['autocommit'] = ObjectSerializer::toFormValue($autocommit);
         }
-        // query params
+        // form params
         if ($masteryoverride !== null) {
-            $queryParams['masteryoverride'] = ObjectSerializer::toQueryValue($masteryoverride, null);
+            $formParams['masteryoverride'] = ObjectSerializer::toFormValue($masteryoverride);
         }
-
-
         // body params
         $_tempBody = null;
 
@@ -1943,7 +2077,7 @@ class DefaultApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                []
+                ['multipart/form-data']
             );
         }
 
@@ -1995,7 +2129,7 @@ class DefaultApi
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2277,7 +2411,7 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \Swagger\Client\Model\InlineResponse2007
      */
     public function courseLtiRegistrationsByDay($from, $till, $toolid = null)
     {
@@ -2296,11 +2430,11 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLtiRegistrationsByDayWithHttpInfo($from, $till, $toolid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\Swagger\Client\Model\InlineResponse2007';
         $request = $this->courseLtiRegistrationsByDayRequest($from, $till, $toolid);
 
         try {
@@ -2352,7 +2486,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2006',
+                        '\Swagger\Client\Model\InlineResponse2007',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2414,7 +2548,7 @@ class DefaultApi
      */
     public function courseLtiRegistrationsByDayAsyncWithHttpInfo($from, $till, $toolid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\Swagger\Client\Model\InlineResponse2007';
         $request = $this->courseLtiRegistrationsByDayRequest($from, $till, $toolid);
 
         return $this->client
@@ -2574,13 +2708,13 @@ class DefaultApi
      *
      * Get total LTI registrations per course
      *
-     * @param  \DateTime $from The start date (format: YYYY-MM-DD) (required)
-     * @param  \DateTime $till The end date (format: YYYY-MM-DD) (required)
+     * @param  \DateTime $from The start date (format: DD-MM-YYYY) (required)
+     * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $courseid The identifier of the course (optional) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2007
+     * @return \Swagger\Client\Model\InlineResponse2008
      */
     public function courseLtiRegistrationsSumByCourse($from, $till, $courseid = null)
     {
@@ -2593,17 +2727,17 @@ class DefaultApi
      *
      * Get total LTI registrations per course
      *
-     * @param  \DateTime $from The start date (format: YYYY-MM-DD) (required)
-     * @param  \DateTime $till The end date (format: YYYY-MM-DD) (required)
+     * @param  \DateTime $from The start date (format: DD-MM-YYYY) (required)
+     * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $courseid The identifier of the course (optional) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLtiRegistrationsSumByCourseWithHttpInfo($from, $till, $courseid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2007';
+        $returnType = '\Swagger\Client\Model\InlineResponse2008';
         $request = $this->courseLtiRegistrationsSumByCourseRequest($from, $till, $courseid);
 
         try {
@@ -2655,7 +2789,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2007',
+                        '\Swagger\Client\Model\InlineResponse2008',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2686,8 +2820,8 @@ class DefaultApi
      *
      * Get total LTI registrations per course
      *
-     * @param  \DateTime $from The start date (format: YYYY-MM-DD) (required)
-     * @param  \DateTime $till The end date (format: YYYY-MM-DD) (required)
+     * @param  \DateTime $from The start date (format: DD-MM-YYYY) (required)
+     * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $courseid The identifier of the course (optional) (optional)
      *
      * @throws \InvalidArgumentException
@@ -2708,8 +2842,8 @@ class DefaultApi
      *
      * Get total LTI registrations per course
      *
-     * @param  \DateTime $from The start date (format: YYYY-MM-DD) (required)
-     * @param  \DateTime $till The end date (format: YYYY-MM-DD) (required)
+     * @param  \DateTime $from The start date (format: DD-MM-YYYY) (required)
+     * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $courseid The identifier of the course (optional) (optional)
      *
      * @throws \InvalidArgumentException
@@ -2717,7 +2851,7 @@ class DefaultApi
      */
     public function courseLtiRegistrationsSumByCourseAsyncWithHttpInfo($from, $till, $courseid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2007';
+        $returnType = '\Swagger\Client\Model\InlineResponse2008';
         $request = $this->courseLtiRegistrationsSumByCourseRequest($from, $till, $courseid);
 
         return $this->client
@@ -2760,8 +2894,8 @@ class DefaultApi
     /**
      * Create request for operation 'courseLtiRegistrationsSumByCourse'
      *
-     * @param  \DateTime $from The start date (format: YYYY-MM-DD) (required)
-     * @param  \DateTime $till The end date (format: YYYY-MM-DD) (required)
+     * @param  \DateTime $from The start date (format: DD-MM-YYYY) (required)
+     * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $courseid The identifier of the course (optional) (optional)
      *
      * @throws \InvalidArgumentException
@@ -2880,28 +3014,28 @@ class DefaultApi
      * @param  int $courseid The ID of the course (required)
      * @param  string $ltiversion The version of LTI (required)
      * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (required)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2008
+     * @return \Swagger\Client\Model\InlineResponse20010
      */
-    public function courseToolAdd($courseid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    public function courseToolAdd($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        list($response) = $this->courseToolAddWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $objectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
+        list($response) = $this->courseToolAddWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
         return $response;
     }
 
@@ -2913,29 +3047,29 @@ class DefaultApi
      * @param  int $courseid The ID of the course (required)
      * @param  string $ltiversion The version of LTI (required)
      * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (required)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseToolAddWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    public function courseToolAddWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2008';
-        $request = $this->courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $objectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
+        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $request = $this->courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2986,7 +3120,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2008',
+                        '\Swagger\Client\Model\InlineResponse20010',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3020,27 +3154,27 @@ class DefaultApi
      * @param  int $courseid The ID of the course (required)
      * @param  string $ltiversion The version of LTI (required)
      * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (required)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseToolAddAsync($courseid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    public function courseToolAddAsync($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        return $this->courseToolAddAsyncWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $objectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate)
+        return $this->courseToolAddAsyncWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3056,28 +3190,28 @@ class DefaultApi
      * @param  int $courseid The ID of the course (required)
      * @param  string $ltiversion The version of LTI (required)
      * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (required)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseToolAddAsyncWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    public function courseToolAddAsyncWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2008';
-        $request = $this->courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $objectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
+        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $request = $this->courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3122,25 +3256,25 @@ class DefaultApi
      * @param  int $courseid The ID of the course (required)
      * @param  string $ltiversion The version of LTI (required)
      * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (required)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    protected function courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
         // verify the required parameter 'courseid' is set
         if ($courseid === null || (is_array($courseid) && count($courseid) === 0)) {
@@ -3191,8 +3325,8 @@ class DefaultApi
             $queryParams['publishmode'] = ObjectSerializer::toQueryValue($publishmode, null);
         }
         // query params
-        if ($objectid !== null) {
-            $queryParams['objectid'] = ObjectSerializer::toQueryValue($objectid, null);
+        if ($learningobjectid !== null) {
+            $queryParams['learningobjectid'] = ObjectSerializer::toQueryValue($learningobjectid, null);
         }
         // query params
         if ($maxenrolled !== null) {
@@ -3318,15 +3452,15 @@ class DefaultApi
      *
      * Delete a specific course tool
      *
-     * @param  int $id The identifier of the lti tool (required)
+     * @param  int $toolid The identifier of the lti tool (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2005
+     * @return \Swagger\Client\Model\InlineResponse2006
      */
-    public function courseToolDelete($id)
+    public function courseToolDelete($toolid)
     {
-        list($response) = $this->courseToolDeleteWithHttpInfo($id);
+        list($response) = $this->courseToolDeleteWithHttpInfo($toolid);
         return $response;
     }
 
@@ -3335,16 +3469,16 @@ class DefaultApi
      *
      * Delete a specific course tool
      *
-     * @param  int $id The identifier of the lti tool (required)
+     * @param  int $toolid The identifier of the lti tool (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseToolDeleteWithHttpInfo($id)
+    public function courseToolDeleteWithHttpInfo($toolid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
-        $request = $this->courseToolDeleteRequest($id);
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $request = $this->courseToolDeleteRequest($toolid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3395,7 +3529,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2005',
+                        '\Swagger\Client\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3426,14 +3560,14 @@ class DefaultApi
      *
      * Delete a specific course tool
      *
-     * @param  int $id The identifier of the lti tool (required)
+     * @param  int $toolid The identifier of the lti tool (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseToolDeleteAsync($id)
+    public function courseToolDeleteAsync($toolid)
     {
-        return $this->courseToolDeleteAsyncWithHttpInfo($id)
+        return $this->courseToolDeleteAsyncWithHttpInfo($toolid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3446,15 +3580,15 @@ class DefaultApi
      *
      * Delete a specific course tool
      *
-     * @param  int $id The identifier of the lti tool (required)
+     * @param  int $toolid The identifier of the lti tool (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseToolDeleteAsyncWithHttpInfo($id)
+    public function courseToolDeleteAsyncWithHttpInfo($toolid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
-        $request = $this->courseToolDeleteRequest($id);
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $request = $this->courseToolDeleteRequest($toolid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3496,17 +3630,17 @@ class DefaultApi
     /**
      * Create request for operation 'courseToolDelete'
      *
-     * @param  int $id The identifier of the lti tool (required)
+     * @param  int $toolid The identifier of the lti tool (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseToolDeleteRequest($id)
+    protected function courseToolDeleteRequest($toolid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'toolid' is set
+        if ($toolid === null || (is_array($toolid) && count($toolid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling courseToolDelete'
+                'Missing the required parameter $toolid when calling courseToolDelete'
             );
         }
 
@@ -3518,8 +3652,296 @@ class DefaultApi
         $multipart = false;
 
         // query params
-        if ($id !== null) {
-            $queryParams['id'] = ObjectSerializer::toQueryValue($id, null);
+        if ($toolid !== null) {
+            $queryParams['toolid'] = ObjectSerializer::toQueryValue($toolid, null);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Access-Token');
+        if ($apiKey !== null) {
+            $headers['Access-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation courseToolList
+     *
+     * List all LTI tools within a course
+     *
+     * @param  int $courseid The ID of the course (required)
+     * @param  string $ltitype The version of LTI (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\InlineResponse2009
+     */
+    public function courseToolList($courseid, $ltitype = null)
+    {
+        list($response) = $this->courseToolListWithHttpInfo($courseid, $ltitype);
+        return $response;
+    }
+
+    /**
+     * Operation courseToolListWithHttpInfo
+     *
+     * List all LTI tools within a course
+     *
+     * @param  int $courseid The ID of the course (required)
+     * @param  string $ltitype The version of LTI (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function courseToolListWithHttpInfo($courseid, $ltitype = null)
+    {
+        $returnType = '\Swagger\Client\Model\InlineResponse2009';
+        $request = $this->courseToolListRequest($courseid, $ltitype);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\InlineResponse2009',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation courseToolListAsync
+     *
+     * List all LTI tools within a course
+     *
+     * @param  int $courseid The ID of the course (required)
+     * @param  string $ltitype The version of LTI (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function courseToolListAsync($courseid, $ltitype = null)
+    {
+        return $this->courseToolListAsyncWithHttpInfo($courseid, $ltitype)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation courseToolListAsyncWithHttpInfo
+     *
+     * List all LTI tools within a course
+     *
+     * @param  int $courseid The ID of the course (required)
+     * @param  string $ltitype The version of LTI (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function courseToolListAsyncWithHttpInfo($courseid, $ltitype = null)
+    {
+        $returnType = '\Swagger\Client\Model\InlineResponse2009';
+        $request = $this->courseToolListRequest($courseid, $ltitype);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'courseToolList'
+     *
+     * @param  int $courseid The ID of the course (required)
+     * @param  string $ltitype The version of LTI (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function courseToolListRequest($courseid, $ltitype = null)
+    {
+        // verify the required parameter 'courseid' is set
+        if ($courseid === null || (is_array($courseid) && count($courseid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $courseid when calling courseToolList'
+            );
+        }
+
+        $resourcePath = '/course/tool/list';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($courseid !== null) {
+            $queryParams['courseid'] = ObjectSerializer::toQueryValue($courseid, null);
+        }
+        // query params
+        if ($ltitype !== null) {
+            $queryParams['ltitype'] = ObjectSerializer::toQueryValue($ltitype, null);
         }
 
 
@@ -3598,30 +4020,30 @@ class DefaultApi
      * Update a specific course tool
      *
      * @param  int $toolid The ID of the lti tool (required)
-     * @param  string $ltiversion The version of LTI (required)
-     * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $ltiversion The version of LTI (optional)
+     * @param  string $name The name (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (optional)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2008
+     * @return \Swagger\Client\Model\InlineResponse20010
      */
-    public function courseToolUpdate($toolid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    public function courseToolUpdate($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        list($response) = $this->courseToolUpdateWithHttpInfo($toolid, $ltiversion, $name, $publishmode, $objectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
+        list($response) = $this->courseToolUpdateWithHttpInfo($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
         return $response;
     }
 
@@ -3631,31 +4053,31 @@ class DefaultApi
      * Update a specific course tool
      *
      * @param  int $toolid The ID of the lti tool (required)
-     * @param  string $ltiversion The version of LTI (required)
-     * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $ltiversion The version of LTI (optional)
+     * @param  string $name The name (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (optional)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseToolUpdateWithHttpInfo($toolid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    public function courseToolUpdateWithHttpInfo($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2008';
-        $request = $this->courseToolUpdateRequest($toolid, $ltiversion, $name, $publishmode, $objectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
+        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $request = $this->courseToolUpdateRequest($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3706,7 +4128,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2008',
+                        '\Swagger\Client\Model\InlineResponse20010',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3738,29 +4160,29 @@ class DefaultApi
      * Update a specific course tool
      *
      * @param  int $toolid The ID of the lti tool (required)
-     * @param  string $ltiversion The version of LTI (required)
-     * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $ltiversion The version of LTI (optional)
+     * @param  string $name The name (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (optional)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseToolUpdateAsync($toolid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    public function courseToolUpdateAsync($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        return $this->courseToolUpdateAsyncWithHttpInfo($toolid, $ltiversion, $name, $publishmode, $objectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate)
+        return $this->courseToolUpdateAsyncWithHttpInfo($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3774,30 +4196,30 @@ class DefaultApi
      * Update a specific course tool
      *
      * @param  int $toolid The ID of the lti tool (required)
-     * @param  string $ltiversion The version of LTI (required)
-     * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $ltiversion The version of LTI (optional)
+     * @param  string $name The name (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (optional)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseToolUpdateAsyncWithHttpInfo($toolid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    public function courseToolUpdateAsyncWithHttpInfo($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2008';
-        $request = $this->courseToolUpdateRequest($toolid, $ltiversion, $name, $publishmode, $objectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
+        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $request = $this->courseToolUpdateRequest($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3840,50 +4262,32 @@ class DefaultApi
      * Create request for operation 'courseToolUpdate'
      *
      * @param  int $toolid The ID of the lti tool (required)
-     * @param  string $ltiversion The version of LTI (required)
-     * @param  string $name The name (required)
-     * @param  string $publishmode The mode of publishing (required)
-     * @param  int $objectid The ID of the object (optional)
+     * @param  string $ltiversion The version of LTI (optional)
+     * @param  string $name The name (optional)
+     * @param  string $publishmode The mode of publishing (course or activity) (optional)
+     * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
      * @param  int $maxenrolled The maximum enrollment (optional)
      * @param  int $roleinstructor The role of the instructor (optional)
      * @param  int $rolelearner The role of the learner (optional)
      * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
      * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
-     * @param  int $gradesync Whether grade sync is enabled (optional)
-     * @param  int $gradesynccompletion Whether grade sync completion is enabled (optional)
-     * @param  int $membersync Whether member sync is enabled (optional)
-     * @param  int $membersyncmode The mode of member sync (optional)
-     * @param  int $enrolperiod The enrollment period in seconds (optional)
-     * @param  \DateTime $enrolstartdate The start date of the enrollment (optional)
-     * @param  \DateTime $enrolenddate The end date of the enrollment (optional)
+     * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
+     * @param  int $membersyncmode User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) (optional)
+     * @param  int $enrolperiod The duration of the enrolment (in seconds) (optional)
+     * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
+     * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseToolUpdateRequest($toolid, $ltiversion, $name, $publishmode, $objectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
+    protected function courseToolUpdateRequest($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
         // verify the required parameter 'toolid' is set
         if ($toolid === null || (is_array($toolid) && count($toolid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $toolid when calling courseToolUpdate'
-            );
-        }
-        // verify the required parameter 'ltiversion' is set
-        if ($ltiversion === null || (is_array($ltiversion) && count($ltiversion) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $ltiversion when calling courseToolUpdate'
-            );
-        }
-        // verify the required parameter 'name' is set
-        if ($name === null || (is_array($name) && count($name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling courseToolUpdate'
-            );
-        }
-        // verify the required parameter 'publishmode' is set
-        if ($publishmode === null || (is_array($publishmode) && count($publishmode) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $publishmode when calling courseToolUpdate'
             );
         }
 
@@ -3911,8 +4315,8 @@ class DefaultApi
             $queryParams['publishmode'] = ObjectSerializer::toQueryValue($publishmode, null);
         }
         // query params
-        if ($objectid !== null) {
-            $queryParams['objectid'] = ObjectSerializer::toQueryValue($objectid, null);
+        if ($learningobjectid !== null) {
+            $queryParams['learningobjectid'] = ObjectSerializer::toQueryValue($learningobjectid, null);
         }
         // query params
         if ($maxenrolled !== null) {
@@ -4034,6 +4438,300 @@ class DefaultApi
     }
 
     /**
+     * Operation courseUpdate
+     *
+     * Update an existing course
+     *
+     * @param  string $coursename The name of the course to be created (required)
+     * @param  int $courseid The unique identifier of the course to be deleted (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\InlineResponse2002
+     */
+    public function courseUpdate($coursename, $courseid)
+    {
+        list($response) = $this->courseUpdateWithHttpInfo($coursename, $courseid);
+        return $response;
+    }
+
+    /**
+     * Operation courseUpdateWithHttpInfo
+     *
+     * Update an existing course
+     *
+     * @param  string $coursename The name of the course to be created (required)
+     * @param  int $courseid The unique identifier of the course to be deleted (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function courseUpdateWithHttpInfo($coursename, $courseid)
+    {
+        $returnType = '\Swagger\Client\Model\InlineResponse2002';
+        $request = $this->courseUpdateRequest($coursename, $courseid);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\InlineResponse2002',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation courseUpdateAsync
+     *
+     * Update an existing course
+     *
+     * @param  string $coursename The name of the course to be created (required)
+     * @param  int $courseid The unique identifier of the course to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function courseUpdateAsync($coursename, $courseid)
+    {
+        return $this->courseUpdateAsyncWithHttpInfo($coursename, $courseid)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation courseUpdateAsyncWithHttpInfo
+     *
+     * Update an existing course
+     *
+     * @param  string $coursename The name of the course to be created (required)
+     * @param  int $courseid The unique identifier of the course to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function courseUpdateAsyncWithHttpInfo($coursename, $courseid)
+    {
+        $returnType = '\Swagger\Client\Model\InlineResponse2002';
+        $request = $this->courseUpdateRequest($coursename, $courseid);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'courseUpdate'
+     *
+     * @param  string $coursename The name of the course to be created (required)
+     * @param  int $courseid The unique identifier of the course to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function courseUpdateRequest($coursename, $courseid)
+    {
+        // verify the required parameter 'coursename' is set
+        if ($coursename === null || (is_array($coursename) && count($coursename) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $coursename when calling courseUpdate'
+            );
+        }
+        // verify the required parameter 'courseid' is set
+        if ($courseid === null || (is_array($courseid) && count($courseid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $courseid when calling courseUpdate'
+            );
+        }
+
+        $resourcePath = '/course/update';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($coursename !== null) {
+            $queryParams['coursename'] = ObjectSerializer::toQueryValue($coursename, null);
+        }
+        // query params
+        if ($courseid !== null) {
+            $queryParams['courseid'] = ObjectSerializer::toQueryValue($courseid, null);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Access-Token');
+        if ($apiKey !== null) {
+            $headers['Access-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation tokenAdd
      *
      * Add a new API token
@@ -4042,7 +4740,7 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse20011
+     * @return \Swagger\Client\Model\InlineResponse20013
      */
     public function tokenAdd($name)
     {
@@ -4059,11 +4757,11 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenAddWithHttpInfo($name)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20011';
+        $returnType = '\Swagger\Client\Model\InlineResponse20013';
         $request = $this->tokenAddRequest($name);
 
         try {
@@ -4115,7 +4813,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse20011',
+                        '\Swagger\Client\Model\InlineResponse20013',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4173,7 +4871,7 @@ class DefaultApi
      */
     public function tokenAddAsyncWithHttpInfo($name)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20011';
+        $returnType = '\Swagger\Client\Model\InlineResponse20013';
         $request = $this->tokenAddRequest($name);
 
         return $this->client
@@ -4321,7 +5019,7 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2005
+     * @return \Swagger\Client\Model\InlineResponse2006
      */
     public function tokenDelete($token)
     {
@@ -4338,11 +5036,11 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenDeleteWithHttpInfo($token)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
         $request = $this->tokenDeleteRequest($token);
 
         try {
@@ -4394,7 +5092,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2005',
+                        '\Swagger\Client\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4452,7 +5150,7 @@ class DefaultApi
      */
     public function tokenDeleteAsyncWithHttpInfo($token)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
         $request = $this->tokenDeleteRequest($token);
 
         return $this->client
@@ -4599,7 +5297,7 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse20010
+     * @return \Swagger\Client\Model\InlineResponse20012
      */
     public function tokenList()
     {
@@ -4615,11 +5313,11 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20012, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenListWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $returnType = '\Swagger\Client\Model\InlineResponse20012';
         $request = $this->tokenListRequest();
 
         try {
@@ -4671,7 +5369,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse20010',
+                        '\Swagger\Client\Model\InlineResponse20012',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4727,7 +5425,7 @@ class DefaultApi
      */
     public function tokenListAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $returnType = '\Swagger\Client\Model\InlineResponse20012';
         $request = $this->tokenListRequest();
 
         return $this->client
@@ -4864,7 +5562,7 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2005
+     * @return \Swagger\Client\Model\InlineResponse2006
      */
     public function userDelete($id)
     {
@@ -4881,11 +5579,11 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function userDeleteWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
         $request = $this->userDeleteRequest($id);
 
         try {
@@ -4937,7 +5635,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2005',
+                        '\Swagger\Client\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4995,7 +5693,7 @@ class DefaultApi
      */
     public function userDeleteAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
         $request = $this->userDeleteRequest($id);
 
         return $this->client
@@ -5143,7 +5841,7 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2005
+     * @return \Swagger\Client\Model\InlineResponse2006
      */
     public function userDeleteBulk($ids)
     {
@@ -5160,11 +5858,11 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function userDeleteBulkWithHttpInfo($ids)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
         $request = $this->userDeleteBulkRequest($ids);
 
         try {
@@ -5216,7 +5914,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2005',
+                        '\Swagger\Client\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5274,7 +5972,7 @@ class DefaultApi
      */
     public function userDeleteBulkAsyncWithHttpInfo($ids)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $returnType = '\Swagger\Client\Model\InlineResponse2006';
         $request = $this->userDeleteBulkRequest($ids);
 
         return $this->client
@@ -5425,7 +6123,7 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2009
+     * @return \Swagger\Client\Model\InlineResponse20011
      */
     public function userList($toolid = null)
     {
@@ -5442,11 +6140,11 @@ class DefaultApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
      */
     public function userListWithHttpInfo($toolid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2009';
+        $returnType = '\Swagger\Client\Model\InlineResponse20011';
         $request = $this->userListRequest($toolid);
 
         try {
@@ -5498,7 +6196,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2009',
+                        '\Swagger\Client\Model\InlineResponse20011',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5556,7 +6254,7 @@ class DefaultApi
      */
     public function userListAsyncWithHttpInfo($toolid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2009';
+        $returnType = '\Swagger\Client\Model\InlineResponse20011';
         $request = $this->userListRequest($toolid);
 
         return $this->client

@@ -13,7 +13,7 @@
 /**
  * LtiSaas API
  *
- * API versions description:  *     - v0: For testing purposes only. It serves mock data that won't be written to the database and there is no validation.  *     - v1: The official version of the LtiSaas API.  *     Note: For testing v0, use the HTTP `Access-Token` header with the value 'dummy'
+ * <p>A brief overview of the API versions:</p> <ul> <li><strong>v0:</strong> This version is solely for testing and does not interact with the database, nor does it involve any validation. It simply serves mock data.</li> <li><strong>v1:</strong> This is the official version of the LtiSaas API, intended for production use.</li> </ul> <p>Please be informed that when testing version v0, the HTTP <code>Access-Token</code> header should be set with the value 'dummy'.</p> <p>Also, please note that the API has a limit of 2500 results per response.</p> <p>Additionally, all webservices support both POST and GET requests. However, the POST method is required when uploading files.</p>
  *
  * OpenAPI spec version: 1.0
  * 
@@ -56,9 +56,8 @@ class InlineResponse2007Results implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'totalregistrations' => 'int',
-        'courseid' => 'int',
-        'coursename' => 'string'
+        'date' => '\DateTime',
+        'totalregistrations' => 'int'
     ];
 
     /**
@@ -67,9 +66,8 @@ class InlineResponse2007Results implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'totalregistrations' => null,
-        'courseid' => null,
-        'coursename' => null
+        'date' => 'date',
+        'totalregistrations' => null
     ];
 
     /**
@@ -99,9 +97,8 @@ class InlineResponse2007Results implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'totalregistrations' => 'totalregistrations',
-        'courseid' => 'courseid',
-        'coursename' => 'coursename'
+        'date' => 'date',
+        'totalregistrations' => 'totalregistrations'
     ];
 
     /**
@@ -110,9 +107,8 @@ class InlineResponse2007Results implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'totalregistrations' => 'setTotalregistrations',
-        'courseid' => 'setCourseid',
-        'coursename' => 'setCoursename'
+        'date' => 'setDate',
+        'totalregistrations' => 'setTotalregistrations'
     ];
 
     /**
@@ -121,9 +117,8 @@ class InlineResponse2007Results implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'totalregistrations' => 'getTotalregistrations',
-        'courseid' => 'getCourseid',
-        'coursename' => 'getCoursename'
+        'date' => 'getDate',
+        'totalregistrations' => 'getTotalregistrations'
     ];
 
     /**
@@ -184,9 +179,8 @@ class InlineResponse2007Results implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
         $this->container['totalregistrations'] = isset($data['totalregistrations']) ? $data['totalregistrations'] : null;
-        $this->container['courseid'] = isset($data['courseid']) ? $data['courseid'] : null;
-        $this->container['coursename'] = isset($data['coursename']) ? $data['coursename'] : null;
     }
 
     /**
@@ -214,6 +208,30 @@ class InlineResponse2007Results implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+
+    /**
+     * Sets date
+     *
+     * @param \DateTime $date The date of the registrations (format: DD-MM-YYYY)
+     *
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
      * Gets totalregistrations
      *
      * @return int
@@ -233,54 +251,6 @@ class InlineResponse2007Results implements ModelInterface, ArrayAccess
     public function setTotalregistrations($totalregistrations)
     {
         $this->container['totalregistrations'] = $totalregistrations;
-
-        return $this;
-    }
-
-    /**
-     * Gets courseid
-     *
-     * @return int
-     */
-    public function getCourseid()
-    {
-        return $this->container['courseid'];
-    }
-
-    /**
-     * Sets courseid
-     *
-     * @param int $courseid The identifier of the course
-     *
-     * @return $this
-     */
-    public function setCourseid($courseid)
-    {
-        $this->container['courseid'] = $courseid;
-
-        return $this;
-    }
-
-    /**
-     * Gets coursename
-     *
-     * @return string
-     */
-    public function getCoursename()
-    {
-        return $this->container['coursename'];
-    }
-
-    /**
-     * Sets coursename
-     *
-     * @param string $coursename The name of the course
-     *
-     * @return $this
-     */
-    public function setCoursename($coursename)
-    {
-        $this->container['coursename'] = $coursename;
 
         return $this;
     }
