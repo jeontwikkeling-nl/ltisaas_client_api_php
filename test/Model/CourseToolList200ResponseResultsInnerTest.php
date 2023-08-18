@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * CourseToolList200ResponseResultsInnerTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * CourseToolList200ResponseResultsInnerTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description CourseToolList200ResponseResultsInner
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class CourseToolList200ResponseResultsInnerTest extends TestCase
 {
 
     /**
@@ -71,36 +71,99 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "CourseToolList200ResponseResultsInner"
      */
-    public function testErrorResponse()
+    public function testCourseToolList200ResponseResultsInner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "toolid"
      */
-    public function testPropertySuccess()
+    public function testPropertyToolid()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "name"
      */
-    public function testPropertyError()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "debuginfo"
+     * Test attribute "secret"
      */
-    public function testPropertyDebuginfo()
+    public function testPropertySecret()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "timecreated"
+     */
+    public function testPropertyTimecreated()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ltitype"
+     */
+    public function testPropertyLtitype()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "cartridgeurl"
+     */
+    public function testPropertyCartridgeurl()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "launchurl"
+     */
+    public function testPropertyLaunchurl()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "registrationurl"
+     */
+    public function testPropertyRegistrationurl()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "customproperties"
+     */
+    public function testPropertyCustomproperties()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "resourcetype"
+     */
+    public function testPropertyResourcetype()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

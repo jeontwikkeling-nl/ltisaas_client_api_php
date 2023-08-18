@@ -1,11 +1,9 @@
-# # ErrorResponse
+# # TokenList200Response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **bool** | Indicates the operation&#39;s success |
-**error** | **string** | Description of the error |
-**debuginfo** | **string** | Debug information |
+**results** | [**\LtiSaasApi\LtiSaasApi\TokenList200ResponseResultsInner[]**](TokenList200ResponseResultsInner.md) | The list of all public available tokens | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

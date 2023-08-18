@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * CourseAdd200ResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * CourseAdd200ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description CourseAdd200Response
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class CourseAdd200ResponseTest extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "CourseAdd200Response"
      */
-    public function testErrorResponse()
+    public function testCourseAdd200Response()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -89,18 +89,9 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "courseid"
      */
-    public function testPropertyError()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "debuginfo"
-     */
-    public function testPropertyDebuginfo()
+    public function testPropertyCourseid()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * CourseList200ResponseResultsInnerTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * CourseList200ResponseResultsInnerTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description CourseList200ResponseResultsInner
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class CourseList200ResponseResultsInnerTest extends TestCase
 {
 
     /**
@@ -71,36 +71,63 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "CourseList200ResponseResultsInner"
      */
-    public function testErrorResponse()
+    public function testCourseList200ResponseResultsInner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "totalregistrations"
      */
-    public function testPropertySuccess()
+    public function testPropertyTotalregistrations()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "totalltitools"
      */
-    public function testPropertyError()
+    public function testPropertyTotalltitools()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "debuginfo"
+     * Test attribute "courseid"
      */
-    public function testPropertyDebuginfo()
+    public function testPropertyCourseid()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "toolids"
+     */
+    public function testPropertyToolids()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "coursename"
+     */
+    public function testPropertyCoursename()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lastaccess"
+     */
+    public function testPropertyLastaccess()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * CourseLtiRegistrationsByDay200ResponseResultsInnerTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * CourseLtiRegistrationsByDay200ResponseResultsInnerTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description CourseLtiRegistrationsByDay200ResponseResultsInner
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class CourseLtiRegistrationsByDay200ResponseResultsInnerTest extends TestCase
 {
 
     /**
@@ -71,36 +71,27 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "CourseLtiRegistrationsByDay200ResponseResultsInner"
      */
-    public function testErrorResponse()
+    public function testCourseLtiRegistrationsByDay200ResponseResultsInner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "date"
      */
-    public function testPropertySuccess()
+    public function testPropertyDate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "totalregistrations"
      */
-    public function testPropertyError()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "debuginfo"
-     */
-    public function testPropertyDebuginfo()
+    public function testPropertyTotalregistrations()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

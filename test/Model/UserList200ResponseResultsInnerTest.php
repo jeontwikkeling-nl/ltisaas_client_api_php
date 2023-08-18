@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * UserList200ResponseResultsInnerTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * UserList200ResponseResultsInnerTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description UserList200ResponseResultsInner
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class UserList200ResponseResultsInnerTest extends TestCase
 {
 
     /**
@@ -71,36 +71,81 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "UserList200ResponseResultsInner"
      */
-    public function testErrorResponse()
+    public function testUserList200ResponseResultsInner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "userid"
      */
-    public function testPropertySuccess()
+    public function testPropertyUserid()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "firstname"
      */
-    public function testPropertyError()
+    public function testPropertyFirstname()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "debuginfo"
+     * Test attribute "lastname"
      */
-    public function testPropertyDebuginfo()
+    public function testPropertyLastname()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lastip"
+     */
+    public function testPropertyLastip()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lti_lastgrade"
+     */
+    public function testPropertyLtiLastgrade()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lti_lastaccess"
+     */
+    public function testPropertyLtiLastaccess()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lti_timecreated"
+     */
+    public function testPropertyLtiTimecreated()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

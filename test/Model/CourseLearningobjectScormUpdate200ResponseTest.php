@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * CourseLearningobjectScormUpdate200ResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * CourseLearningobjectScormUpdate200ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description CourseLearningobjectScormUpdate200Response
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class CourseLearningobjectScormUpdate200ResponseTest extends TestCase
 {
 
     /**
@@ -71,36 +71,18 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "CourseLearningobjectScormUpdate200Response"
      */
-    public function testErrorResponse()
+    public function testCourseLearningobjectScormUpdate200Response()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "succes"
      */
-    public function testPropertySuccess()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "error"
-     */
-    public function testPropertyError()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "debuginfo"
-     */
-    public function testPropertyDebuginfo()
+    public function testPropertySucces()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
