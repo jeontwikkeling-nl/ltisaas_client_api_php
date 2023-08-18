@@ -29,7 +29,7 @@
 namespace LtiSaasApi;
 
 use GuzzleHttp\Psr7\Utils;
-use LtiSaasApi\LtiSaasApi\ModelInterface;
+use LtiSaasApi\Model\ModelInterface;
 
 /**
  * ObjectSerializer Class Doc Comment

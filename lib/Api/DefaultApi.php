@@ -189,7 +189,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseAdd($coursename, string $contentType = self::contentTypes['courseAdd'][0])
     {
@@ -207,7 +207,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseAddWithHttpInfo($coursename, string $contentType = self::contentTypes['courseAdd'][0])
     {
@@ -250,53 +250,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseAdd200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseAdd200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseAdd200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseAdd200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseAdd200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseAdd200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseAdd200Response';
+            $returnType = '\LtiSaasApi\Model\CourseAdd200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -317,7 +317,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseAdd200Response',
+                        '\LtiSaasApi\Model\CourseAdd200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -325,7 +325,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -333,7 +333,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -377,7 +377,7 @@ class DefaultApi
      */
     public function courseAddAsyncWithHttpInfo($coursename, string $contentType = self::contentTypes['courseAdd'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseAdd200Response';
+        $returnType = '\LtiSaasApi\Model\CourseAdd200Response';
         $request = $this->courseAddRequest($coursename, $contentType);
 
         return $this->client
@@ -524,7 +524,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseDelete200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseDelete200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseDelete($courseid, string $contentType = self::contentTypes['courseDelete'][0])
     {
@@ -542,7 +542,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseDelete200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseDelete200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseDeleteWithHttpInfo($courseid, string $contentType = self::contentTypes['courseDelete'][0])
     {
@@ -585,53 +585,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseDelete200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseDelete200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseDelete200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseDelete200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseDelete200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseDelete200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseDelete200Response';
+            $returnType = '\LtiSaasApi\Model\CourseDelete200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -652,7 +652,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseDelete200Response',
+                        '\LtiSaasApi\Model\CourseDelete200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -660,7 +660,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -668,7 +668,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -712,7 +712,7 @@ class DefaultApi
      */
     public function courseDeleteAsyncWithHttpInfo($courseid, string $contentType = self::contentTypes['courseDelete'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseDelete200Response';
+        $returnType = '\LtiSaasApi\Model\CourseDelete200Response';
         $request = $this->courseDeleteRequest($courseid, $contentType);
 
         return $this->client
@@ -859,7 +859,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseLearningObjectDelete($learningobjectid, string $contentType = self::contentTypes['courseLearningObjectDelete'][0])
     {
@@ -877,7 +877,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningObjectDeleteWithHttpInfo($learningobjectid, string $contentType = self::contentTypes['courseLearningObjectDelete'][0])
     {
@@ -920,53 +920,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -987,7 +987,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -995,7 +995,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1003,7 +1003,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1047,7 +1047,7 @@ class DefaultApi
      */
     public function courseLearningObjectDeleteAsyncWithHttpInfo($learningobjectid, string $contentType = self::contentTypes['courseLearningObjectDelete'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
         $request = $this->courseLearningObjectDeleteRequest($learningobjectid, $contentType);
 
         return $this->client
@@ -1207,7 +1207,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLearningObjectScromAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseLearningObjectScromAdd($courseid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningObjectScromAdd'][0])
     {
@@ -1238,7 +1238,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLearningObjectScromAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningObjectScromAddWithHttpInfo($courseid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningObjectScromAdd'][0])
     {
@@ -1281,53 +1281,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLearningObjectScromAdd200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLearningObjectScromAdd200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningObjectScromAdd200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLearningObjectScromAdd200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1348,7 +1348,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response',
+                        '\LtiSaasApi\Model\CourseLearningObjectScromAdd200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1356,7 +1356,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1364,7 +1364,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1434,7 +1434,7 @@ class DefaultApi
      */
     public function courseLearningObjectScromAddAsyncWithHttpInfo($courseid, $packagefile, $name, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningObjectScromAdd'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLearningObjectScromAdd200Response';
         $request = $this->courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride, $contentType);
 
         return $this->client
@@ -1686,7 +1686,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLearningobjectList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseLearningobjectList($courseid, string $contentType = self::contentTypes['courseLearningobjectList'][0])
     {
@@ -1704,7 +1704,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLearningobjectList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningobjectListWithHttpInfo($courseid, string $contentType = self::contentTypes['courseLearningobjectList'][0])
     {
@@ -1747,53 +1747,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLearningobjectList200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLearningobjectList200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectList200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLearningobjectList200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1814,7 +1814,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response',
+                        '\LtiSaasApi\Model\CourseLearningobjectList200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1822,7 +1822,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1830,7 +1830,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1874,7 +1874,7 @@ class DefaultApi
      */
     public function courseLearningobjectListAsyncWithHttpInfo($courseid, string $contentType = self::contentTypes['courseLearningobjectList'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLearningobjectList200Response';
         $request = $this->courseLearningobjectListRequest($courseid, $contentType);
 
         return $this->client
@@ -2034,7 +2034,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response
+     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
      */
     public function courseLearningobjectScormUpdate($learningobjectid, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningobjectScormUpdate'][0])
     {
@@ -2065,7 +2065,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningobjectScormUpdateWithHttpInfo($learningobjectid, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningobjectScormUpdate'][0])
     {
@@ -2108,23 +2108,23 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2145,7 +2145,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2215,7 +2215,7 @@ class DefaultApi
      */
     public function courseLearningobjectScormUpdateAsyncWithHttpInfo($learningobjectid, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningobjectScormUpdate'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
         $request = $this->courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride, $contentType);
 
         return $this->client
@@ -2446,7 +2446,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseList(string $contentType = self::contentTypes['courseList'][0])
     {
@@ -2463,7 +2463,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseListWithHttpInfo(string $contentType = self::contentTypes['courseList'][0])
     {
@@ -2506,53 +2506,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseList200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseList200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseList200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseList200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseList200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseList200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseList200Response';
+            $returnType = '\LtiSaasApi\Model\CourseList200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2573,7 +2573,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseList200Response',
+                        '\LtiSaasApi\Model\CourseList200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2581,7 +2581,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2589,7 +2589,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2631,7 +2631,7 @@ class DefaultApi
      */
     public function courseListAsyncWithHttpInfo(string $contentType = self::contentTypes['courseList'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseList200Response';
+        $returnType = '\LtiSaasApi\Model\CourseList200Response';
         $request = $this->courseListRequest($contentType);
 
         return $this->client
@@ -2763,7 +2763,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseLtiRegistrationsByDay($from, $till, $toolid = null, string $contentType = self::contentTypes['courseLtiRegistrationsByDay'][0])
     {
@@ -2783,7 +2783,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLtiRegistrationsByDayWithHttpInfo($from, $till, $toolid = null, string $contentType = self::contentTypes['courseLtiRegistrationsByDay'][0])
     {
@@ -2826,53 +2826,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2893,7 +2893,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response',
+                        '\LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2901,7 +2901,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2909,7 +2909,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2957,7 +2957,7 @@ class DefaultApi
      */
     public function courseLtiRegistrationsByDayAsyncWithHttpInfo($from, $till, $toolid = null, string $contentType = self::contentTypes['courseLtiRegistrationsByDay'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response';
         $request = $this->courseLtiRegistrationsByDayRequest($from, $till, $toolid, $contentType);
 
         return $this->client
@@ -3134,7 +3134,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseLtiRegistrationsSumByCourse($from, $till, $courseid = null, string $contentType = self::contentTypes['courseLtiRegistrationsSumByCourse'][0])
     {
@@ -3154,7 +3154,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLtiRegistrationsSumByCourseWithHttpInfo($from, $till, $courseid = null, string $contentType = self::contentTypes['courseLtiRegistrationsSumByCourse'][0])
     {
@@ -3197,53 +3197,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3264,7 +3264,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response',
+                        '\LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3272,7 +3272,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3280,7 +3280,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3328,7 +3328,7 @@ class DefaultApi
      */
     public function courseLtiRegistrationsSumByCourseAsyncWithHttpInfo($from, $till, $courseid = null, string $contentType = self::contentTypes['courseLtiRegistrationsSumByCourse'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response';
         $request = $this->courseLtiRegistrationsSumByCourseRequest($from, $till, $courseid, $contentType);
 
         return $this->client
@@ -3519,7 +3519,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseToolAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseToolAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseToolAdd($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null, string $contentType = self::contentTypes['courseToolAdd'][0])
     {
@@ -3553,7 +3553,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseToolAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseToolAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolAddWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null, string $contentType = self::contentTypes['courseToolAdd'][0])
     {
@@ -3596,53 +3596,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseToolAdd200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseToolAdd200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseToolAdd200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response';
+            $returnType = '\LtiSaasApi\Model\CourseToolAdd200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3663,7 +3663,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response',
+                        '\LtiSaasApi\Model\CourseToolAdd200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3671,7 +3671,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3679,7 +3679,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3755,7 +3755,7 @@ class DefaultApi
      */
     public function courseToolAddAsyncWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null, string $contentType = self::contentTypes['courseToolAdd'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response';
+        $returnType = '\LtiSaasApi\Model\CourseToolAdd200Response';
         $request = $this->courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate, $contentType);
 
         return $this->client
@@ -4096,7 +4096,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseToolDelete($toolid, string $contentType = self::contentTypes['courseToolDelete'][0])
     {
@@ -4114,7 +4114,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolDeleteWithHttpInfo($toolid, string $contentType = self::contentTypes['courseToolDelete'][0])
     {
@@ -4157,53 +4157,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4224,7 +4224,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4232,7 +4232,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4240,7 +4240,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4284,7 +4284,7 @@ class DefaultApi
      */
     public function courseToolDeleteAsyncWithHttpInfo($toolid, string $contentType = self::contentTypes['courseToolDelete'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
         $request = $this->courseToolDeleteRequest($toolid, $contentType);
 
         return $this->client
@@ -4432,7 +4432,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseToolList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseToolList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseToolList($courseid, $ltitype = null, string $contentType = self::contentTypes['courseToolList'][0])
     {
@@ -4451,7 +4451,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseToolList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseToolList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolListWithHttpInfo($courseid, $ltitype = null, string $contentType = self::contentTypes['courseToolList'][0])
     {
@@ -4494,53 +4494,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseToolList200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseToolList200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseToolList200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseToolList200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseToolList200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseToolList200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseToolList200Response';
+            $returnType = '\LtiSaasApi\Model\CourseToolList200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4561,7 +4561,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseToolList200Response',
+                        '\LtiSaasApi\Model\CourseToolList200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4569,7 +4569,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4577,7 +4577,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4623,7 +4623,7 @@ class DefaultApi
      */
     public function courseToolListAsyncWithHttpInfo($courseid, $ltitype = null, string $contentType = self::contentTypes['courseToolList'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseToolList200Response';
+        $returnType = '\LtiSaasApi\Model\CourseToolList200Response';
         $request = $this->courseToolListRequest($courseid, $ltitype, $contentType);
 
         return $this->client
@@ -4797,7 +4797,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseToolAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseToolAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseToolUpdate($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null, string $contentType = self::contentTypes['courseToolUpdate'][0])
     {
@@ -4831,7 +4831,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseToolAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseToolAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolUpdateWithHttpInfo($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null, string $contentType = self::contentTypes['courseToolUpdate'][0])
     {
@@ -4874,53 +4874,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseToolAdd200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseToolAdd200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseToolAdd200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response';
+            $returnType = '\LtiSaasApi\Model\CourseToolAdd200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4941,7 +4941,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response',
+                        '\LtiSaasApi\Model\CourseToolAdd200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4949,7 +4949,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4957,7 +4957,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5033,7 +5033,7 @@ class DefaultApi
      */
     public function courseToolUpdateAsyncWithHttpInfo($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null, string $contentType = self::contentTypes['courseToolUpdate'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response';
+        $returnType = '\LtiSaasApi\Model\CourseToolAdd200Response';
         $request = $this->courseToolUpdateRequest($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate, $contentType);
 
         return $this->client
@@ -5357,7 +5357,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseUpdate($coursename, $courseid, string $contentType = self::contentTypes['courseUpdate'][0])
     {
@@ -5376,7 +5376,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseUpdateWithHttpInfo($coursename, $courseid, string $contentType = self::contentTypes['courseUpdate'][0])
     {
@@ -5419,53 +5419,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5486,7 +5486,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseUpdate200Response',
+                        '\LtiSaasApi\Model\CourseUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5494,7 +5494,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5502,7 +5502,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5548,7 +5548,7 @@ class DefaultApi
      */
     public function courseUpdateAsyncWithHttpInfo($coursename, $courseid, string $contentType = self::contentTypes['courseUpdate'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
         $request = $this->courseUpdateRequest($coursename, $courseid, $contentType);
 
         return $this->client
@@ -5712,7 +5712,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\TokenAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\TokenAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function tokenAdd($name, string $contentType = self::contentTypes['tokenAdd'][0])
     {
@@ -5730,7 +5730,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\TokenAdd200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\TokenAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenAddWithHttpInfo($name, string $contentType = self::contentTypes['tokenAdd'][0])
     {
@@ -5773,53 +5773,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\TokenAdd200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\TokenAdd200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\TokenAdd200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\TokenAdd200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\TokenAdd200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\TokenAdd200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\TokenAdd200Response';
+            $returnType = '\LtiSaasApi\Model\TokenAdd200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5840,7 +5840,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\TokenAdd200Response',
+                        '\LtiSaasApi\Model\TokenAdd200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5848,7 +5848,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5856,7 +5856,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5900,7 +5900,7 @@ class DefaultApi
      */
     public function tokenAddAsyncWithHttpInfo($name, string $contentType = self::contentTypes['tokenAdd'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\TokenAdd200Response';
+        $returnType = '\LtiSaasApi\Model\TokenAdd200Response';
         $request = $this->tokenAddRequest($name, $contentType);
 
         return $this->client
@@ -6047,7 +6047,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function tokenDelete($token, string $contentType = self::contentTypes['tokenDelete'][0])
     {
@@ -6065,7 +6065,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenDeleteWithHttpInfo($token, string $contentType = self::contentTypes['tokenDelete'][0])
     {
@@ -6108,53 +6108,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6175,7 +6175,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6183,7 +6183,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6191,7 +6191,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6235,7 +6235,7 @@ class DefaultApi
      */
     public function tokenDeleteAsyncWithHttpInfo($token, string $contentType = self::contentTypes['tokenDelete'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
         $request = $this->tokenDeleteRequest($token, $contentType);
 
         return $this->client
@@ -6381,7 +6381,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\TokenList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\TokenList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function tokenList(string $contentType = self::contentTypes['tokenList'][0])
     {
@@ -6398,7 +6398,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\TokenList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\TokenList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenListWithHttpInfo(string $contentType = self::contentTypes['tokenList'][0])
     {
@@ -6441,53 +6441,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\TokenList200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\TokenList200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\TokenList200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\TokenList200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\TokenList200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\TokenList200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\TokenList200Response';
+            $returnType = '\LtiSaasApi\Model\TokenList200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6508,7 +6508,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\TokenList200Response',
+                        '\LtiSaasApi\Model\TokenList200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6516,7 +6516,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6524,7 +6524,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6566,7 +6566,7 @@ class DefaultApi
      */
     public function tokenListAsyncWithHttpInfo(string $contentType = self::contentTypes['tokenList'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\TokenList200Response';
+        $returnType = '\LtiSaasApi\Model\TokenList200Response';
         $request = $this->tokenListRequest($contentType);
 
         return $this->client
@@ -6696,7 +6696,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function userDelete($id, string $contentType = self::contentTypes['userDelete'][0])
     {
@@ -6714,7 +6714,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function userDeleteWithHttpInfo($id, string $contentType = self::contentTypes['userDelete'][0])
     {
@@ -6757,53 +6757,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6824,7 +6824,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6832,7 +6832,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6840,7 +6840,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6884,7 +6884,7 @@ class DefaultApi
      */
     public function userDeleteAsyncWithHttpInfo($id, string $contentType = self::contentTypes['userDelete'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
         $request = $this->userDeleteRequest($id, $contentType);
 
         return $this->client
@@ -7031,7 +7031,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function userDeleteBulk($ids, string $contentType = self::contentTypes['userDeleteBulk'][0])
     {
@@ -7049,7 +7049,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function userDeleteBulkWithHttpInfo($ids, string $contentType = self::contentTypes['userDeleteBulk'][0])
     {
@@ -7092,53 +7092,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7159,7 +7159,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7167,7 +7167,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7175,7 +7175,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7219,7 +7219,7 @@ class DefaultApi
      */
     public function userDeleteBulkAsyncWithHttpInfo($ids, string $contentType = self::contentTypes['userDeleteBulk'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
         $request = $this->userDeleteBulkRequest($ids, $contentType);
 
         return $this->client
@@ -7366,7 +7366,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\LtiSaasApi\UserList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse
+     * @return \LtiSaasApi\Model\UserList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function userList($toolid = null, string $contentType = self::contentTypes['userList'][0])
     {
@@ -7384,7 +7384,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\LtiSaasApi\UserList200Response|\LtiSaasApi\LtiSaasApi\ErrorResponse|\LtiSaasApi\LtiSaasApi\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\UserList200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function userListWithHttpInfo($toolid = null, string $contentType = self::contentTypes['userList'][0])
     {
@@ -7427,53 +7427,53 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\LtiSaasApi\UserList200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\UserList200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\UserList200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\UserList200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\UserList200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\UserList200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\LtiSaasApi\ErrorResponse' !== 'string') {
+                        if ('\LtiSaasApi\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\LtiSaasApi\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\LtiSaasApi\UserList200Response';
+            $returnType = '\LtiSaasApi\Model\UserList200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7494,7 +7494,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\UserList200Response',
+                        '\LtiSaasApi\Model\UserList200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7502,7 +7502,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7510,7 +7510,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\LtiSaasApi\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7554,7 +7554,7 @@ class DefaultApi
      */
     public function userListAsyncWithHttpInfo($toolid = null, string $contentType = self::contentTypes['userList'][0])
     {
-        $returnType = '\LtiSaasApi\LtiSaasApi\UserList200Response';
+        $returnType = '\LtiSaasApi\Model\UserList200Response';
         $request = $this->userListRequest($toolid, $contentType);
 
         return $this->client

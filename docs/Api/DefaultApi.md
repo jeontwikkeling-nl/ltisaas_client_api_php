@@ -29,7 +29,7 @@ All URIs are relative to https://provider42luuk.web11.webv.nl/local/ltisaas/api.
 ## `courseAdd()`
 
 ```php
-courseAdd($coursename): \LtiSaasApi\LtiSaasApi\CourseAdd200Response
+courseAdd($coursename): \LtiSaasApi\Model\CourseAdd200Response
 ```
 
 Create a new course
@@ -73,7 +73,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseAdd200Response**](../Model/CourseAdd200Response.md)
+[**\LtiSaasApi\Model\CourseAdd200Response**](../Model/CourseAdd200Response.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ try {
 ## `courseDelete()`
 
 ```php
-courseDelete($courseid): \LtiSaasApi\LtiSaasApi\CourseDelete200Response
+courseDelete($courseid): \LtiSaasApi\Model\CourseDelete200Response
 ```
 
 Delete an existing course by its ID
@@ -135,7 +135,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseDelete200Response**](../Model/CourseDelete200Response.md)
+[**\LtiSaasApi\Model\CourseDelete200Response**](../Model/CourseDelete200Response.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ try {
 ## `courseLearningObjectDelete()`
 
 ```php
-courseLearningObjectDelete($learningobjectid): \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response
+courseLearningObjectDelete($learningobjectid): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
 ```
 
 Delete a specific learning object
@@ -197,7 +197,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ try {
 ## `courseLearningObjectScromAdd()`
 
 ```php
-courseLearningObjectScromAdd($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride): \LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response
+courseLearningObjectScromAdd($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride): \LtiSaasApi\Model\CourseLearningObjectScromAdd200Response
 ```
 
 Add an SCORM package to a course
@@ -285,7 +285,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLearningObjectScromAdd200Response**](../Model/CourseLearningObjectScromAdd200Response.md)
+[**\LtiSaasApi\Model\CourseLearningObjectScromAdd200Response**](../Model/CourseLearningObjectScromAdd200Response.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ try {
 ## `courseLearningobjectList()`
 
 ```php
-courseLearningobjectList($courseid): \LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response
+courseLearningobjectList($courseid): \LtiSaasApi\Model\CourseLearningobjectList200Response
 ```
 
 Get learning objects for a course
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLearningobjectList200Response**](../Model/CourseLearningobjectList200Response.md)
+[**\LtiSaasApi\Model\CourseLearningobjectList200Response**](../Model/CourseLearningobjectList200Response.md)
 
 ### Authorization
 
@@ -365,7 +365,7 @@ try {
 ## `courseLearningobjectScormUpdate()`
 
 ```php
-courseLearningobjectScormUpdate($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride): \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response
+courseLearningobjectScormUpdate($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
 ```
 
 Update SCORM Learning Object
@@ -435,7 +435,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
 
 ### Authorization
 
@@ -453,7 +453,7 @@ try {
 ## `courseList()`
 
 ```php
-courseList(): \LtiSaasApi\LtiSaasApi\CourseList200Response
+courseList(): \LtiSaasApi\Model\CourseList200Response
 ```
 
 Retrieve all courses
@@ -494,7 +494,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseList200Response**](../Model/CourseList200Response.md)
+[**\LtiSaasApi\Model\CourseList200Response**](../Model/CourseList200Response.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ This endpoint does not need any parameter.
 ## `courseLtiRegistrationsByDay()`
 
 ```php
-courseLtiRegistrationsByDay($from, $till, $toolid): \LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response
+courseLtiRegistrationsByDay($from, $till, $toolid): \LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response
 ```
 
 Get LTI registrations by day
@@ -560,7 +560,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsByDay200Response**](../Model/CourseLtiRegistrationsByDay200Response.md)
+[**\LtiSaasApi\Model\CourseLtiRegistrationsByDay200Response**](../Model/CourseLtiRegistrationsByDay200Response.md)
 
 ### Authorization
 
@@ -578,7 +578,7 @@ try {
 ## `courseLtiRegistrationsSumByCourse()`
 
 ```php
-courseLtiRegistrationsSumByCourse($from, $till, $courseid): \LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response
+courseLtiRegistrationsSumByCourse($from, $till, $courseid): \LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response
 ```
 
 Get total LTI registrations per course
@@ -626,7 +626,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLtiRegistrationsSumByCourse200Response**](../Model/CourseLtiRegistrationsSumByCourse200Response.md)
+[**\LtiSaasApi\Model\CourseLtiRegistrationsSumByCourse200Response**](../Model/CourseLtiRegistrationsSumByCourse200Response.md)
 
 ### Authorization
 
@@ -644,7 +644,7 @@ try {
 ## `courseToolAdd()`
 
 ```php
-courseToolAdd($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate): \LtiSaasApi\LtiSaasApi\CourseToolAdd200Response
+courseToolAdd($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate): \LtiSaasApi\Model\CourseToolAdd200Response
 ```
 
 Add new tool to a course
@@ -720,7 +720,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response**](../Model/CourseToolAdd200Response.md)
+[**\LtiSaasApi\Model\CourseToolAdd200Response**](../Model/CourseToolAdd200Response.md)
 
 ### Authorization
 
@@ -738,7 +738,7 @@ try {
 ## `courseToolDelete()`
 
 ```php
-courseToolDelete($toolid): \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response
+courseToolDelete($toolid): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
 ```
 
 Delete a specific course tool
@@ -782,7 +782,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
 
 ### Authorization
 
@@ -800,7 +800,7 @@ try {
 ## `courseToolList()`
 
 ```php
-courseToolList($courseid, $ltitype): \LtiSaasApi\LtiSaasApi\CourseToolList200Response
+courseToolList($courseid, $ltitype): \LtiSaasApi\Model\CourseToolList200Response
 ```
 
 List all LTI tools within a course
@@ -846,7 +846,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseToolList200Response**](../Model/CourseToolList200Response.md)
+[**\LtiSaasApi\Model\CourseToolList200Response**](../Model/CourseToolList200Response.md)
 
 ### Authorization
 
@@ -864,7 +864,7 @@ try {
 ## `courseToolUpdate()`
 
 ```php
-courseToolUpdate($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate): \LtiSaasApi\LtiSaasApi\CourseToolAdd200Response
+courseToolUpdate($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate): \LtiSaasApi\Model\CourseToolAdd200Response
 ```
 
 Update a specific course tool
@@ -940,7 +940,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseToolAdd200Response**](../Model/CourseToolAdd200Response.md)
+[**\LtiSaasApi\Model\CourseToolAdd200Response**](../Model/CourseToolAdd200Response.md)
 
 ### Authorization
 
@@ -958,7 +958,7 @@ try {
 ## `courseUpdate()`
 
 ```php
-courseUpdate($coursename, $courseid): \LtiSaasApi\LtiSaasApi\CourseUpdate200Response
+courseUpdate($coursename, $courseid): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Update an existing course
@@ -1004,7 +1004,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
 
 ### Authorization
 
@@ -1022,7 +1022,7 @@ try {
 ## `tokenAdd()`
 
 ```php
-tokenAdd($name): \LtiSaasApi\LtiSaasApi\TokenAdd200Response
+tokenAdd($name): \LtiSaasApi\Model\TokenAdd200Response
 ```
 
 Add a new API token
@@ -1066,7 +1066,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\TokenAdd200Response**](../Model/TokenAdd200Response.md)
+[**\LtiSaasApi\Model\TokenAdd200Response**](../Model/TokenAdd200Response.md)
 
 ### Authorization
 
@@ -1084,7 +1084,7 @@ try {
 ## `tokenDelete()`
 
 ```php
-tokenDelete($token): \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response
+tokenDelete($token): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
 ```
 
 Delete an API token
@@ -1128,7 +1128,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
 
 ### Authorization
 
@@ -1146,7 +1146,7 @@ try {
 ## `tokenList()`
 
 ```php
-tokenList(): \LtiSaasApi\LtiSaasApi\TokenList200Response
+tokenList(): \LtiSaasApi\Model\TokenList200Response
 ```
 
 Get list of API tokens
@@ -1187,7 +1187,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\TokenList200Response**](../Model/TokenList200Response.md)
+[**\LtiSaasApi\Model\TokenList200Response**](../Model/TokenList200Response.md)
 
 ### Authorization
 
@@ -1205,7 +1205,7 @@ This endpoint does not need any parameter.
 ## `userDelete()`
 
 ```php
-userDelete($id): \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response
+userDelete($id): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
 ```
 
 Delete a user by ID
@@ -1249,7 +1249,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
 
 ### Authorization
 
@@ -1267,7 +1267,7 @@ try {
 ## `userDeleteBulk()`
 
 ```php
-userDeleteBulk($ids): \LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response
+userDeleteBulk($ids): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
 ```
 
 Delete multiple users by IDs
@@ -1311,7 +1311,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
 
 ### Authorization
 
@@ -1329,7 +1329,7 @@ try {
 ## `userList()`
 
 ```php
-userList($toolid): \LtiSaasApi\LtiSaasApi\UserList200Response
+userList($toolid): \LtiSaasApi\Model\UserList200Response
 ```
 
 Get list of users in a tool
@@ -1373,7 +1373,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\LtiSaasApi\UserList200Response**](../Model/UserList200Response.md)
+[**\LtiSaasApi\Model\UserList200Response**](../Model/UserList200Response.md)
 
 ### Authorization
 

@@ -27,7 +27,6 @@ openapi-generator generate \
 -i https://provider42luuk.web11.webv.nl/local/ltisaas/docs.php \
 --http-user-agent "LTISaasClient V$new_version" \
 -p composerProjectName=ltisaas_client_api_php \
--p modelPackage=LtiSaasApi \
 --git-repo-id=ltisaas_client_api_php \
 --git-user-id=jeontwikkeling-nl \
 -p composerVendorName=ltisaas \
