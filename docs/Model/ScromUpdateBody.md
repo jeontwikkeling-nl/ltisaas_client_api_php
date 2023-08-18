@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **learningobjectid** | **int** | The ID of the learning object | 
-**packagefile** | **string** | The .zip file of the SCORM package | [optional] 
+**packagefile** | [**\SplFileObject**](\SplFileObject.md) | The .zip file of the SCORM package | [optional] 
 **name** | **string** | The name of the SCORM package | [optional] 
 **popup** | **int** | Indicates if the SCORM package should open in a new window (1) or not (0) | [optional] 
 **width** | **int** | The display width for the SCORM package | [optional] 

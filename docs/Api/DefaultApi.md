@@ -210,7 +210,7 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $courseid = 56; // int | 
-$packagefile = "packagefile_example"; // string | 
+$packagefile = "/path/to/file"; // \SplFileObject | 
 $name = "name_example"; // string | 
 $popup = 56; // int | 
 $width = 56; // int | 
@@ -238,7 +238,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **courseid** | **int**|  | [optional]
- **packagefile** | **string****string**|  | [optional]
+ **packagefile** | [**\SplFileObject**](../Model/.md)|  | [optional]
  **name** | **string**|  | [optional]
  **popup** | **int**|  | [optional]
  **width** | **int**|  | [optional]
@@ -344,7 +344,7 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $learningobjectid = 56; // int | 
-$packagefile = "packagefile_example"; // string | 
+$packagefile = "/path/to/file"; // \SplFileObject | 
 $name = "name_example"; // string | 
 $popup = 56; // int | 
 $width = 56; // int | 
@@ -371,20 +371,20 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **learningobjectid** | **int**|  |
- **packagefile** | **string****string**|  |
- **name** | **string**|  |
- **popup** | **int**|  |
- **width** | **int**|  |
- **height** | **int**|  |
- **grademethod** | **int**|  |
- **maxgrade** | **int**|  |
- **maxattempt** | **int**|  |
- **whatgrade** | **int**|  |
- **forcenewattempt** | **int**|  |
- **lastattemptlock** | **int**|  |
- **autocommit** | **int**|  |
- **masteryoverride** | **int**|  |
+ **learningobjectid** | **int**|  | [optional]
+ **packagefile** | [**\SplFileObject**](../Model/.md)|  | [optional]
+ **name** | **string**|  | [optional]
+ **popup** | **int**|  | [optional]
+ **width** | **int**|  | [optional]
+ **height** | **int**|  | [optional]
+ **grademethod** | **int**|  | [optional]
+ **maxgrade** | **int**|  | [optional]
+ **maxattempt** | **int**|  | [optional]
+ **whatgrade** | **int**|  | [optional]
+ **forcenewattempt** | **int**|  | [optional]
+ **lastattemptlock** | **int**|  | [optional]
+ **autocommit** | **int**|  | [optional]
+ **masteryoverride** | **int**|  | [optional]
 
 ### Return type
 

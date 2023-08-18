@@ -929,7 +929,7 @@ class DefaultApi
      * Add an SCORM package to a course
      *
      * @param  int $courseid courseid (optional)
-     * @param  string $packagefile packagefile (optional)
+     * @param  \SplFileObject $packagefile packagefile (optional)
      * @param  string $name name (optional)
      * @param  int $popup popup (optional)
      * @param  int $width width (optional)
@@ -959,7 +959,7 @@ class DefaultApi
      * Add an SCORM package to a course
      *
      * @param  int $courseid (optional)
-     * @param  string $packagefile (optional)
+     * @param  \SplFileObject $packagefile (optional)
      * @param  string $name (optional)
      * @param  int $popup (optional)
      * @param  int $width (optional)
@@ -1063,7 +1063,7 @@ class DefaultApi
      * Add an SCORM package to a course
      *
      * @param  int $courseid (optional)
-     * @param  string $packagefile (optional)
+     * @param  \SplFileObject $packagefile (optional)
      * @param  string $name (optional)
      * @param  int $popup (optional)
      * @param  int $width (optional)
@@ -1096,7 +1096,7 @@ class DefaultApi
      * Add an SCORM package to a course
      *
      * @param  int $courseid (optional)
-     * @param  string $packagefile (optional)
+     * @param  \SplFileObject $packagefile (optional)
      * @param  string $name (optional)
      * @param  int $popup (optional)
      * @param  int $width (optional)
@@ -1159,7 +1159,7 @@ class DefaultApi
      * Create request for operation 'courseLearningObjectScromAdd'
      *
      * @param  int $courseid (optional)
-     * @param  string $packagefile (optional)
+     * @param  \SplFileObject $packagefile (optional)
      * @param  string $name (optional)
      * @param  int $popup (optional)
      * @param  int $width (optional)
@@ -1194,8 +1194,7 @@ class DefaultApi
         }
         // form params
         if ($packagefile !== null) {
-            $multipart = true;
-            $formParams['packagefile'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($packagefile), 'rb');
+            $formParams['packagefile'] = ObjectSerializer::toFormValue($packagefile);
         }
         // form params
         if ($name !== null) {
@@ -1598,26 +1597,26 @@ class DefaultApi
      *
      * Update SCORM Learning Object
      *
-     * @param  int $learningobjectid learningobjectid (required)
-     * @param  string $packagefile packagefile (required)
-     * @param  string $name name (required)
-     * @param  int $popup popup (required)
-     * @param  int $width width (required)
-     * @param  int $height height (required)
-     * @param  int $grademethod grademethod (required)
-     * @param  int $maxgrade maxgrade (required)
-     * @param  int $maxattempt maxattempt (required)
-     * @param  int $whatgrade whatgrade (required)
-     * @param  int $forcenewattempt forcenewattempt (required)
-     * @param  int $lastattemptlock lastattemptlock (required)
-     * @param  int $autocommit autocommit (required)
-     * @param  int $masteryoverride masteryoverride (required)
+     * @param  int $learningobjectid learningobjectid (optional)
+     * @param  \SplFileObject $packagefile packagefile (optional)
+     * @param  string $name name (optional)
+     * @param  int $popup popup (optional)
+     * @param  int $width width (optional)
+     * @param  int $height height (optional)
+     * @param  int $grademethod grademethod (optional)
+     * @param  int $maxgrade maxgrade (optional)
+     * @param  int $maxattempt maxattempt (optional)
+     * @param  int $whatgrade whatgrade (optional)
+     * @param  int $forcenewattempt forcenewattempt (optional)
+     * @param  int $lastattemptlock lastattemptlock (optional)
+     * @param  int $autocommit autocommit (optional)
+     * @param  int $masteryoverride masteryoverride (optional)
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \LtiSaasApi\Model\InlineResponse2006
      */
-    public function courseLearningobjectScormUpdate($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    public function courseLearningobjectScormUpdate($learningobjectid = null, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
     {
         list($response) = $this->courseLearningobjectScormUpdateWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
         return $response;
@@ -1628,26 +1627,26 @@ class DefaultApi
      *
      * Update SCORM Learning Object
      *
-     * @param  int $learningobjectid (required)
-     * @param  string $packagefile (required)
-     * @param  string $name (required)
-     * @param  int $popup (required)
-     * @param  int $width (required)
-     * @param  int $height (required)
-     * @param  int $grademethod (required)
-     * @param  int $maxgrade (required)
-     * @param  int $maxattempt (required)
-     * @param  int $whatgrade (required)
-     * @param  int $forcenewattempt (required)
-     * @param  int $lastattemptlock (required)
-     * @param  int $autocommit (required)
-     * @param  int $masteryoverride (required)
+     * @param  int $learningobjectid (optional)
+     * @param  \SplFileObject $packagefile (optional)
+     * @param  string $name (optional)
+     * @param  int $popup (optional)
+     * @param  int $width (optional)
+     * @param  int $height (optional)
+     * @param  int $grademethod (optional)
+     * @param  int $maxgrade (optional)
+     * @param  int $maxattempt (optional)
+     * @param  int $whatgrade (optional)
+     * @param  int $forcenewattempt (optional)
+     * @param  int $lastattemptlock (optional)
+     * @param  int $autocommit (optional)
+     * @param  int $masteryoverride (optional)
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \LtiSaasApi\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseLearningobjectScormUpdateWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    public function courseLearningobjectScormUpdateWithHttpInfo($learningobjectid = null, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
     {
         $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
@@ -1716,25 +1715,25 @@ class DefaultApi
      *
      * Update SCORM Learning Object
      *
-     * @param  int $learningobjectid (required)
-     * @param  string $packagefile (required)
-     * @param  string $name (required)
-     * @param  int $popup (required)
-     * @param  int $width (required)
-     * @param  int $height (required)
-     * @param  int $grademethod (required)
-     * @param  int $maxgrade (required)
-     * @param  int $maxattempt (required)
-     * @param  int $whatgrade (required)
-     * @param  int $forcenewattempt (required)
-     * @param  int $lastattemptlock (required)
-     * @param  int $autocommit (required)
-     * @param  int $masteryoverride (required)
+     * @param  int $learningobjectid (optional)
+     * @param  \SplFileObject $packagefile (optional)
+     * @param  string $name (optional)
+     * @param  int $popup (optional)
+     * @param  int $width (optional)
+     * @param  int $height (optional)
+     * @param  int $grademethod (optional)
+     * @param  int $maxgrade (optional)
+     * @param  int $maxattempt (optional)
+     * @param  int $whatgrade (optional)
+     * @param  int $forcenewattempt (optional)
+     * @param  int $lastattemptlock (optional)
+     * @param  int $autocommit (optional)
+     * @param  int $masteryoverride (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseLearningobjectScormUpdateAsync($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    public function courseLearningobjectScormUpdateAsync($learningobjectid = null, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
     {
         return $this->courseLearningobjectScormUpdateAsyncWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
             ->then(
@@ -1749,25 +1748,25 @@ class DefaultApi
      *
      * Update SCORM Learning Object
      *
-     * @param  int $learningobjectid (required)
-     * @param  string $packagefile (required)
-     * @param  string $name (required)
-     * @param  int $popup (required)
-     * @param  int $width (required)
-     * @param  int $height (required)
-     * @param  int $grademethod (required)
-     * @param  int $maxgrade (required)
-     * @param  int $maxattempt (required)
-     * @param  int $whatgrade (required)
-     * @param  int $forcenewattempt (required)
-     * @param  int $lastattemptlock (required)
-     * @param  int $autocommit (required)
-     * @param  int $masteryoverride (required)
+     * @param  int $learningobjectid (optional)
+     * @param  \SplFileObject $packagefile (optional)
+     * @param  string $name (optional)
+     * @param  int $popup (optional)
+     * @param  int $width (optional)
+     * @param  int $height (optional)
+     * @param  int $grademethod (optional)
+     * @param  int $maxgrade (optional)
+     * @param  int $maxattempt (optional)
+     * @param  int $whatgrade (optional)
+     * @param  int $forcenewattempt (optional)
+     * @param  int $lastattemptlock (optional)
+     * @param  int $autocommit (optional)
+     * @param  int $masteryoverride (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseLearningobjectScormUpdateAsyncWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    public function courseLearningobjectScormUpdateAsyncWithHttpInfo($learningobjectid = null, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
     {
         $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
@@ -1812,110 +1811,26 @@ class DefaultApi
     /**
      * Create request for operation 'courseLearningobjectScormUpdate'
      *
-     * @param  int $learningobjectid (required)
-     * @param  string $packagefile (required)
-     * @param  string $name (required)
-     * @param  int $popup (required)
-     * @param  int $width (required)
-     * @param  int $height (required)
-     * @param  int $grademethod (required)
-     * @param  int $maxgrade (required)
-     * @param  int $maxattempt (required)
-     * @param  int $whatgrade (required)
-     * @param  int $forcenewattempt (required)
-     * @param  int $lastattemptlock (required)
-     * @param  int $autocommit (required)
-     * @param  int $masteryoverride (required)
+     * @param  int $learningobjectid (optional)
+     * @param  \SplFileObject $packagefile (optional)
+     * @param  string $name (optional)
+     * @param  int $popup (optional)
+     * @param  int $width (optional)
+     * @param  int $height (optional)
+     * @param  int $grademethod (optional)
+     * @param  int $maxgrade (optional)
+     * @param  int $maxattempt (optional)
+     * @param  int $whatgrade (optional)
+     * @param  int $forcenewattempt (optional)
+     * @param  int $lastattemptlock (optional)
+     * @param  int $autocommit (optional)
+     * @param  int $masteryoverride (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
+    protected function courseLearningobjectScormUpdateRequest($learningobjectid = null, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null)
     {
-        // verify the required parameter 'learningobjectid' is set
-        if ($learningobjectid === null || (is_array($learningobjectid) && count($learningobjectid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $learningobjectid when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'packagefile' is set
-        if ($packagefile === null || (is_array($packagefile) && count($packagefile) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $packagefile when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'name' is set
-        if ($name === null || (is_array($name) && count($name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'popup' is set
-        if ($popup === null || (is_array($popup) && count($popup) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $popup when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'width' is set
-        if ($width === null || (is_array($width) && count($width) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $width when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'height' is set
-        if ($height === null || (is_array($height) && count($height) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $height when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'grademethod' is set
-        if ($grademethod === null || (is_array($grademethod) && count($grademethod) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $grademethod when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'maxgrade' is set
-        if ($maxgrade === null || (is_array($maxgrade) && count($maxgrade) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $maxgrade when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'maxattempt' is set
-        if ($maxattempt === null || (is_array($maxattempt) && count($maxattempt) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $maxattempt when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'whatgrade' is set
-        if ($whatgrade === null || (is_array($whatgrade) && count($whatgrade) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $whatgrade when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'forcenewattempt' is set
-        if ($forcenewattempt === null || (is_array($forcenewattempt) && count($forcenewattempt) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $forcenewattempt when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'lastattemptlock' is set
-        if ($lastattemptlock === null || (is_array($lastattemptlock) && count($lastattemptlock) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $lastattemptlock when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'autocommit' is set
-        if ($autocommit === null || (is_array($autocommit) && count($autocommit) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $autocommit when calling courseLearningobjectScormUpdate'
-            );
-        }
-        // verify the required parameter 'masteryoverride' is set
-        if ($masteryoverride === null || (is_array($masteryoverride) && count($masteryoverride) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $masteryoverride when calling courseLearningobjectScormUpdate'
-            );
-        }
 
         $resourcePath = '/course/learningobject/scrom/update';
         $formParams = [];
@@ -1932,8 +1847,7 @@ class DefaultApi
         }
         // form params
         if ($packagefile !== null) {
-            $multipart = true;
-            $formParams['packagefile'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($packagefile), 'rb');
+            $formParams['packagefile'] = ObjectSerializer::toFormValue($packagefile);
         }
         // form params
         if ($name !== null) {
