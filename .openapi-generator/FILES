@@ -28,6 +28,7 @@ docs/Model/TokenList200ResponseResultsInner.md
 docs/Model/UserList200Response.md
 docs/Model/UserList200ResponseResultsInner.md
 git_push.sh
+lib/Api/DefaultApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/CourseAdd200Response.php
@@ -46,7 +47,6 @@ lib/CourseToolAdd200Response.php
 lib/CourseToolList200Response.php
 lib/CourseToolList200ResponseResultsInner.php
 lib/CourseUpdate200Response.php
-lib/DefaultApi.php
 lib/ErrorResponse.php
 lib/HeaderSelector.php
 lib/ModelInterface.php
