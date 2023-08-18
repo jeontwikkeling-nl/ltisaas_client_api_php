@@ -57,7 +57,7 @@ class TokenAdd200Response implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'succes' => 'bool',
+        'success' => 'bool',
         'token' => 'string',
         'endpoint' => 'string'
     ];
@@ -70,7 +70,7 @@ class TokenAdd200Response implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'succes' => null,
+        'success' => null,
         'token' => null,
         'endpoint' => 'url'
     ];
@@ -81,7 +81,7 @@ class TokenAdd200Response implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'succes' => false,
+        'success' => false,
 		'token' => false,
 		'endpoint' => false
     ];
@@ -172,7 +172,7 @@ class TokenAdd200Response implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'succes' => 'succes',
+        'success' => 'success',
         'token' => 'token',
         'endpoint' => 'endpoint'
     ];
@@ -183,7 +183,7 @@ class TokenAdd200Response implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'succes' => 'setSucces',
+        'success' => 'setSuccess',
         'token' => 'setToken',
         'endpoint' => 'setEndpoint'
     ];
@@ -194,7 +194,7 @@ class TokenAdd200Response implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'succes' => 'getSucces',
+        'success' => 'getSuccess',
         'token' => 'getToken',
         'endpoint' => 'getEndpoint'
     ];
@@ -256,7 +256,7 @@ class TokenAdd200Response implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('succes', $data ?? [], null);
+        $this->setIfExists('success', $data ?? [], null);
         $this->setIfExists('token', $data ?? [], null);
         $this->setIfExists('endpoint', $data ?? [], null);
     }
@@ -304,28 +304,28 @@ class TokenAdd200Response implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets succes
+     * Gets success
      *
      * @return bool|null
      */
-    public function getSucces()
+    public function getSuccess()
     {
-        return $this->container['succes'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets succes
+     * Sets success
      *
-     * @param bool|null $succes succes
+     * @param bool|null $success success
      *
      * @return self
      */
-    public function setSucces($succes)
+    public function setSuccess($success)
     {
-        if (is_null($succes)) {
-            throw new \InvalidArgumentException('non-nullable succes cannot be null');
+        if (is_null($success)) {
+            throw new \InvalidArgumentException('non-nullable success cannot be null');
         }
-        $this->container['succes'] = $succes;
+        $this->container['success'] = $success;
 
         return $this;
     }

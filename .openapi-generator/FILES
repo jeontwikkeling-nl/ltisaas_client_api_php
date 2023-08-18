@@ -10,7 +10,6 @@ docs/Model/CourseDelete200Response.md
 docs/Model/CourseLearningObjectScromAdd200Response.md
 docs/Model/CourseLearningobjectList200Response.md
 docs/Model/CourseLearningobjectList200ResponseResultsInner.md
-docs/Model/CourseLearningobjectScormUpdate200Response.md
 docs/Model/CourseList200Response.md
 docs/Model/CourseList200ResponseResultsInner.md
 docs/Model/CourseLtiRegistrationsByDay200Response.md
@@ -37,7 +36,6 @@ lib/Model/CourseDelete200Response.php
 lib/Model/CourseLearningObjectScromAdd200Response.php
 lib/Model/CourseLearningobjectList200Response.php
 lib/Model/CourseLearningobjectList200ResponseResultsInner.php
-lib/Model/CourseLearningobjectScormUpdate200Response.php
 lib/Model/CourseList200Response.php
 lib/Model/CourseList200ResponseResultsInner.php
 lib/Model/CourseLtiRegistrationsByDay200Response.php
@@ -63,7 +61,6 @@ test/Model/CourseDelete200ResponseTest.php
 test/Model/CourseLearningObjectScromAdd200ResponseTest.php
 test/Model/CourseLearningobjectList200ResponseResultsInnerTest.php
 test/Model/CourseLearningobjectList200ResponseTest.php
-test/Model/CourseLearningobjectScormUpdate200ResponseTest.php
 test/Model/CourseList200ResponseResultsInnerTest.php
 test/Model/CourseList200ResponseTest.php
 test/Model/CourseLtiRegistrationsByDay200ResponseResultsInnerTest.php

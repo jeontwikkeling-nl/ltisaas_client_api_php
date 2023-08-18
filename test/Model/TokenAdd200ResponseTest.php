@@ -80,9 +80,9 @@ class TokenAdd200ResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "succes"
+     * Test attribute "success"
      */
-    public function testPropertySucces()
+    public function testPropertySuccess()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
