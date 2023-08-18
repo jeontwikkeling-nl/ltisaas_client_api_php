@@ -1,6 +1,6 @@
 {
-    "name": "git_user_id/git_repo_id",
-    "description": "",
+    "name": "jeontwikkeling-nl/ltisaas_client_api_php",
+    "description": "Jeontwikkeling LTI client API",
     "keywords": [
         "swagger",
         "php",
@@ -8,12 +8,17 @@
         "rest",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "https://jeontwikkeling.nl",
+    "type": "library",
     "license": "proprietary",
     "authors": [
         {
             "name": "Swagger and contributors",
             "homepage": "https://github.com/swagger-api/swagger-codegen"
+        },
+        {
+            "name": "Ldesign Media",
+            "homepage": "https://ldesignmedia.nl"
         }
     ],
     "require": {
