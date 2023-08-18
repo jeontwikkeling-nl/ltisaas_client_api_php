@@ -1,5 +1,6 @@
 {
     "name": "jeontwikkeling-nl/ltisaas_client_api_php",
+    "version": "1.0.0",
     "description": "Jeontwikkeling LTI client API",
     "keywords": [
         "swagger",
@@ -8,17 +9,12 @@
         "rest",
         "api"
     ],
-    "homepage": "https://jeontwikkeling.nl",
-    "type": "library",
+    "homepage": "http://swagger.io",
     "license": "proprietary",
     "authors": [
         {
             "name": "Swagger and contributors",
             "homepage": "https://github.com/swagger-api/swagger-codegen"
-        },
-        {
-            "name": "Ldesign Media",
-            "homepage": "https://ldesignmedia.nl"
         }
     ],
     "require": {
@@ -34,9 +30,9 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "lib/" }
+        "psr-4": { "LtiSaasApi\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "test/" }
+        "psr-4": { "LtiSaasApi\\" : "test/" }
     }
 }

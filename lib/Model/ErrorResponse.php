@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace LtiSaasApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \LtiSaasApi\ObjectSerializer;
 
 /**
  * ErrorResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace LtiSaasApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \LtiSaasApi\ObjectSerializer;
 
 /**
  * InlineResponse2004 Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'success' => 'bool',
-        'results' => '\Swagger\Client\Model\InlineResponse2004Results[]'
+        'results' => '\LtiSaasApi\Model\InlineResponse2004Results[]'
     ];
 
     /**
@@ -234,7 +234,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
     /**
      * Gets results
      *
-     * @return \Swagger\Client\Model\InlineResponse2004Results[]
+     * @return \LtiSaasApi\Model\InlineResponse2004Results[]
      */
     public function getResults()
     {
@@ -244,7 +244,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess
     /**
      * Sets results
      *
-     * @param \Swagger\Client\Model\InlineResponse2004Results[] $results The list of learning objects associated with the specified course
+     * @param \LtiSaasApi\Model\InlineResponse2004Results[] $results The list of learning objects associated with the specified course
      *
      * @return $this
      */

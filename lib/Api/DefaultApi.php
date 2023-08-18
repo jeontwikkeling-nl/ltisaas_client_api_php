@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace LtiSaasApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use LtiSaasApi\ApiException;
+use LtiSaasApi\Configuration;
+use LtiSaasApi\HeaderSelector;
+use LtiSaasApi\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,9 +93,9 @@ class DefaultApi
      *
      * @param  string $coursename The name of the course to be created (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2001
+     * @return \LtiSaasApi\Model\InlineResponse2001
      */
     public function courseAdd($coursename)
     {
@@ -110,13 +110,13 @@ class DefaultApi
      *
      * @param  string $coursename The name of the course to be created (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseAddWithHttpInfo($coursename)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2001';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2001';
         $request = $this->courseAddRequest($coursename);
 
         try {
@@ -168,7 +168,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2001',
+                        '\LtiSaasApi\Model\InlineResponse2001',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -176,7 +176,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -226,7 +226,7 @@ class DefaultApi
      */
     public function courseAddAsyncWithHttpInfo($coursename)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2001';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2001';
         $request = $this->courseAddRequest($coursename);
 
         return $this->client
@@ -372,9 +372,9 @@ class DefaultApi
      *
      * @param  int $courseid The unique identifier of the course to be deleted (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2003
+     * @return \LtiSaasApi\Model\InlineResponse2003
      */
     public function courseDelete($courseid)
     {
@@ -389,13 +389,13 @@ class DefaultApi
      *
      * @param  int $courseid The unique identifier of the course to be deleted (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseDeleteWithHttpInfo($courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2003';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2003';
         $request = $this->courseDeleteRequest($courseid);
 
         try {
@@ -447,7 +447,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2003',
+                        '\LtiSaasApi\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -455,7 +455,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -463,7 +463,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -505,7 +505,7 @@ class DefaultApi
      */
     public function courseDeleteAsyncWithHttpInfo($courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2003';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2003';
         $request = $this->courseDeleteRequest($courseid);
 
         return $this->client
@@ -651,9 +651,9 @@ class DefaultApi
      *
      * @param  int $learningobjectid The identifier of the learning object (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \LtiSaasApi\Model\InlineResponse2006
      */
     public function courseLearningObjectDelete($learningobjectid)
     {
@@ -668,13 +668,13 @@ class DefaultApi
      *
      * @param  int $learningobjectid The identifier of the learning object (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningObjectDeleteWithHttpInfo($learningobjectid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->courseLearningObjectDeleteRequest($learningobjectid);
 
         try {
@@ -726,7 +726,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2006',
+                        '\LtiSaasApi\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -734,7 +734,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -742,7 +742,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -784,7 +784,7 @@ class DefaultApi
      */
     public function courseLearningObjectDeleteAsyncWithHttpInfo($learningobjectid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->courseLearningObjectDeleteRequest($learningobjectid);
 
         return $this->client
@@ -943,9 +943,9 @@ class DefaultApi
      * @param  int $autocommit autocommit (required)
      * @param  int $masteryoverride masteryoverride (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2005
+     * @return \LtiSaasApi\Model\InlineResponse2005
      */
     public function courseLearningObjectScromAdd($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
@@ -973,13 +973,13 @@ class DefaultApi
      * @param  int $autocommit (required)
      * @param  int $masteryoverride (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningObjectScromAddWithHttpInfo($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2005';
         $request = $this->courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
 
         try {
@@ -1031,7 +1031,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2005',
+                        '\LtiSaasApi\Model\InlineResponse2005',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1039,7 +1039,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1047,7 +1047,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1115,7 +1115,7 @@ class DefaultApi
      */
     public function courseLearningObjectScromAddAsyncWithHttpInfo($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2005';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2005';
         $request = $this->courseLearningObjectScromAddRequest($courseid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
 
         return $this->client
@@ -1405,9 +1405,9 @@ class DefaultApi
      *
      * @param  int $courseid The unique identifier of the course (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2004
+     * @return \LtiSaasApi\Model\InlineResponse2004
      */
     public function courseLearningobjectList($courseid)
     {
@@ -1422,13 +1422,13 @@ class DefaultApi
      *
      * @param  int $courseid The unique identifier of the course (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningobjectListWithHttpInfo($courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2004';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2004';
         $request = $this->courseLearningobjectListRequest($courseid);
 
         try {
@@ -1480,7 +1480,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2004',
+                        '\LtiSaasApi\Model\InlineResponse2004',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1488,7 +1488,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1496,7 +1496,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1538,7 +1538,7 @@ class DefaultApi
      */
     public function courseLearningobjectListAsyncWithHttpInfo($courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2004';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2004';
         $request = $this->courseLearningobjectListRequest($courseid);
 
         return $this->client
@@ -1697,9 +1697,9 @@ class DefaultApi
      * @param  int $autocommit autocommit (required)
      * @param  int $masteryoverride masteryoverride (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \LtiSaasApi\Model\InlineResponse2006
      */
     public function courseLearningobjectScormUpdate($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
@@ -1727,13 +1727,13 @@ class DefaultApi
      * @param  int $autocommit (required)
      * @param  int $masteryoverride (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningobjectScormUpdateWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
 
         try {
@@ -1785,7 +1785,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2006',
+                        '\LtiSaasApi\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1853,7 +1853,7 @@ class DefaultApi
      */
     public function courseLearningobjectScormUpdateAsyncWithHttpInfo($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride);
 
         return $this->client
@@ -2142,9 +2142,9 @@ class DefaultApi
      * Retrieve all courses
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse200
+     * @return \LtiSaasApi\Model\InlineResponse200
      */
     public function courseList()
     {
@@ -2158,13 +2158,13 @@ class DefaultApi
      * Retrieve all courses
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseListWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse200';
+        $returnType = '\LtiSaasApi\Model\InlineResponse200';
         $request = $this->courseListRequest();
 
         try {
@@ -2216,7 +2216,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse200',
+                        '\LtiSaasApi\Model\InlineResponse200',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2224,7 +2224,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2232,7 +2232,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2272,7 +2272,7 @@ class DefaultApi
      */
     public function courseListAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse200';
+        $returnType = '\LtiSaasApi\Model\InlineResponse200';
         $request = $this->courseListRequest();
 
         return $this->client
@@ -2409,9 +2409,9 @@ class DefaultApi
      * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $toolid The identifier of the LTI tool (optional) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2007
+     * @return \LtiSaasApi\Model\InlineResponse2007
      */
     public function courseLtiRegistrationsByDay($from, $till, $toolid = null)
     {
@@ -2428,13 +2428,13 @@ class DefaultApi
      * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $toolid The identifier of the LTI tool (optional) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLtiRegistrationsByDayWithHttpInfo($from, $till, $toolid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2007';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2007';
         $request = $this->courseLtiRegistrationsByDayRequest($from, $till, $toolid);
 
         try {
@@ -2486,7 +2486,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2007',
+                        '\LtiSaasApi\Model\InlineResponse2007',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2494,7 +2494,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2502,7 +2502,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2548,7 +2548,7 @@ class DefaultApi
      */
     public function courseLtiRegistrationsByDayAsyncWithHttpInfo($from, $till, $toolid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2007';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2007';
         $request = $this->courseLtiRegistrationsByDayRequest($from, $till, $toolid);
 
         return $this->client
@@ -2712,9 +2712,9 @@ class DefaultApi
      * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $courseid The identifier of the course (optional) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2008
+     * @return \LtiSaasApi\Model\InlineResponse2008
      */
     public function courseLtiRegistrationsSumByCourse($from, $till, $courseid = null)
     {
@@ -2731,13 +2731,13 @@ class DefaultApi
      * @param  \DateTime $till The end date (format: DD-MM-YYYY) (required)
      * @param  int $courseid The identifier of the course (optional) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLtiRegistrationsSumByCourseWithHttpInfo($from, $till, $courseid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2008';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2008';
         $request = $this->courseLtiRegistrationsSumByCourseRequest($from, $till, $courseid);
 
         try {
@@ -2789,7 +2789,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2008',
+                        '\LtiSaasApi\Model\InlineResponse2008',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2797,7 +2797,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2805,7 +2805,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2851,7 +2851,7 @@ class DefaultApi
      */
     public function courseLtiRegistrationsSumByCourseAsyncWithHttpInfo($from, $till, $courseid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2008';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2008';
         $request = $this->courseLtiRegistrationsSumByCourseRequest($from, $till, $courseid);
 
         return $this->client
@@ -3029,9 +3029,9 @@ class DefaultApi
      * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
      * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse20010
+     * @return \LtiSaasApi\Model\InlineResponse20010
      */
     public function courseToolAdd($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
@@ -3062,13 +3062,13 @@ class DefaultApi
      * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
      * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolAddWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20010';
         $request = $this->courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
 
         try {
@@ -3120,7 +3120,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse20010',
+                        '\LtiSaasApi\Model\InlineResponse20010',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3128,7 +3128,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3136,7 +3136,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3210,7 +3210,7 @@ class DefaultApi
      */
     public function courseToolAddAsyncWithHttpInfo($courseid, $ltiversion, $name, $publishmode, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20010';
         $request = $this->courseToolAddRequest($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
 
         return $this->client
@@ -3454,9 +3454,9 @@ class DefaultApi
      *
      * @param  int $toolid The identifier of the lti tool (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \LtiSaasApi\Model\InlineResponse2006
      */
     public function courseToolDelete($toolid)
     {
@@ -3471,13 +3471,13 @@ class DefaultApi
      *
      * @param  int $toolid The identifier of the lti tool (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolDeleteWithHttpInfo($toolid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->courseToolDeleteRequest($toolid);
 
         try {
@@ -3529,7 +3529,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2006',
+                        '\LtiSaasApi\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3537,7 +3537,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3545,7 +3545,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3587,7 +3587,7 @@ class DefaultApi
      */
     public function courseToolDeleteAsyncWithHttpInfo($toolid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->courseToolDeleteRequest($toolid);
 
         return $this->client
@@ -3734,9 +3734,9 @@ class DefaultApi
      * @param  int $courseid The ID of the course (required)
      * @param  string $ltitype The version of LTI (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2009
+     * @return \LtiSaasApi\Model\InlineResponse2009
      */
     public function courseToolList($courseid, $ltitype = null)
     {
@@ -3752,13 +3752,13 @@ class DefaultApi
      * @param  int $courseid The ID of the course (required)
      * @param  string $ltitype The version of LTI (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolListWithHttpInfo($courseid, $ltitype = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2009';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2009';
         $request = $this->courseToolListRequest($courseid, $ltitype);
 
         try {
@@ -3810,7 +3810,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2009',
+                        '\LtiSaasApi\Model\InlineResponse2009',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3818,7 +3818,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3826,7 +3826,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3870,7 +3870,7 @@ class DefaultApi
      */
     public function courseToolListAsyncWithHttpInfo($courseid, $ltitype = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2009';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2009';
         $request = $this->courseToolListRequest($courseid, $ltitype);
 
         return $this->client
@@ -4037,9 +4037,9 @@ class DefaultApi
      * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
      * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse20010
+     * @return \LtiSaasApi\Model\InlineResponse20010
      */
     public function courseToolUpdate($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
@@ -4070,13 +4070,13 @@ class DefaultApi
      * @param  \DateTime $enrolstartdate The enrolment start date (YYYY-MM-DDTHH:mm) (optional)
      * @param  \DateTime $enrolenddate The enrolment end date (YYYY-MM-DDTHH:mm) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolUpdateWithHttpInfo($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20010';
         $request = $this->courseToolUpdateRequest($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
 
         try {
@@ -4128,7 +4128,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse20010',
+                        '\LtiSaasApi\Model\InlineResponse20010',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4136,7 +4136,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4144,7 +4144,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4218,7 +4218,7 @@ class DefaultApi
      */
     public function courseToolUpdateAsyncWithHttpInfo($toolid, $ltiversion = null, $name = null, $publishmode = null, $learningobjectid = null, $maxenrolled = null, $roleinstructor = null, $rolelearner = null, $provisioningmodeinstructor = null, $provisioningmodelearner = null, $gradesync = null, $gradesynccompletion = null, $membersync = null, $membersyncmode = null, $enrolperiod = null, $enrolstartdate = null, $enrolenddate = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20010';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20010';
         $request = $this->courseToolUpdateRequest($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
 
         return $this->client
@@ -4445,9 +4445,9 @@ class DefaultApi
      * @param  string $coursename The name of the course to be created (required)
      * @param  int $courseid The unique identifier of the course to be deleted (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2002
+     * @return \LtiSaasApi\Model\InlineResponse2002
      */
     public function courseUpdate($coursename, $courseid)
     {
@@ -4463,13 +4463,13 @@ class DefaultApi
      * @param  string $coursename The name of the course to be created (required)
      * @param  int $courseid The unique identifier of the course to be deleted (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseUpdateWithHttpInfo($coursename, $courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2002';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2002';
         $request = $this->courseUpdateRequest($coursename, $courseid);
 
         try {
@@ -4521,7 +4521,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2002',
+                        '\LtiSaasApi\Model\InlineResponse2002',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4529,7 +4529,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4537,7 +4537,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4581,7 +4581,7 @@ class DefaultApi
      */
     public function courseUpdateAsyncWithHttpInfo($coursename, $courseid)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2002';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2002';
         $request = $this->courseUpdateRequest($coursename, $courseid);
 
         return $this->client
@@ -4738,9 +4738,9 @@ class DefaultApi
      *
      * @param  string $name The name of the token for your own administration purposes (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse20013
+     * @return \LtiSaasApi\Model\InlineResponse20013
      */
     public function tokenAdd($name)
     {
@@ -4755,13 +4755,13 @@ class DefaultApi
      *
      * @param  string $name The name of the token for your own administration purposes (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenAddWithHttpInfo($name)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20013';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20013';
         $request = $this->tokenAddRequest($name);
 
         try {
@@ -4813,7 +4813,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse20013',
+                        '\LtiSaasApi\Model\InlineResponse20013',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4821,7 +4821,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4829,7 +4829,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4871,7 +4871,7 @@ class DefaultApi
      */
     public function tokenAddAsyncWithHttpInfo($name)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20013';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20013';
         $request = $this->tokenAddRequest($name);
 
         return $this->client
@@ -5017,9 +5017,9 @@ class DefaultApi
      *
      * @param  string $token The tokenkey you want to delete (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \LtiSaasApi\Model\InlineResponse2006
      */
     public function tokenDelete($token)
     {
@@ -5034,13 +5034,13 @@ class DefaultApi
      *
      * @param  string $token The tokenkey you want to delete (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenDeleteWithHttpInfo($token)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->tokenDeleteRequest($token);
 
         try {
@@ -5092,7 +5092,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2006',
+                        '\LtiSaasApi\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5100,7 +5100,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5108,7 +5108,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5150,7 +5150,7 @@ class DefaultApi
      */
     public function tokenDeleteAsyncWithHttpInfo($token)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->tokenDeleteRequest($token);
 
         return $this->client
@@ -5295,9 +5295,9 @@ class DefaultApi
      * Get list of API tokens
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse20012
+     * @return \LtiSaasApi\Model\InlineResponse20012
      */
     public function tokenList()
     {
@@ -5311,13 +5311,13 @@ class DefaultApi
      * Get list of API tokens
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse20012, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse20012, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenListWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20012';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20012';
         $request = $this->tokenListRequest();
 
         try {
@@ -5369,7 +5369,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse20012',
+                        '\LtiSaasApi\Model\InlineResponse20012',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5377,7 +5377,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5385,7 +5385,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5425,7 +5425,7 @@ class DefaultApi
      */
     public function tokenListAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20012';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20012';
         $request = $this->tokenListRequest();
 
         return $this->client
@@ -5560,9 +5560,9 @@ class DefaultApi
      *
      * @param  int $id The identifier of the user (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \LtiSaasApi\Model\InlineResponse2006
      */
     public function userDelete($id)
     {
@@ -5577,13 +5577,13 @@ class DefaultApi
      *
      * @param  int $id The identifier of the user (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function userDeleteWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->userDeleteRequest($id);
 
         try {
@@ -5635,7 +5635,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2006',
+                        '\LtiSaasApi\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5643,7 +5643,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5651,7 +5651,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5693,7 +5693,7 @@ class DefaultApi
      */
     public function userDeleteAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->userDeleteRequest($id);
 
         return $this->client
@@ -5839,9 +5839,9 @@ class DefaultApi
      *
      * @param  int[] $ids Comma-separated list of identifiers of the users to delete (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \LtiSaasApi\Model\InlineResponse2006
      */
     public function userDeleteBulk($ids)
     {
@@ -5856,13 +5856,13 @@ class DefaultApi
      *
      * @param  int[] $ids Comma-separated list of identifiers of the users to delete (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function userDeleteBulkWithHttpInfo($ids)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->userDeleteBulkRequest($ids);
 
         try {
@@ -5914,7 +5914,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2006',
+                        '\LtiSaasApi\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5922,7 +5922,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5930,7 +5930,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5972,7 +5972,7 @@ class DefaultApi
      */
     public function userDeleteBulkAsyncWithHttpInfo($ids)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2006';
+        $returnType = '\LtiSaasApi\Model\InlineResponse2006';
         $request = $this->userDeleteBulkRequest($ids);
 
         return $this->client
@@ -6121,9 +6121,9 @@ class DefaultApi
      *
      * @param  int $toolid The identifier of the tool (optional) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse20011
+     * @return \LtiSaasApi\Model\InlineResponse20011
      */
     public function userList($toolid = null)
     {
@@ -6138,13 +6138,13 @@ class DefaultApi
      *
      * @param  int $toolid The identifier of the tool (optional) (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
      */
     public function userListWithHttpInfo($toolid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20011';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20011';
         $request = $this->userListRequest($toolid);
 
         try {
@@ -6196,7 +6196,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse20011',
+                        '\LtiSaasApi\Model\InlineResponse20011',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6204,7 +6204,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6212,7 +6212,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ErrorResponse',
+                        '\LtiSaasApi\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6254,7 +6254,7 @@ class DefaultApi
      */
     public function userListAsyncWithHttpInfo($toolid = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse20011';
+        $returnType = '\LtiSaasApi\Model\InlineResponse20011';
         $request = $this->userListRequest($toolid);
 
         return $this->client
