@@ -1,9 +1,17 @@
-
 ### Building example - for developers
-```txt
 
+This is a step by step guide to build the example from scratch. Note that this is personal and not a guide for everyone.
+
+```bash
 # Build the client
 cd ~/PROJECTEN/ltisaas_client_api_php 
+
+echo "Version like 1.0.1:"
+read -r version
+echo $version
+
+echo "Press enter to continue..." 
+read -r key
 
 rm -rf /tmp/ltisaas_client
 swagger-codegen generate \
@@ -18,18 +26,17 @@ swagger-codegen generate \
 --invoker-package LtiSaasApi \
 -D invokerPackage=LtiSaasApi \
 -D apiPackage=LtiSaasApi \
--D artifactVersion=1.0.1 \
--o /tmp/ltisaas_client
-
-open /tmp/ltisaas_client
+-D artifactVersion=$version \
+-o /tmp/ltisaas_client/
 
 # Copy needed files to this project.
+rsync -av /tmp/ltisaas_client/ ~/PROJECTEN/ltisaas_client_api_php 
 
 # Push version
-git tag v1.0.1
-git push origin v1.0.1
+git tag v$version
+git push origin v$version
 
 # update on packagist.com
-https://packagist.org/packages/jeontwikkeling-nl/ltisaas_client_api_php
+# https://packagist.org/packages/jeontwikkeling-nl/ltisaas_client_api_php
 
 ```
