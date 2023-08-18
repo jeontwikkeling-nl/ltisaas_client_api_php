@@ -929,7 +929,7 @@ class DefaultApi
      * Add an SCORM package to a course
      *
      * @param  int $courseid courseid (optional)
-     * @param  \SplFileObject $packagefile packagefile (optional)
+     * @param  string $packagefile packagefile (optional)
      * @param  string $name name (optional)
      * @param  int $popup popup (optional)
      * @param  int $width width (optional)
@@ -959,7 +959,7 @@ class DefaultApi
      * Add an SCORM package to a course
      *
      * @param  int $courseid (optional)
-     * @param  \SplFileObject $packagefile (optional)
+     * @param  string $packagefile (optional)
      * @param  string $name (optional)
      * @param  int $popup (optional)
      * @param  int $width (optional)
@@ -1063,7 +1063,7 @@ class DefaultApi
      * Add an SCORM package to a course
      *
      * @param  int $courseid (optional)
-     * @param  \SplFileObject $packagefile (optional)
+     * @param  string $packagefile (optional)
      * @param  string $name (optional)
      * @param  int $popup (optional)
      * @param  int $width (optional)
@@ -1096,7 +1096,7 @@ class DefaultApi
      * Add an SCORM package to a course
      *
      * @param  int $courseid (optional)
-     * @param  \SplFileObject $packagefile (optional)
+     * @param  string $packagefile (optional)
      * @param  string $name (optional)
      * @param  int $popup (optional)
      * @param  int $width (optional)
@@ -1159,7 +1159,7 @@ class DefaultApi
      * Create request for operation 'courseLearningObjectScromAdd'
      *
      * @param  int $courseid (optional)
-     * @param  \SplFileObject $packagefile (optional)
+     * @param  string $packagefile (optional)
      * @param  string $name (optional)
      * @param  int $popup (optional)
      * @param  int $width (optional)
@@ -1194,7 +1194,8 @@ class DefaultApi
         }
         // form params
         if ($packagefile !== null) {
-            $formParams['packagefile'] = ObjectSerializer::toFormValue($packagefile);
+            $multipart = true;
+            $formParams['packagefile'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($packagefile), 'rb');
         }
         // form params
         if ($name !== null) {

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **courseid** | **int** | The unique identifier of the course | 
-**packagefile** | [**\SplFileObject**](\SplFileObject.md) | The .zip file of the SCORM package | 
+**packagefile** | **string** | The .zip file of the SCORM package | 
 **name** | **string** | The name of the SCORM package | 
 **popup** | **int** | Indicates if the SCORM package should open in a new window (1) or not (0) | [optional] 
 **width** | **int** | The display width for the SCORM package | [optional] 

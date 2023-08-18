@@ -57,7 +57,7 @@ class ScromAddBody implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'courseid' => 'int',
-        'packagefile' => '\SplFileObject',
+        'packagefile' => 'string',
         'name' => 'string',
         'popup' => 'int',
         'width' => 'int',
@@ -477,7 +477,7 @@ class ScromAddBody implements ModelInterface, ArrayAccess
     /**
      * Gets packagefile
      *
-     * @return \SplFileObject
+     * @return string
      */
     public function getPackagefile()
     {
@@ -487,7 +487,7 @@ class ScromAddBody implements ModelInterface, ArrayAccess
     /**
      * Sets packagefile
      *
-     * @param \SplFileObject $packagefile The .zip file of the SCORM package
+     * @param string $packagefile The .zip file of the SCORM package
      *
      * @return $this
      */
