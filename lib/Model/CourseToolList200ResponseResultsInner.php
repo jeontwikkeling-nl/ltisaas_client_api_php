@@ -58,6 +58,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
       */
     protected static $openAPITypes = [
         'toolid' => 'int',
+        'learningobjectid' => 'int',
         'name' => 'string',
         'secret' => 'string',
         'timecreated' => 'string',
@@ -78,6 +79,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
       */
     protected static $openAPIFormats = [
         'toolid' => null,
+        'learningobjectid' => null,
         'name' => null,
         'secret' => null,
         'timecreated' => null,
@@ -96,6 +98,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
       */
     protected static array $openAPINullables = [
         'toolid' => false,
+		'learningobjectid' => false,
 		'name' => false,
 		'secret' => false,
 		'timecreated' => false,
@@ -194,6 +197,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
      */
     protected static $attributeMap = [
         'toolid' => 'toolid',
+        'learningobjectid' => 'learningobjectid',
         'name' => 'name',
         'secret' => 'secret',
         'timecreated' => 'timecreated',
@@ -212,6 +216,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
      */
     protected static $setters = [
         'toolid' => 'setToolid',
+        'learningobjectid' => 'setLearningobjectid',
         'name' => 'setName',
         'secret' => 'setSecret',
         'timecreated' => 'setTimecreated',
@@ -230,6 +235,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
      */
     protected static $getters = [
         'toolid' => 'getToolid',
+        'learningobjectid' => 'getLearningobjectid',
         'name' => 'getName',
         'secret' => 'getSecret',
         'timecreated' => 'getTimecreated',
@@ -299,6 +305,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
     public function __construct(array $data = null)
     {
         $this->setIfExists('toolid', $data ?? [], null);
+        $this->setIfExists('learningobjectid', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('secret', $data ?? [], null);
         $this->setIfExists('timecreated', $data ?? [], null);
@@ -375,6 +382,33 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
             throw new \InvalidArgumentException('non-nullable toolid cannot be null');
         }
         $this->container['toolid'] = $toolid;
+
+        return $this;
+    }
+
+    /**
+     * Gets learningobjectid
+     *
+     * @return int|null
+     */
+    public function getLearningobjectid()
+    {
+        return $this->container['learningobjectid'];
+    }
+
+    /**
+     * Sets learningobjectid
+     *
+     * @param int|null $learningobjectid The ID of the learning object. This ID is only available if It's connected to single learning object.
+     *
+     * @return self
+     */
+    public function setLearningobjectid($learningobjectid)
+    {
+        if (is_null($learningobjectid)) {
+            throw new \InvalidArgumentException('non-nullable learningobjectid cannot be null');
+        }
+        $this->container['learningobjectid'] = $learningobjectid;
 
         return $this;
     }

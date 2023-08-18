@@ -3507,15 +3507,15 @@ class DefaultApi
      * Add new tool to a course
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltiversion The version of LTI (required)
+     * @param  string $ltiversion The version of LTI. Either LTI Advantage or Legacy LTI (required)
      * @param  string $name The name (required)
      * @param  string $publishmode The mode of publishing (course or activity) (required)
      * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
-     * @param  int $maxenrolled The maximum enrollment (optional)
-     * @param  int $roleinstructor The role of the instructor (optional)
-     * @param  int $rolelearner The role of the learner (optional)
-     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
-     * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
+     * @param  int $maxenrolled The maximum enrollment. Defaults to unlimited (0). (optional)
+     * @param  int $roleinstructor The role of the instructor. Defaults to 3 (optional)
+     * @param  int $rolelearner The role of the learner. Defaults to 5 (optional)
+     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor. Defaults to 2 (optional)
+     * @param  int $provisioningmodelearner The provisioning mode of the learner. Defaults to 1 (optional)
      * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
@@ -3541,15 +3541,15 @@ class DefaultApi
      * Add new tool to a course
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltiversion The version of LTI (required)
+     * @param  string $ltiversion The version of LTI. Either LTI Advantage or Legacy LTI (required)
      * @param  string $name The name (required)
      * @param  string $publishmode The mode of publishing (course or activity) (required)
      * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
-     * @param  int $maxenrolled The maximum enrollment (optional)
-     * @param  int $roleinstructor The role of the instructor (optional)
-     * @param  int $rolelearner The role of the learner (optional)
-     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
-     * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
+     * @param  int $maxenrolled The maximum enrollment. Defaults to unlimited (0). (optional)
+     * @param  int $roleinstructor The role of the instructor. Defaults to 3 (optional)
+     * @param  int $rolelearner The role of the learner. Defaults to 5 (optional)
+     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor. Defaults to 2 (optional)
+     * @param  int $provisioningmodelearner The provisioning mode of the learner. Defaults to 1 (optional)
      * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
@@ -3703,15 +3703,15 @@ class DefaultApi
      * Add new tool to a course
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltiversion The version of LTI (required)
+     * @param  string $ltiversion The version of LTI. Either LTI Advantage or Legacy LTI (required)
      * @param  string $name The name (required)
      * @param  string $publishmode The mode of publishing (course or activity) (required)
      * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
-     * @param  int $maxenrolled The maximum enrollment (optional)
-     * @param  int $roleinstructor The role of the instructor (optional)
-     * @param  int $rolelearner The role of the learner (optional)
-     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
-     * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
+     * @param  int $maxenrolled The maximum enrollment. Defaults to unlimited (0). (optional)
+     * @param  int $roleinstructor The role of the instructor. Defaults to 3 (optional)
+     * @param  int $rolelearner The role of the learner. Defaults to 5 (optional)
+     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor. Defaults to 2 (optional)
+     * @param  int $provisioningmodelearner The provisioning mode of the learner. Defaults to 1 (optional)
      * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
@@ -3740,15 +3740,15 @@ class DefaultApi
      * Add new tool to a course
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltiversion The version of LTI (required)
+     * @param  string $ltiversion The version of LTI. Either LTI Advantage or Legacy LTI (required)
      * @param  string $name The name (required)
      * @param  string $publishmode The mode of publishing (course or activity) (required)
      * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
-     * @param  int $maxenrolled The maximum enrollment (optional)
-     * @param  int $roleinstructor The role of the instructor (optional)
-     * @param  int $rolelearner The role of the learner (optional)
-     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
-     * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
+     * @param  int $maxenrolled The maximum enrollment. Defaults to unlimited (0). (optional)
+     * @param  int $roleinstructor The role of the instructor. Defaults to 3 (optional)
+     * @param  int $rolelearner The role of the learner. Defaults to 5 (optional)
+     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor. Defaults to 2 (optional)
+     * @param  int $provisioningmodelearner The provisioning mode of the learner. Defaults to 1 (optional)
      * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
@@ -3806,15 +3806,15 @@ class DefaultApi
      * Create request for operation 'courseToolAdd'
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltiversion The version of LTI (required)
+     * @param  string $ltiversion The version of LTI. Either LTI Advantage or Legacy LTI (required)
      * @param  string $name The name (required)
      * @param  string $publishmode The mode of publishing (course or activity) (required)
      * @param  int $learningobjectid The ID of the learning object. Only required if publishmode is set to activity (optional)
-     * @param  int $maxenrolled The maximum enrollment (optional)
-     * @param  int $roleinstructor The role of the instructor (optional)
-     * @param  int $rolelearner The role of the learner (optional)
-     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor (optional)
-     * @param  int $provisioningmodelearner The provisioning mode of the learner (optional)
+     * @param  int $maxenrolled The maximum enrollment. Defaults to unlimited (0). (optional)
+     * @param  int $roleinstructor The role of the instructor. Defaults to 3 (optional)
+     * @param  int $rolelearner The role of the learner. Defaults to 5 (optional)
+     * @param  int $provisioningmodeinstructor The provisioning mode of the instructor. Defaults to 2 (optional)
+     * @param  int $provisioningmodelearner The provisioning mode of the learner. Defaults to 1 (optional)
      * @param  int $gradesync Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $gradesynccompletion Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
      * @param  int $membersync Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) (optional)
@@ -4435,7 +4435,7 @@ class DefaultApi
      * List all LTI tools within a course
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltitype The version of LTI (optional)
+     * @param  string $ltitype The version of LTI. Either LTI Advantage or Legacy LTI (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseToolList'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
@@ -4454,7 +4454,7 @@ class DefaultApi
      * List all LTI tools within a course
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltitype The version of LTI (optional)
+     * @param  string $ltitype The version of LTI. Either LTI Advantage or Legacy LTI (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseToolList'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
@@ -4601,7 +4601,7 @@ class DefaultApi
      * List all LTI tools within a course
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltitype The version of LTI (optional)
+     * @param  string $ltitype The version of LTI. Either LTI Advantage or Legacy LTI (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseToolList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4623,7 +4623,7 @@ class DefaultApi
      * List all LTI tools within a course
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltitype The version of LTI (optional)
+     * @param  string $ltitype The version of LTI. Either LTI Advantage or Legacy LTI (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseToolList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4674,7 +4674,7 @@ class DefaultApi
      * Create request for operation 'courseToolList'
      *
      * @param  int $courseid The ID of the course (required)
-     * @param  string $ltitype The version of LTI (optional)
+     * @param  string $ltitype The version of LTI. Either LTI Advantage or Legacy LTI (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseToolList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
