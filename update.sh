@@ -32,7 +32,6 @@ openapi-generator generate \
 --git-user-id=jeontwikkeling-nl \
 -p composerVendorName=ltisaas \
 -p invokerPackage=LtiSaasApi \
--p apiPackage=LtiSaasApi \
 -p packageVersion="$version" \
 -o /tmp/ltisaas_client/
 
