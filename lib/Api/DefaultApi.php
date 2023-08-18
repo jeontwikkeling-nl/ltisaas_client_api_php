@@ -2328,7 +2328,15 @@ class DefaultApi
         }
         // form params
         if ($packagefile !== null) {
-            $formParams['packagefile'] = ObjectSerializer::toFormValue($packagefile);
+            $multipart = true;
+            $formParams['packagefile'] = [];
+            $paramFiles = is_array($packagefile) ? $packagefile : [$packagefile];
+            foreach ($paramFiles as $paramFile) {
+                $formParams['packagefile'][] = \GuzzleHttp\Psr7\Utils::tryFopen(
+                    ObjectSerializer::toFormValue($paramFile),
+                    'rb'
+                );
+            }
         }
         // form params
         if ($name !== null) {
