@@ -1254,7 +1254,7 @@ class DefaultApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data']
+                ['application/x-www-form-urlencoded']
             );
         }
 
