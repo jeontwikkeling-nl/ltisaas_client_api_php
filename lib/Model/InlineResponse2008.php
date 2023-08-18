@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace LtiSaasApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \LtiSaasApi\ObjectSerializer;
 
 /**
  * InlineResponse2008 Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\InlineResponse2008Results[]'
+        'results' => '\LtiSaasApi\Model\InlineResponse2008Results[]'
     ];
 
     /**
@@ -204,7 +204,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess
     /**
      * Gets results
      *
-     * @return \Swagger\Client\Model\InlineResponse2008Results[]
+     * @return \LtiSaasApi\Model\InlineResponse2008Results[]
      */
     public function getResults()
     {
@@ -214,7 +214,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess
     /**
      * Sets results
      *
-     * @param \Swagger\Client\Model\InlineResponse2008Results[] $results The list of course registration results
+     * @param \LtiSaasApi\Model\InlineResponse2008Results[] $results The list of course registration results
      *
      * @return $this
      */

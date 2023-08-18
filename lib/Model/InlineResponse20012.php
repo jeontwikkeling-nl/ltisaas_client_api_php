@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace LtiSaasApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \LtiSaasApi\ObjectSerializer;
 
 /**
  * InlineResponse20012 Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  LtiSaasApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\InlineResponse20012Results[]'
+        'results' => '\LtiSaasApi\Model\InlineResponse20012Results[]'
     ];
 
     /**
@@ -204,7 +204,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess
     /**
      * Gets results
      *
-     * @return \Swagger\Client\Model\InlineResponse20012Results[]
+     * @return \LtiSaasApi\Model\InlineResponse20012Results[]
      */
     public function getResults()
     {
@@ -214,7 +214,7 @@ class InlineResponse20012 implements ModelInterface, ArrayAccess
     /**
      * Sets results
      *
-     * @param \Swagger\Client\Model\InlineResponse20012Results[] $results The list of all public available tokens
+     * @param \LtiSaasApi\Model\InlineResponse20012Results[] $results The list of all public available tokens
      *
      * @return $this
      */
