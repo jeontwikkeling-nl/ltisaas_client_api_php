@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * CourseLearningobjectList200ResponseResultsInnerTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * CourseLearningobjectList200ResponseResultsInnerTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description CourseLearningobjectList200ResponseResultsInner
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class CourseLearningobjectList200ResponseResultsInnerTest extends TestCase
 {
 
     /**
@@ -71,36 +71,45 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "CourseLearningobjectList200ResponseResultsInner"
      */
-    public function testErrorResponse()
+    public function testCourseLearningobjectList200ResponseResultsInner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "id"
      */
-    public function testPropertySuccess()
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "type"
      */
-    public function testPropertyError()
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "debuginfo"
+     * Test attribute "name"
      */
-    public function testPropertyDebuginfo()
+    public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "is_hidden"
+     */
+    public function testPropertyIsHidden()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

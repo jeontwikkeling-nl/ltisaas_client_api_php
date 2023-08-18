@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * TokenAdd200ResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * TokenAdd200ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description TokenAdd200Response
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class TokenAdd200ResponseTest extends TestCase
 {
 
     /**
@@ -71,36 +71,36 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "TokenAdd200Response"
      */
-    public function testErrorResponse()
+    public function testTokenAdd200Response()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "succes"
      */
-    public function testPropertySuccess()
+    public function testPropertySucces()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "token"
      */
-    public function testPropertyError()
+    public function testPropertyToken()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "debuginfo"
+     * Test attribute "endpoint"
      */
-    public function testPropertyDebuginfo()
+    public function testPropertyEndpoint()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

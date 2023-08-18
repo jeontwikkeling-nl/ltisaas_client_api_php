@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorResponseTest
+ * TokenList200ResponseResultsInnerTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ErrorResponseTest Class Doc Comment
+ * TokenList200ResponseResultsInnerTest Class Doc Comment
  *
  * @category    Class
- * @description ErrorResponse
+ * @description TokenList200ResponseResultsInner
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ErrorResponseTest extends TestCase
+class TokenList200ResponseResultsInnerTest extends TestCase
 {
 
     /**
@@ -71,36 +71,54 @@ class ErrorResponseTest extends TestCase
     }
 
     /**
-     * Test "ErrorResponse"
+     * Test "TokenList200ResponseResultsInner"
      */
-    public function testErrorResponse()
+    public function testTokenList200ResponseResultsInner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "token"
      */
-    public function testPropertySuccess()
+    public function testPropertyToken()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "endpoint"
      */
-    public function testPropertyError()
+    public function testPropertyEndpoint()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "debuginfo"
+     * Test attribute "name"
      */
-    public function testPropertyDebuginfo()
+    public function testPropertyName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lastaccess"
+     */
+    public function testPropertyLastaccess()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "timecreated"
+     */
+    public function testPropertyTimecreated()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
