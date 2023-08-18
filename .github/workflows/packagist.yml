@@ -1,0 +1,21 @@
+name: Update packagist
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      uses: mnavarrocarter/packagist-update@v1.0
+      with:
+        username: "luukverhoeven"
+        api_token: ${{ secrets.packagist_token }}
+        package_name: jeontwikkeling-nl/ltisaas_client_api_php
+        domain: "packagist.org"
