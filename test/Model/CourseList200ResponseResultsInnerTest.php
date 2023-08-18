@@ -80,6 +80,15 @@ class CourseList200ResponseResultsInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "coursename"
+     */
+    public function testPropertyCoursename()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "totalregistrations"
      */
     public function testPropertyTotalregistrations()
@@ -110,24 +119,6 @@ class CourseList200ResponseResultsInnerTest extends TestCase
      * Test attribute "toolids"
      */
     public function testPropertyToolids()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "coursename"
-     */
-    public function testPropertyCoursename()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "lastaccess"
-     */
-    public function testPropertyLastaccess()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
