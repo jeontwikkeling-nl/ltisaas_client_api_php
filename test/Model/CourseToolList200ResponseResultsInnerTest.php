@@ -89,6 +89,15 @@ class CourseToolList200ResponseResultsInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "learningobjectid"
+     */
+    public function testPropertyLearningobjectid()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "name"
      */
     public function testPropertyName()

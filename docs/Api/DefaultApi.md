@@ -671,15 +671,15 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $courseid = 56; // int | The ID of the course
-$ltiversion = 'ltiversion_example'; // string | The version of LTI
+$ltiversion = 'ltiversion_example'; // string | The version of LTI. Either LTI Advantage or Legacy LTI
 $name = 'name_example'; // string | The name
 $publishmode = 'publishmode_example'; // string | The mode of publishing (course or activity)
 $learningobjectid = 56; // int | The ID of the learning object. Only required if publishmode is set to activity
-$maxenrolled = 56; // int | The maximum enrollment
-$roleinstructor = 56; // int | The role of the instructor
-$rolelearner = 56; // int | The role of the learner
-$provisioningmodeinstructor = 56; // int | The provisioning mode of the instructor
-$provisioningmodelearner = 56; // int | The provisioning mode of the learner
+$maxenrolled = 56; // int | The maximum enrollment. Defaults to unlimited (0).
+$roleinstructor = 56; // int | The role of the instructor. Defaults to 3
+$rolelearner = 56; // int | The role of the learner. Defaults to 5
+$provisioningmodeinstructor = 56; // int | The provisioning mode of the instructor. Defaults to 2
+$provisioningmodelearner = 56; // int | The provisioning mode of the learner. Defaults to 1
 $gradesync = 56; // int | Whether grade sync is enabled. Grade synchronization (1=Yes, 0=No)
 $gradesynccompletion = 56; // int | Require course or activity completion prior to grade synchronisation (1=Yes, 0=No)
 $membersync = 56; // int | Whether member sync is enabled. User synchronisation (1=Yes, 0=No)
@@ -701,15 +701,15 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **courseid** | **int**| The ID of the course | |
-| **ltiversion** | **string**| The version of LTI | |
+| **ltiversion** | **string**| The version of LTI. Either LTI Advantage or Legacy LTI | |
 | **name** | **string**| The name | |
 | **publishmode** | **string**| The mode of publishing (course or activity) | |
 | **learningobjectid** | **int**| The ID of the learning object. Only required if publishmode is set to activity | [optional] |
-| **maxenrolled** | **int**| The maximum enrollment | [optional] |
-| **roleinstructor** | **int**| The role of the instructor | [optional] |
-| **rolelearner** | **int**| The role of the learner | [optional] |
-| **provisioningmodeinstructor** | **int**| The provisioning mode of the instructor | [optional] |
-| **provisioningmodelearner** | **int**| The provisioning mode of the learner | [optional] |
+| **maxenrolled** | **int**| The maximum enrollment. Defaults to unlimited (0). | [optional] |
+| **roleinstructor** | **int**| The role of the instructor. Defaults to 3 | [optional] |
+| **rolelearner** | **int**| The role of the learner. Defaults to 5 | [optional] |
+| **provisioningmodeinstructor** | **int**| The provisioning mode of the instructor. Defaults to 2 | [optional] |
+| **provisioningmodelearner** | **int**| The provisioning mode of the learner. Defaults to 1 | [optional] |
 | **gradesync** | **int**| Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) | [optional] |
 | **gradesynccompletion** | **int**| Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) | [optional] |
 | **membersync** | **int**| Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) | [optional] |
@@ -827,7 +827,7 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $courseid = 56; // int | The ID of the course
-$ltitype = 'ltitype_example'; // string | The version of LTI
+$ltitype = 'ltitype_example'; // string | The version of LTI. Either LTI Advantage or Legacy LTI
 
 try {
     $result = $apiInstance->courseToolList($courseid, $ltitype);
@@ -842,7 +842,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **courseid** | **int**| The ID of the course | |
-| **ltitype** | **string**| The version of LTI | [optional] |
+| **ltitype** | **string**| The version of LTI. Either LTI Advantage or Legacy LTI | [optional] |
 
 ### Return type
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **toolid** | **int** | Unique ID of the tool. | [optional]
+**learningobjectid** | **int** | The ID of the learning object. This ID is only available if It&#39;s connected to single learning object. | [optional]
 **name** | **string** | Name of the tool. | [optional]
 **secret** | **string** | Secret key for the tool. | [optional]
 **timecreated** | **string** | Timestamp of when the tool was      *                                                             created. | [optional]
