@@ -15,18 +15,8 @@ PHP 5.5 and later
 
 To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
 
-```
-{
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/jeontwikkeling-nl/ltisaas_client_api_php.git"
-    }
-  ],
-  "require": {
-    "jeontwikkeling-nl/ltisaas_client_api_php": "*@dev"
-  }
-}
+```bash
+composer require jeontwikkeling-nl/ltisaas_client_api_php
 ```
 
 Then run `composer install`
@@ -36,7 +26,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
+    require_once('vendor/autoload.php');
 ```
 
 ## Tests
