@@ -210,7 +210,7 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $courseid = 56; // int | 
-$packagefile = "/path/to/file"; // \SplFileObject | 
+$packagefile = "packagefile_example"; // string | 
 $name = "name_example"; // string | 
 $popup = 56; // int | 
 $width = 56; // int | 
@@ -238,7 +238,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **courseid** | **int**|  | [optional]
- **packagefile** | [**\SplFileObject**](../Model/.md)|  | [optional]
+ **packagefile** | **string****string**|  | [optional]
  **name** | **string**|  | [optional]
  **popup** | **int**|  | [optional]
  **width** | **int**|  | [optional]
