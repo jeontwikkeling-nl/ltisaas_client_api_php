@@ -13,7 +13,7 @@ cd ~/PROJECTEN/ltisaas_client_api_php
 
 
 # Extract the current version using jq
-current_version=$(jq -r '.version' composer.json)
+current_version=$(jq -r '.version' version.json)
 
 # Split the version into its components
 major=$(echo $current_version | cut -d. -f1)
@@ -25,6 +25,7 @@ newpatch=$((patch + 1))
 
 # Construct the new version string
 version="$major.$minor.$newpatch"
+jq --arg version "$new_version" '.version = $version' version.json > tmp.json && mv tmp.json version.json
 
 echo "$version"
 
