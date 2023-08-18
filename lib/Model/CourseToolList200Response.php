@@ -57,7 +57,7 @@ class CourseToolList200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'succes' => 'bool',
+        'success' => 'bool',
         'results' => '\LtiSaasApi\Model\CourseToolList200ResponseResultsInner[]'
     ];
 
@@ -69,7 +69,7 @@ class CourseToolList200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'succes' => null,
+        'success' => null,
         'results' => null
     ];
 
@@ -79,7 +79,7 @@ class CourseToolList200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'succes' => false,
+        'success' => false,
 		'results' => false
     ];
 
@@ -169,7 +169,7 @@ class CourseToolList200Response implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'succes' => 'succes',
+        'success' => 'success',
         'results' => 'results'
     ];
 
@@ -179,7 +179,7 @@ class CourseToolList200Response implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'succes' => 'setSucces',
+        'success' => 'setSuccess',
         'results' => 'setResults'
     ];
 
@@ -189,7 +189,7 @@ class CourseToolList200Response implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'succes' => 'getSucces',
+        'success' => 'getSuccess',
         'results' => 'getResults'
     ];
 
@@ -250,7 +250,7 @@ class CourseToolList200Response implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('succes', $data ?? [], null);
+        $this->setIfExists('success', $data ?? [], null);
         $this->setIfExists('results', $data ?? [], null);
     }
 
@@ -297,28 +297,28 @@ class CourseToolList200Response implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets succes
+     * Gets success
      *
      * @return bool|null
      */
-    public function getSucces()
+    public function getSuccess()
     {
-        return $this->container['succes'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets succes
+     * Sets success
      *
-     * @param bool|null $succes succes
+     * @param bool|null $success success
      *
      * @return self
      */
-    public function setSucces($succes)
+    public function setSuccess($success)
     {
-        if (is_null($succes)) {
-            throw new \InvalidArgumentException('non-nullable succes cannot be null');
+        if (is_null($success)) {
+            throw new \InvalidArgumentException('non-nullable success cannot be null');
         }
-        $this->container['succes'] = $succes;
+        $this->container['success'] = $success;
 
         return $this;
     }

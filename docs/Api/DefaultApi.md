@@ -153,7 +153,7 @@ try {
 ## `courseLearningObjectDelete()`
 
 ```php
-courseLearningObjectDelete($learningobjectid): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
+courseLearningObjectDelete($learningobjectid): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Delete a specific learning object
@@ -197,7 +197,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
 
 ### Authorization
 
@@ -365,7 +365,7 @@ try {
 ## `courseLearningobjectScormUpdate()`
 
 ```php
-courseLearningobjectScormUpdate($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
+courseLearningobjectScormUpdate($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Update SCORM Learning Object
@@ -435,7 +435,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
 
 ### Authorization
 
@@ -738,7 +738,7 @@ try {
 ## `courseToolDelete()`
 
 ```php
-courseToolDelete($toolid): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
+courseToolDelete($toolid): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Delete a specific course tool
@@ -782,7 +782,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
 
 ### Authorization
 
@@ -1084,7 +1084,7 @@ try {
 ## `tokenDelete()`
 
 ```php
-tokenDelete($token): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
+tokenDelete($token): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Delete an API token
@@ -1128,7 +1128,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
 
 ### Authorization
 
@@ -1205,7 +1205,7 @@ This endpoint does not need any parameter.
 ## `userDelete()`
 
 ```php
-userDelete($id): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
+userDelete($id): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Delete a user by ID
@@ -1249,7 +1249,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
 
 ### Authorization
 
@@ -1267,7 +1267,7 @@ try {
 ## `userDeleteBulk()`
 
 ```php
-userDeleteBulk($ids): \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
+userDeleteBulk($ids): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Delete multiple users by IDs
@@ -1311,7 +1311,7 @@ try {
 
 ### Return type
 
-[**\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response**](../Model/CourseLearningobjectScormUpdate200Response.md)
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
 
 ### Authorization
 

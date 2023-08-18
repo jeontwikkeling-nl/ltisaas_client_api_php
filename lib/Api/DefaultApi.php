@@ -859,7 +859,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseLearningObjectDelete($learningobjectid, string $contentType = self::contentTypes['courseLearningObjectDelete'][0])
     {
@@ -877,7 +877,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningObjectDeleteWithHttpInfo($learningobjectid, string $contentType = self::contentTypes['courseLearningObjectDelete'][0])
     {
@@ -920,17 +920,17 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -966,7 +966,7 @@ class DefaultApi
                     ];
             }
 
-            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -987,7 +987,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1047,7 +1047,7 @@ class DefaultApi
      */
     public function courseLearningObjectDeleteAsyncWithHttpInfo($learningobjectid, string $contentType = self::contentTypes['courseLearningObjectDelete'][0])
     {
-        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
         $request = $this->courseLearningObjectDeleteRequest($learningobjectid, $contentType);
 
         return $this->client
@@ -2034,7 +2034,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response
+     * @return \LtiSaasApi\Model\CourseUpdate200Response
      */
     public function courseLearningobjectScormUpdate($learningobjectid, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningobjectScormUpdate'][0])
     {
@@ -2065,7 +2065,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseLearningobjectScormUpdateWithHttpInfo($learningobjectid, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningobjectScormUpdate'][0])
     {
@@ -2108,23 +2108,23 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2145,7 +2145,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2215,7 +2215,7 @@ class DefaultApi
      */
     public function courseLearningobjectScormUpdateAsyncWithHttpInfo($learningobjectid, $packagefile = null, $name = null, $popup = null, $width = null, $height = null, $grademethod = null, $maxgrade = null, $maxattempt = null, $whatgrade = null, $forcenewattempt = null, $lastattemptlock = null, $autocommit = null, $masteryoverride = null, string $contentType = self::contentTypes['courseLearningobjectScormUpdate'][0])
     {
-        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
         $request = $this->courseLearningobjectScormUpdateRequest($learningobjectid, $packagefile, $name, $popup, $width, $height, $grademethod, $maxgrade, $maxattempt, $whatgrade, $forcenewattempt, $lastattemptlock, $autocommit, $masteryoverride, $contentType);
 
         return $this->client
@@ -4104,7 +4104,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function courseToolDelete($toolid, string $contentType = self::contentTypes['courseToolDelete'][0])
     {
@@ -4122,7 +4122,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function courseToolDeleteWithHttpInfo($toolid, string $contentType = self::contentTypes['courseToolDelete'][0])
     {
@@ -4165,17 +4165,17 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4211,7 +4211,7 @@ class DefaultApi
                     ];
             }
 
-            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4232,7 +4232,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4292,7 +4292,7 @@ class DefaultApi
      */
     public function courseToolDeleteAsyncWithHttpInfo($toolid, string $contentType = self::contentTypes['courseToolDelete'][0])
     {
-        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
         $request = $this->courseToolDeleteRequest($toolid, $contentType);
 
         return $this->client
@@ -6055,7 +6055,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function tokenDelete($token, string $contentType = self::contentTypes['tokenDelete'][0])
     {
@@ -6073,7 +6073,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenDeleteWithHttpInfo($token, string $contentType = self::contentTypes['tokenDelete'][0])
     {
@@ -6116,17 +6116,17 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6162,7 +6162,7 @@ class DefaultApi
                     ];
             }
 
-            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6183,7 +6183,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6243,7 +6243,7 @@ class DefaultApi
      */
     public function tokenDeleteAsyncWithHttpInfo($token, string $contentType = self::contentTypes['tokenDelete'][0])
     {
-        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
         $request = $this->tokenDeleteRequest($token, $contentType);
 
         return $this->client
@@ -6704,7 +6704,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function userDelete($id, string $contentType = self::contentTypes['userDelete'][0])
     {
@@ -6722,7 +6722,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function userDeleteWithHttpInfo($id, string $contentType = self::contentTypes['userDelete'][0])
     {
@@ -6765,17 +6765,17 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6811,7 +6811,7 @@ class DefaultApi
                     ];
             }
 
-            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6832,7 +6832,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6892,7 +6892,7 @@ class DefaultApi
      */
     public function userDeleteAsyncWithHttpInfo($id, string $contentType = self::contentTypes['userDelete'][0])
     {
-        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
         $request = $this->userDeleteRequest($id, $contentType);
 
         return $this->client
@@ -7039,7 +7039,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
+     * @return \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
     public function userDeleteBulk($ids, string $contentType = self::contentTypes['userDeleteBulk'][0])
     {
@@ -7057,7 +7057,7 @@ class DefaultApi
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function userDeleteBulkWithHttpInfo($ids, string $contentType = self::contentTypes['userDeleteBulk'][0])
     {
@@ -7100,17 +7100,17 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' === '\SplFileObject') {
+                    if ('\LtiSaasApi\Model\CourseUpdate200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response' !== 'string') {
+                        if ('\LtiSaasApi\Model\CourseUpdate200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\LtiSaasApi\Model\CourseUpdate200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -7146,7 +7146,7 @@ class DefaultApi
                     ];
             }
 
-            $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+            $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7167,7 +7167,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response',
+                        '\LtiSaasApi\Model\CourseUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7227,7 +7227,7 @@ class DefaultApi
      */
     public function userDeleteBulkAsyncWithHttpInfo($ids, string $contentType = self::contentTypes['userDeleteBulk'][0])
     {
-        $returnType = '\LtiSaasApi\Model\CourseLearningobjectScormUpdate200Response';
+        $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
         $request = $this->userDeleteBulkRequest($ids, $contentType);
 
         return $this->client

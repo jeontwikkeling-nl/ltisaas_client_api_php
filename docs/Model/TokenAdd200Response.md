@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**succes** | **bool** |  | [optional]
+**success** | **bool** |  | [optional]
 **token** | **string** |  | [optional]
 **endpoint** | **string** |  | [optional]
 

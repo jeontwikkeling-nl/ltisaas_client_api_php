@@ -114,7 +114,6 @@ Class | Method | HTTP request | Description
 - [CourseLearningObjectScromAdd200Response](docs/Model/CourseLearningObjectScromAdd200Response.md)
 - [CourseLearningobjectList200Response](docs/Model/CourseLearningobjectList200Response.md)
 - [CourseLearningobjectList200ResponseResultsInner](docs/Model/CourseLearningobjectList200ResponseResultsInner.md)
-- [CourseLearningobjectScormUpdate200Response](docs/Model/CourseLearningobjectScormUpdate200Response.md)
 - [CourseList200Response](docs/Model/CourseList200Response.md)
 - [CourseList200ResponseResultsInner](docs/Model/CourseList200ResponseResultsInner.md)
 - [CourseLtiRegistrationsByDay200Response](docs/Model/CourseLtiRegistrationsByDay200Response.md)

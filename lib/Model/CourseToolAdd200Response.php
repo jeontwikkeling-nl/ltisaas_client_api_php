@@ -57,7 +57,7 @@ class CourseToolAdd200Response implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'succes' => 'bool',
+        'success' => 'bool',
         'toolid' => 'int'
     ];
 
@@ -69,7 +69,7 @@ class CourseToolAdd200Response implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'succes' => null,
+        'success' => null,
         'toolid' => null
     ];
 
@@ -79,7 +79,7 @@ class CourseToolAdd200Response implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'succes' => false,
+        'success' => false,
 		'toolid' => false
     ];
 
@@ -169,7 +169,7 @@ class CourseToolAdd200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'succes' => 'succes',
+        'success' => 'success',
         'toolid' => 'toolid'
     ];
 
@@ -179,7 +179,7 @@ class CourseToolAdd200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'succes' => 'setSucces',
+        'success' => 'setSuccess',
         'toolid' => 'setToolid'
     ];
 
@@ -189,7 +189,7 @@ class CourseToolAdd200Response implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'succes' => 'getSucces',
+        'success' => 'getSuccess',
         'toolid' => 'getToolid'
     ];
 
@@ -250,7 +250,7 @@ class CourseToolAdd200Response implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('succes', $data ?? [], null);
+        $this->setIfExists('success', $data ?? [], null);
         $this->setIfExists('toolid', $data ?? [], null);
     }
 
@@ -297,28 +297,28 @@ class CourseToolAdd200Response implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets succes
+     * Gets success
      *
      * @return bool|null
      */
-    public function getSucces()
+    public function getSuccess()
     {
-        return $this->container['succes'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets succes
+     * Sets success
      *
-     * @param bool|null $succes succes
+     * @param bool|null $success success
      *
      * @return self
      */
-    public function setSucces($succes)
+    public function setSuccess($success)
     {
-        if (is_null($succes)) {
-            throw new \InvalidArgumentException('non-nullable succes cannot be null');
+        if (is_null($success)) {
+            throw new \InvalidArgumentException('non-nullable success cannot be null');
         }
-        $this->container['succes'] = $succes;
+        $this->container['success'] = $success;
 
         return $this;
     }
