@@ -40,25 +40,6 @@ Download the files and include `autoload.php`:
     require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
 ```
 
-### Building
-```txt
-cd ~/PROJECTEN/ltisaas_client_api_php 
-swagger-codegen generate \
--i https://provider42luuk.web11.webv.nl/local/ltisaas/docs.php \
--l php \
---http-user-agent LTISaasClientv1 \
--D composerProjectName=ltisaas_client_api_php \
--D modelPackage=LtiSaasApi \
---git-repo-id=ltisaas_client_api_php \
---git-user-id=jeontwikkeling-nl \
--D composerVendorName=ltisaas \
---invoker-package LtiSaasApi \
--D invokerPackage=LtiSaasApi \
--D apiPackage=LtiSaasApi \
--D artifactVersion=1.0.1 \
--o .
-```
-
 ## Tests
 
 To run the unit tests:
