@@ -237,20 +237,20 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **courseid** | **int**|  |
- **packagefile** | **string****string**|  |
- **name** | **string**|  |
- **popup** | **int**|  |
- **width** | **int**|  |
- **height** | **int**|  |
- **grademethod** | **int**|  |
- **maxgrade** | **int**|  |
- **maxattempt** | **int**|  |
- **whatgrade** | **int**|  |
- **forcenewattempt** | **int**|  |
- **lastattemptlock** | **int**|  |
- **autocommit** | **int**|  |
- **masteryoverride** | **int**|  |
+ **courseid** | **int**|  | [optional]
+ **packagefile** | **string****string**|  | [optional]
+ **name** | **string**|  | [optional]
+ **popup** | **int**|  | [optional]
+ **width** | **int**|  | [optional]
+ **height** | **int**|  | [optional]
+ **grademethod** | **int**|  | [optional]
+ **maxgrade** | **int**|  | [optional]
+ **maxattempt** | **int**|  | [optional]
+ **whatgrade** | **int**|  | [optional]
+ **forcenewattempt** | **int**|  | [optional]
+ **lastattemptlock** | **int**|  | [optional]
+ **autocommit** | **int**|  | [optional]
+ **masteryoverride** | **int**|  | [optional]
 
 ### Return type
 
