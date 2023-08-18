@@ -57,12 +57,11 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
+        'coursename' => 'string',
         'totalregistrations' => 'int',
         'totalltitools' => 'int',
         'courseid' => 'int',
-        'toolids' => 'int[]',
-        'coursename' => 'string',
-        'lastaccess' => 'int'
+        'toolids' => 'int[]'
     ];
 
     /**
@@ -73,12 +72,11 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'coursename' => null,
         'totalregistrations' => null,
         'totalltitools' => null,
         'courseid' => null,
-        'toolids' => null,
-        'coursename' => null,
-        'lastaccess' => 'int64'
+        'toolids' => null
     ];
 
     /**
@@ -87,12 +85,11 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'totalregistrations' => false,
+        'coursename' => false,
+		'totalregistrations' => false,
 		'totalltitools' => false,
 		'courseid' => false,
-		'toolids' => false,
-		'coursename' => false,
-		'lastaccess' => false
+		'toolids' => false
     ];
 
     /**
@@ -181,12 +178,11 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
+        'coursename' => 'coursename',
         'totalregistrations' => 'totalregistrations',
         'totalltitools' => 'totalltitools',
         'courseid' => 'courseid',
-        'toolids' => 'toolids',
-        'coursename' => 'coursename',
-        'lastaccess' => 'lastaccess'
+        'toolids' => 'toolids'
     ];
 
     /**
@@ -195,12 +191,11 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
+        'coursename' => 'setCoursename',
         'totalregistrations' => 'setTotalregistrations',
         'totalltitools' => 'setTotalltitools',
         'courseid' => 'setCourseid',
-        'toolids' => 'setToolids',
-        'coursename' => 'setCoursename',
-        'lastaccess' => 'setLastaccess'
+        'toolids' => 'setToolids'
     ];
 
     /**
@@ -209,12 +204,11 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
+        'coursename' => 'getCoursename',
         'totalregistrations' => 'getTotalregistrations',
         'totalltitools' => 'getTotalltitools',
         'courseid' => 'getCourseid',
-        'toolids' => 'getToolids',
-        'coursename' => 'getCoursename',
-        'lastaccess' => 'getLastaccess'
+        'toolids' => 'getToolids'
     ];
 
     /**
@@ -274,12 +268,11 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('coursename', $data ?? [], null);
         $this->setIfExists('totalregistrations', $data ?? [], null);
         $this->setIfExists('totalltitools', $data ?? [], null);
         $this->setIfExists('courseid', $data ?? [], null);
         $this->setIfExists('toolids', $data ?? [], null);
-        $this->setIfExists('coursename', $data ?? [], null);
-        $this->setIfExists('lastaccess', $data ?? [], null);
     }
 
     /**
@@ -323,6 +316,33 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets coursename
+     *
+     * @return string|null
+     */
+    public function getCoursename()
+    {
+        return $this->container['coursename'];
+    }
+
+    /**
+     * Sets coursename
+     *
+     * @param string|null $coursename Course name
+     *
+     * @return self
+     */
+    public function setCoursename($coursename)
+    {
+        if (is_null($coursename)) {
+            throw new \InvalidArgumentException('non-nullable coursename cannot be null');
+        }
+        $this->container['coursename'] = $coursename;
+
+        return $this;
+    }
 
     /**
      * Gets totalregistrations
@@ -428,60 +448,6 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
             throw new \InvalidArgumentException('non-nullable toolids cannot be null');
         }
         $this->container['toolids'] = $toolids;
-
-        return $this;
-    }
-
-    /**
-     * Gets coursename
-     *
-     * @return string|null
-     */
-    public function getCoursename()
-    {
-        return $this->container['coursename'];
-    }
-
-    /**
-     * Sets coursename
-     *
-     * @param string|null $coursename Course name
-     *
-     * @return self
-     */
-    public function setCoursename($coursename)
-    {
-        if (is_null($coursename)) {
-            throw new \InvalidArgumentException('non-nullable coursename cannot be null');
-        }
-        $this->container['coursename'] = $coursename;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastaccess
-     *
-     * @return int|null
-     */
-    public function getLastaccess()
-    {
-        return $this->container['lastaccess'];
-    }
-
-    /**
-     * Sets lastaccess
-     *
-     * @param int|null $lastaccess Timestamp of last course access
-     *
-     * @return self
-     */
-    public function setLastaccess($lastaccess)
-    {
-        if (is_null($lastaccess)) {
-            throw new \InvalidArgumentException('non-nullable lastaccess cannot be null');
-        }
-        $this->container['lastaccess'] = $lastaccess;
 
         return $this;
     }
