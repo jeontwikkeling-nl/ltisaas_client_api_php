@@ -59,6 +59,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'toolid' => 'int',
         'enrollmentid' => 'int',
+        'totalregistrations' => 'int',
         'learningobjectid' => 'int',
         'name' => 'string',
         'secret' => 'string',
@@ -81,6 +82,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
     protected static $openAPIFormats = [
         'toolid' => null,
         'enrollmentid' => null,
+        'totalregistrations' => null,
         'learningobjectid' => null,
         'name' => null,
         'secret' => null,
@@ -101,6 +103,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
     protected static array $openAPINullables = [
         'toolid' => false,
 		'enrollmentid' => false,
+		'totalregistrations' => false,
 		'learningobjectid' => false,
 		'name' => false,
 		'secret' => false,
@@ -201,6 +204,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
     protected static $attributeMap = [
         'toolid' => 'toolid',
         'enrollmentid' => 'enrollmentid',
+        'totalregistrations' => 'totalregistrations',
         'learningobjectid' => 'learningobjectid',
         'name' => 'name',
         'secret' => 'secret',
@@ -221,6 +225,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
     protected static $setters = [
         'toolid' => 'setToolid',
         'enrollmentid' => 'setEnrollmentid',
+        'totalregistrations' => 'setTotalregistrations',
         'learningobjectid' => 'setLearningobjectid',
         'name' => 'setName',
         'secret' => 'setSecret',
@@ -241,6 +246,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
     protected static $getters = [
         'toolid' => 'getToolid',
         'enrollmentid' => 'getEnrollmentid',
+        'totalregistrations' => 'getTotalregistrations',
         'learningobjectid' => 'getLearningobjectid',
         'name' => 'getName',
         'secret' => 'getSecret',
@@ -312,6 +318,7 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
     {
         $this->setIfExists('toolid', $data ?? [], null);
         $this->setIfExists('enrollmentid', $data ?? [], null);
+        $this->setIfExists('totalregistrations', $data ?? [], null);
         $this->setIfExists('learningobjectid', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('secret', $data ?? [], null);
@@ -416,6 +423,33 @@ class CourseToolList200ResponseResultsInner implements ModelInterface, ArrayAcce
             throw new \InvalidArgumentException('non-nullable enrollmentid cannot be null');
         }
         $this->container['enrollmentid'] = $enrollmentid;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalregistrations
+     *
+     * @return int|null
+     */
+    public function getTotalregistrations()
+    {
+        return $this->container['totalregistrations'];
+    }
+
+    /**
+     * Sets totalregistrations
+     *
+     * @param int|null $totalregistrations The total user registration counts.
+     *
+     * @return self
+     */
+    public function setTotalregistrations($totalregistrations)
+    {
+        if (is_null($totalregistrations)) {
+            throw new \InvalidArgumentException('non-nullable totalregistrations cannot be null');
+        }
+        $this->container['totalregistrations'] = $totalregistrations;
 
         return $this;
     }
