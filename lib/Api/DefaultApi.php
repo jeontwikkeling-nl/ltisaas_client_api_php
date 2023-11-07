@@ -185,15 +185,16 @@ class DefaultApi
      * Create a new course
      *
      * @param  string $coursename The name of the course to be created (required)
+     * @param  string $coursenameshort The shortname of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseAdd'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \LtiSaasApi\Model\CourseAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
-    public function courseAdd($coursename, string $contentType = self::contentTypes['courseAdd'][0])
+    public function courseAdd($coursename, $coursenameshort = null, string $contentType = self::contentTypes['courseAdd'][0])
     {
-        list($response) = $this->courseAddWithHttpInfo($coursename, $contentType);
+        list($response) = $this->courseAddWithHttpInfo($coursename, $coursenameshort, $contentType);
         return $response;
     }
 
@@ -203,15 +204,16 @@ class DefaultApi
      * Create a new course
      *
      * @param  string $coursename The name of the course to be created (required)
+     * @param  string $coursenameshort The shortname of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseAdd'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \LtiSaasApi\Model\CourseAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseAddWithHttpInfo($coursename, string $contentType = self::contentTypes['courseAdd'][0])
+    public function courseAddWithHttpInfo($coursename, $coursenameshort = null, string $contentType = self::contentTypes['courseAdd'][0])
     {
-        $request = $this->courseAddRequest($coursename, $contentType);
+        $request = $this->courseAddRequest($coursename, $coursenameshort, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -349,14 +351,15 @@ class DefaultApi
      * Create a new course
      *
      * @param  string $coursename The name of the course to be created (required)
+     * @param  string $coursenameshort The shortname of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseAddAsync($coursename, string $contentType = self::contentTypes['courseAdd'][0])
+    public function courseAddAsync($coursename, $coursenameshort = null, string $contentType = self::contentTypes['courseAdd'][0])
     {
-        return $this->courseAddAsyncWithHttpInfo($coursename, $contentType)
+        return $this->courseAddAsyncWithHttpInfo($coursename, $coursenameshort, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -370,15 +373,16 @@ class DefaultApi
      * Create a new course
      *
      * @param  string $coursename The name of the course to be created (required)
+     * @param  string $coursenameshort The shortname of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseAddAsyncWithHttpInfo($coursename, string $contentType = self::contentTypes['courseAdd'][0])
+    public function courseAddAsyncWithHttpInfo($coursename, $coursenameshort = null, string $contentType = self::contentTypes['courseAdd'][0])
     {
         $returnType = '\LtiSaasApi\Model\CourseAdd200Response';
-        $request = $this->courseAddRequest($coursename, $contentType);
+        $request = $this->courseAddRequest($coursename, $coursenameshort, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -420,12 +424,13 @@ class DefaultApi
      * Create request for operation 'courseAdd'
      *
      * @param  string $coursename The name of the course to be created (required)
+     * @param  string $coursenameshort The shortname of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function courseAddRequest($coursename, string $contentType = self::contentTypes['courseAdd'][0])
+    public function courseAddRequest($coursename, $coursenameshort = null, string $contentType = self::contentTypes['courseAdd'][0])
     {
 
         // verify the required parameter 'coursename' is set
@@ -434,6 +439,7 @@ class DefaultApi
                 'Missing the required parameter $coursename when calling courseAdd'
             );
         }
+
 
 
         $resourcePath = '/course/add';
@@ -451,6 +457,15 @@ class DefaultApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $coursenameshort,
+            'coursenameshort', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -5361,15 +5376,16 @@ class DefaultApi
      *
      * @param  string $coursename The name of the course to be created (required)
      * @param  int $courseid The unique identifier of the course to be deleted (required)
+     * @param  string $coursenameshort The name of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseUpdate'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
-    public function courseUpdate($coursename, $courseid, string $contentType = self::contentTypes['courseUpdate'][0])
+    public function courseUpdate($coursename, $courseid, $coursenameshort = null, string $contentType = self::contentTypes['courseUpdate'][0])
     {
-        list($response) = $this->courseUpdateWithHttpInfo($coursename, $courseid, $contentType);
+        list($response) = $this->courseUpdateWithHttpInfo($coursename, $courseid, $coursenameshort, $contentType);
         return $response;
     }
 
@@ -5380,15 +5396,16 @@ class DefaultApi
      *
      * @param  string $coursename The name of the course to be created (required)
      * @param  int $courseid The unique identifier of the course to be deleted (required)
+     * @param  string $coursenameshort The name of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseUpdate'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseUpdateWithHttpInfo($coursename, $courseid, string $contentType = self::contentTypes['courseUpdate'][0])
+    public function courseUpdateWithHttpInfo($coursename, $courseid, $coursenameshort = null, string $contentType = self::contentTypes['courseUpdate'][0])
     {
-        $request = $this->courseUpdateRequest($coursename, $courseid, $contentType);
+        $request = $this->courseUpdateRequest($coursename, $courseid, $coursenameshort, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5527,14 +5544,15 @@ class DefaultApi
      *
      * @param  string $coursename The name of the course to be created (required)
      * @param  int $courseid The unique identifier of the course to be deleted (required)
+     * @param  string $coursenameshort The name of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseUpdateAsync($coursename, $courseid, string $contentType = self::contentTypes['courseUpdate'][0])
+    public function courseUpdateAsync($coursename, $courseid, $coursenameshort = null, string $contentType = self::contentTypes['courseUpdate'][0])
     {
-        return $this->courseUpdateAsyncWithHttpInfo($coursename, $courseid, $contentType)
+        return $this->courseUpdateAsyncWithHttpInfo($coursename, $courseid, $coursenameshort, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5549,15 +5567,16 @@ class DefaultApi
      *
      * @param  string $coursename The name of the course to be created (required)
      * @param  int $courseid The unique identifier of the course to be deleted (required)
+     * @param  string $coursenameshort The name of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseUpdateAsyncWithHttpInfo($coursename, $courseid, string $contentType = self::contentTypes['courseUpdate'][0])
+    public function courseUpdateAsyncWithHttpInfo($coursename, $courseid, $coursenameshort = null, string $contentType = self::contentTypes['courseUpdate'][0])
     {
         $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
-        $request = $this->courseUpdateRequest($coursename, $courseid, $contentType);
+        $request = $this->courseUpdateRequest($coursename, $courseid, $coursenameshort, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5600,12 +5619,13 @@ class DefaultApi
      *
      * @param  string $coursename The name of the course to be created (required)
      * @param  int $courseid The unique identifier of the course to be deleted (required)
+     * @param  string $coursenameshort The name of the course to be created (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function courseUpdateRequest($coursename, $courseid, string $contentType = self::contentTypes['courseUpdate'][0])
+    public function courseUpdateRequest($coursename, $courseid, $coursenameshort = null, string $contentType = self::contentTypes['courseUpdate'][0])
     {
 
         // verify the required parameter 'coursename' is set
@@ -5623,6 +5643,7 @@ class DefaultApi
         }
 
 
+
         $resourcePath = '/course/update';
         $formParams = [];
         $queryParams = [];
@@ -5638,6 +5659,15 @@ class DefaultApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $coursenameshort,
+            'coursenameshort', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(

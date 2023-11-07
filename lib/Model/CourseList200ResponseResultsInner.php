@@ -58,6 +58,7 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPITypes = [
         'coursename' => 'string',
+        'coursenameshort' => 'string',
         'totalregistrations' => 'int',
         'totalltitools' => 'int',
         'courseid' => 'int',
@@ -73,6 +74,7 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPIFormats = [
         'coursename' => null,
+        'coursenameshort' => null,
         'totalregistrations' => null,
         'totalltitools' => null,
         'courseid' => null,
@@ -86,6 +88,7 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPINullables = [
         'coursename' => false,
+		'coursenameshort' => false,
 		'totalregistrations' => false,
 		'totalltitools' => false,
 		'courseid' => false,
@@ -179,6 +182,7 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
      */
     protected static $attributeMap = [
         'coursename' => 'coursename',
+        'coursenameshort' => 'coursenameshort',
         'totalregistrations' => 'totalregistrations',
         'totalltitools' => 'totalltitools',
         'courseid' => 'courseid',
@@ -192,6 +196,7 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
      */
     protected static $setters = [
         'coursename' => 'setCoursename',
+        'coursenameshort' => 'setCoursenameshort',
         'totalregistrations' => 'setTotalregistrations',
         'totalltitools' => 'setTotalltitools',
         'courseid' => 'setCourseid',
@@ -205,6 +210,7 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
      */
     protected static $getters = [
         'coursename' => 'getCoursename',
+        'coursenameshort' => 'getCoursenameshort',
         'totalregistrations' => 'getTotalregistrations',
         'totalltitools' => 'getTotalltitools',
         'courseid' => 'getCourseid',
@@ -269,6 +275,7 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
     public function __construct(array $data = null)
     {
         $this->setIfExists('coursename', $data ?? [], null);
+        $this->setIfExists('coursenameshort', $data ?? [], null);
         $this->setIfExists('totalregistrations', $data ?? [], null);
         $this->setIfExists('totalltitools', $data ?? [], null);
         $this->setIfExists('courseid', $data ?? [], null);
@@ -340,6 +347,33 @@ class CourseList200ResponseResultsInner implements ModelInterface, ArrayAccess, 
             throw new \InvalidArgumentException('non-nullable coursename cannot be null');
         }
         $this->container['coursename'] = $coursename;
+
+        return $this;
+    }
+
+    /**
+     * Gets coursenameshort
+     *
+     * @return string|null
+     */
+    public function getCoursenameshort()
+    {
+        return $this->container['coursenameshort'];
+    }
+
+    /**
+     * Sets coursenameshort
+     *
+     * @param string|null $coursenameshort Course name short
+     *
+     * @return self
+     */
+    public function setCoursenameshort($coursenameshort)
+    {
+        if (is_null($coursenameshort)) {
+            throw new \InvalidArgumentException('non-nullable coursenameshort cannot be null');
+        }
+        $this->container['coursenameshort'] = $coursenameshort;
 
         return $this;
     }

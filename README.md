@@ -70,9 +70,10 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $coursename = 'coursename_example'; // string | The name of the course to be created
+$coursenameshort = 'coursenameshort_example'; // string | The shortname of the course to be created
 
 try {
-    $result = $apiInstance->courseAdd($coursename);
+    $result = $apiInstance->courseAdd($coursename, $coursenameshort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->courseAdd: ', $e->getMessage(), PHP_EOL;

@@ -89,6 +89,15 @@ class CourseList200ResponseResultsInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "coursenameshort"
+     */
+    public function testPropertyCoursenameshort()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "totalregistrations"
      */
     public function testPropertyTotalregistrations()
