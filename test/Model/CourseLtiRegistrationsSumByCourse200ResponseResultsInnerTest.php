@@ -105,4 +105,13 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInnerTest extends TestC
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "coursenameshort"
+     */
+    public function testPropertyCoursenameshort()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

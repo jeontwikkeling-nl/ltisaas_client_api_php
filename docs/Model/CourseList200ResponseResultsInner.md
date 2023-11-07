@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **coursename** | **string** | Course name | [optional]
+**coursenameshort** | **string** | Course name short | [optional]
 **totalregistrations** | **int** | Total number of course registrations | [optional]
 **totalltitools** | **int** | Total number of LTI tools in the course | [optional]
 **courseid** | **int** | Course identifier | [optional]

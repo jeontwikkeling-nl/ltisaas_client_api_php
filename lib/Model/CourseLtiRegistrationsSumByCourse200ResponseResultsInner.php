@@ -59,7 +59,8 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInner implements ModelI
     protected static $openAPITypes = [
         'totalregistrations' => 'int',
         'courseid' => 'int',
-        'coursename' => 'string'
+        'coursename' => 'string',
+        'coursenameshort' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInner implements ModelI
     protected static $openAPIFormats = [
         'totalregistrations' => null,
         'courseid' => null,
-        'coursename' => null
+        'coursename' => null,
+        'coursenameshort' => null
     ];
 
     /**
@@ -83,7 +85,8 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInner implements ModelI
     protected static array $openAPINullables = [
         'totalregistrations' => false,
 		'courseid' => false,
-		'coursename' => false
+		'coursename' => false,
+		'coursenameshort' => false
     ];
 
     /**
@@ -174,7 +177,8 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInner implements ModelI
     protected static $attributeMap = [
         'totalregistrations' => 'totalregistrations',
         'courseid' => 'courseid',
-        'coursename' => 'coursename'
+        'coursename' => 'coursename',
+        'coursenameshort' => 'coursenameshort'
     ];
 
     /**
@@ -185,7 +189,8 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInner implements ModelI
     protected static $setters = [
         'totalregistrations' => 'setTotalregistrations',
         'courseid' => 'setCourseid',
-        'coursename' => 'setCoursename'
+        'coursename' => 'setCoursename',
+        'coursenameshort' => 'setCoursenameshort'
     ];
 
     /**
@@ -196,7 +201,8 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInner implements ModelI
     protected static $getters = [
         'totalregistrations' => 'getTotalregistrations',
         'courseid' => 'getCourseid',
-        'coursename' => 'getCoursename'
+        'coursename' => 'getCoursename',
+        'coursenameshort' => 'getCoursenameshort'
     ];
 
     /**
@@ -259,6 +265,7 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInner implements ModelI
         $this->setIfExists('totalregistrations', $data ?? [], null);
         $this->setIfExists('courseid', $data ?? [], null);
         $this->setIfExists('coursename', $data ?? [], null);
+        $this->setIfExists('coursenameshort', $data ?? [], null);
     }
 
     /**
@@ -380,6 +387,33 @@ class CourseLtiRegistrationsSumByCourse200ResponseResultsInner implements ModelI
             throw new \InvalidArgumentException('non-nullable coursename cannot be null');
         }
         $this->container['coursename'] = $coursename;
+
+        return $this;
+    }
+
+    /**
+     * Gets coursenameshort
+     *
+     * @return string|null
+     */
+    public function getCoursenameshort()
+    {
+        return $this->container['coursenameshort'];
+    }
+
+    /**
+     * Sets coursenameshort
+     *
+     * @param string|null $coursenameshort The short name of the course
+     *
+     * @return self
+     */
+    public function setCoursenameshort($coursenameshort)
+    {
+        if (is_null($coursenameshort)) {
+            throw new \InvalidArgumentException('non-nullable coursenameshort cannot be null');
+        }
+        $this->container['coursenameshort'] = $coursenameshort;
 
         return $this;
     }

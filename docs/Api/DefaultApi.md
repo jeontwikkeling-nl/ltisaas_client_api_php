@@ -29,7 +29,7 @@ All URIs are relative to https://provider42luuk.web11.webv.nl/local/ltisaas/api.
 ## `courseAdd()`
 
 ```php
-courseAdd($coursename): \LtiSaasApi\Model\CourseAdd200Response
+courseAdd($coursename, $coursenameshort): \LtiSaasApi\Model\CourseAdd200Response
 ```
 
 Create a new course
@@ -56,9 +56,10 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $coursename = 'coursename_example'; // string | The name of the course to be created
+$coursenameshort = 'coursenameshort_example'; // string | The shortname of the course to be created
 
 try {
-    $result = $apiInstance->courseAdd($coursename);
+    $result = $apiInstance->courseAdd($coursename, $coursenameshort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->courseAdd: ', $e->getMessage(), PHP_EOL;
@@ -70,6 +71,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **coursename** | **string**| The name of the course to be created | |
+| **coursenameshort** | **string**| The shortname of the course to be created | [optional] |
 
 ### Return type
 
@@ -958,7 +960,7 @@ try {
 ## `courseUpdate()`
 
 ```php
-courseUpdate($coursename, $courseid): \LtiSaasApi\Model\CourseUpdate200Response
+courseUpdate($coursename, $courseid, $coursenameshort): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Update an existing course
@@ -986,9 +988,10 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
 );
 $coursename = 'coursename_example'; // string | The name of the course to be created
 $courseid = 56; // int | The unique identifier of the course to be deleted
+$coursenameshort = 'coursenameshort_example'; // string | The name of the course to be created
 
 try {
-    $result = $apiInstance->courseUpdate($coursename, $courseid);
+    $result = $apiInstance->courseUpdate($coursename, $courseid, $coursenameshort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->courseUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1001,6 +1004,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **coursename** | **string**| The name of the course to be created | |
 | **courseid** | **int**| The unique identifier of the course to be deleted | |
+| **coursenameshort** | **string**| The name of the course to be created | [optional] |
 
 ### Return type
 
