@@ -24,7 +24,7 @@ echo "$new_version"
 rm -rf /tmp/ltisaas_client
 openapi-generator generate \
 -g php \
--i https://provider42luuk.web11.webv.nl/local/ltisaas/docs.php \
+-i https://linqur45.web09.webv.nl/local/ltisaas/docs.php \
 --http-user-agent "LTISaasClient V$new_version" \
 --enable-post-process-file \
 -p composerProjectName=ltisaas_client_api_php \
