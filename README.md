@@ -83,30 +83,30 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://provider42luuk.web11.webv.nl/local/ltisaas/api.php/v0*
+All URIs are relative to *https://test.example.nl/local/ltisaas/api.php/v0*
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*DefaultApi* | [**courseAdd**](docs/Api/DefaultApi.md#courseadd) | **GET** /course/add | Create a new course
-*DefaultApi* | [**courseDelete**](docs/Api/DefaultApi.md#coursedelete) | **GET** /course/delete | Delete an existing course by its ID
-*DefaultApi* | [**courseLearningObjectDelete**](docs/Api/DefaultApi.md#courselearningobjectdelete) | **GET** /course/learningobject/delete | Delete a specific learning object
-*DefaultApi* | [**courseLearningObjectScromAdd**](docs/Api/DefaultApi.md#courselearningobjectscromadd) | **POST** /course/learningobject/scrom/add | Add an SCORM package to a course
-*DefaultApi* | [**courseLearningobjectList**](docs/Api/DefaultApi.md#courselearningobjectlist) | **GET** /course/learningobject/list | Get learning objects for a course
-*DefaultApi* | [**courseLearningobjectScormUpdate**](docs/Api/DefaultApi.md#courselearningobjectscormupdate) | **POST** /course/learningobject/scrom/update | Update SCORM Learning Object
-*DefaultApi* | [**courseList**](docs/Api/DefaultApi.md#courselist) | **GET** /course/list | Retrieve all courses
-*DefaultApi* | [**courseLtiRegistrationsByDay**](docs/Api/DefaultApi.md#courseltiregistrationsbyday) | **GET** /course/lti/registrations_by_day | Get LTI registrations by day
-*DefaultApi* | [**courseLtiRegistrationsSumByCourse**](docs/Api/DefaultApi.md#courseltiregistrationssumbycourse) | **GET** /course/lti/registrations_sum_by_course | Get total LTI registrations per course
-*DefaultApi* | [**courseToolAdd**](docs/Api/DefaultApi.md#coursetooladd) | **GET** /course/tool/add | Add new tool to a course
-*DefaultApi* | [**courseToolDelete**](docs/Api/DefaultApi.md#coursetooldelete) | **GET** /course/tool/delete | Delete a specific course tool
-*DefaultApi* | [**courseToolList**](docs/Api/DefaultApi.md#coursetoollist) | **GET** /course/tool/list | List all LTI tools within a course
-*DefaultApi* | [**courseToolUpdate**](docs/Api/DefaultApi.md#coursetoolupdate) | **GET** /course/tool/update | Update a specific course tool
-*DefaultApi* | [**courseUpdate**](docs/Api/DefaultApi.md#courseupdate) | **GET** /course/update | Update an existing course
-*DefaultApi* | [**tokenAdd**](docs/Api/DefaultApi.md#tokenadd) | **GET** /token/add | Add a new API token
-*DefaultApi* | [**tokenDelete**](docs/Api/DefaultApi.md#tokendelete) | **GET** /token/delete | Delete an API token
-*DefaultApi* | [**tokenList**](docs/Api/DefaultApi.md#tokenlist) | **GET** /token/list | Get list of API tokens
-*DefaultApi* | [**userDelete**](docs/Api/DefaultApi.md#userdelete) | **GET** /user/delete | Delete a user by ID
-*DefaultApi* | [**userDeleteBulk**](docs/Api/DefaultApi.md#userdeletebulk) | **GET** /user/delete_bulk | Delete multiple users by IDs
-*DefaultApi* | [**userList**](docs/Api/DefaultApi.md#userlist) | **GET** /user/list | Get list of users in a tool
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**courseAdd()**](DefaultApi.md#courseAdd) | **GET** /course/add | Create a new course |
+| [**courseDelete()**](DefaultApi.md#courseDelete) | **GET** /course/delete | Delete an existing course by its ID |
+| [**courseLearningObjectDelete()**](DefaultApi.md#courseLearningObjectDelete) | **GET** /course/learningobject/delete | Delete a specific learning object |
+| [**courseLearningObjectScromAdd()**](DefaultApi.md#courseLearningObjectScromAdd) | **POST** /course/learningobject/scrom/add | Add an SCORM package to a course |
+| [**courseLearningobjectList()**](DefaultApi.md#courseLearningobjectList) | **GET** /course/learningobject/list | Get learning objects for a course |
+| [**courseLearningobjectScormUpdate()**](DefaultApi.md#courseLearningobjectScormUpdate) | **POST** /course/learningobject/scrom/update | Update SCORM Learning Object |
+| [**courseList()**](DefaultApi.md#courseList) | **GET** /course/list | Retrieve all courses |
+| [**courseLtiRegistrationsByDay()**](DefaultApi.md#courseLtiRegistrationsByDay) | **GET** /course/lti/registrations_by_day | Get LTI registrations by day |
+| [**courseLtiRegistrationsSumByCourse()**](DefaultApi.md#courseLtiRegistrationsSumByCourse) | **GET** /course/lti/registrations_sum_by_course | Get total LTI registrations per course |
+| [**courseToolAdd()**](DefaultApi.md#courseToolAdd) | **GET** /course/tool/add | Add new tool to a course |
+| [**courseToolDelete()**](DefaultApi.md#courseToolDelete) | **GET** /course/tool/delete | Delete a specific course tool |
+| [**courseToolList()**](DefaultApi.md#courseToolList) | **GET** /course/tool/list | List all LTI tools within a course |
+| [**courseToolUpdate()**](DefaultApi.md#courseToolUpdate) | **GET** /course/tool/update | Update a specific course tool |
+| [**courseUpdate()**](DefaultApi.md#courseUpdate) | **GET** /course/update | Update an existing course |
+| [**tokenAdd()**](DefaultApi.md#tokenAdd) | **GET** /token/add | Add a new API token |
+| [**tokenDelete()**](DefaultApi.md#tokenDelete) | **GET** /token/delete | Delete an API token |
+| [**tokenList()**](DefaultApi.md#tokenList) | **GET** /token/list | Get list of API tokens |
+| [**userDelete()**](DefaultApi.md#userDelete) | **GET** /user/delete | Delete a user by ID |
+| [**userDeleteBulk()**](DefaultApi.md#userDeleteBulk) | **GET** /user/delete_bulk | Delete multiple users by IDs |
+| [**userList()**](DefaultApi.md#userList) | **GET** /user/list | Get list of users in a tool |
 
 ## Models
 

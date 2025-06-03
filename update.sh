@@ -41,6 +41,8 @@ openapi-generator generate \
   -p packageVersion="$version" \
   -o $OUTPUT_DIR
 
+find . -type f ! -name "*.sh" -exec grep -Iq . {} \; -exec sed -i 's/provider42luuk\.web11\.webv\.nl/example\.com/g' {} \;
+
 # Copy files to project directory
 rsync -av $OUTPUT_DIR/ $TARGET_DIR
 
