@@ -168,7 +168,7 @@ $apiInstance = new LtiSaasApi\Api\CoursesApi(
 );
 $userid = 56; // int | Moodle user ID of the student
 $courseid = 56; // int | Identifier of the course
-$grade = 56; // int | Grade between 0 and 100
+$grade = 3.4; // float | Grade
 $reset = 56; // int | If 1, resets the course grade to its original calculated value (removes override)
 
 try {
@@ -185,7 +185,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userid** | **int**| Moodle user ID of the student | |
 | **courseid** | **int**| Identifier of the course | |
-| **grade** | **int**| Grade between 0 and 100 | |
+| **grade** | **float**| Grade | |
 | **reset** | **int**| If 1, resets the course grade to its original calculated value (removes override) | [optional] |
 
 ### Return type

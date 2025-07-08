@@ -763,7 +763,7 @@ class CoursesApi
      *
      * @param  int $userid Moodle user ID of the student (required)
      * @param  int $courseid Identifier of the course (required)
-     * @param  int $grade Grade between 0 and 100 (required)
+     * @param  float $grade Grade (required)
      * @param  int|null $reset If 1, resets the course grade to its original calculated value (removes override) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseGradeSet'] to see the possible values for this operation
      *
@@ -784,7 +784,7 @@ class CoursesApi
      *
      * @param  int $userid Moodle user ID of the student (required)
      * @param  int $courseid Identifier of the course (required)
-     * @param  int $grade Grade between 0 and 100 (required)
+     * @param  float $grade Grade (required)
      * @param  int|null $reset If 1, resets the course grade to its original calculated value (removes override) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseGradeSet'] to see the possible values for this operation
      *
@@ -900,7 +900,7 @@ class CoursesApi
      *
      * @param  int $userid Moodle user ID of the student (required)
      * @param  int $courseid Identifier of the course (required)
-     * @param  int $grade Grade between 0 and 100 (required)
+     * @param  float $grade Grade (required)
      * @param  int|null $reset If 1, resets the course grade to its original calculated value (removes override) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseGradeSet'] to see the possible values for this operation
      *
@@ -924,7 +924,7 @@ class CoursesApi
      *
      * @param  int $userid Moodle user ID of the student (required)
      * @param  int $courseid Identifier of the course (required)
-     * @param  int $grade Grade between 0 and 100 (required)
+     * @param  float $grade Grade (required)
      * @param  int|null $reset If 1, resets the course grade to its original calculated value (removes override) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseGradeSet'] to see the possible values for this operation
      *
@@ -977,7 +977,7 @@ class CoursesApi
      *
      * @param  int $userid Moodle user ID of the student (required)
      * @param  int $courseid Identifier of the course (required)
-     * @param  int $grade Grade between 0 and 100 (required)
+     * @param  float $grade Grade (required)
      * @param  int|null $reset If 1, resets the course grade to its original calculated value (removes override) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['courseGradeSet'] to see the possible values for this operation
      *
@@ -1006,9 +1006,6 @@ class CoursesApi
             throw new \InvalidArgumentException(
                 'Missing the required parameter $grade when calling courseGradeSet'
             );
-        }
-        if ($grade > 100) {
-            throw new \InvalidArgumentException('invalid value for "$grade" when calling CoursesApi.courseGradeSet, must be smaller than or equal to 100.');
         }
         if ($grade < 0) {
             throw new \InvalidArgumentException('invalid value for "$grade" when calling CoursesApi.courseGradeSet, must be bigger than or equal to 0.');
