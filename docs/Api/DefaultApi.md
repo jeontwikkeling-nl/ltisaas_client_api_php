@@ -1,6 +1,8 @@
 # LtiSaasApi\DefaultApi
 
-All URIs are relative to https://provider42luuk.web11.webv.nl/local/ltisaas/api.php/v0, except if the operation defines another base path.
+
+
+All URIs are relative to https://linqur45luuk.web09.webv.nl/local/ltisaas/api.php/v0, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -18,6 +20,13 @@ All URIs are relative to https://provider42luuk.web11.webv.nl/local/ltisaas/api.
 | [**courseToolList()**](DefaultApi.md#courseToolList) | **GET** /course/tool/list | List all LTI tools within a course |
 | [**courseToolUpdate()**](DefaultApi.md#courseToolUpdate) | **GET** /course/tool/update | Update a specific course tool |
 | [**courseUpdate()**](DefaultApi.md#courseUpdate) | **GET** /course/update | Update an existing course |
+| [**memberList()**](DefaultApi.md#memberList) | **GET** /member/list | Get a list of LTI system members that are unique on the system |
+| [**scormproxyAdd()**](DefaultApi.md#scormproxyAdd) | **POST** /scormproxy/add | Create a new SCORM proxy wrapper |
+| [**scormproxyDelete()**](DefaultApi.md#scormproxyDelete) | **POST** /scormproxy/delete | Delete a SCORM proxy wrapper |
+| [**scormproxyList()**](DefaultApi.md#scormproxyList) | **GET** /scormproxy/list | List SCORM proxy wrappers |
+| [**scormproxyRegistrationsByDay()**](DefaultApi.md#scormproxyRegistrationsByDay) | **GET** /scormproxy/registrations_by_day | Get SCORM proxy registration statistics by day |
+| [**scormproxyResults()**](DefaultApi.md#scormproxyResults) | **GET** /scormproxy/results | Get CMI results for SCORM proxy registrations |
+| [**scormproxyUpdate()**](DefaultApi.md#scormproxyUpdate) | **POST** /scormproxy/update | Update an existing SCORM proxy wrapper |
 | [**tokenAdd()**](DefaultApi.md#tokenAdd) | **GET** /token/add | Add a new API token |
 | [**tokenDelete()**](DefaultApi.md#tokenDelete) | **GET** /token/delete | Delete an API token |
 | [**tokenList()**](DefaultApi.md#tokenList) | **GET** /token/list | Get list of API tokens |
@@ -244,7 +253,7 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $courseid = 56; // int | The unique identifier of the course
-$packagefile = "/path/to/file.txt"; // \SplFileObject | The .zip file of the SCORM package
+$packagefile = '/path/to/file.txt'; // \SplFileObject | The .zip file of the SCORM package
 $name = 'name_example'; // string | The name of the SCORM package
 $popup = 56; // int | Indicates if the SCORM package should open in a new window (1) or not (0)
 $width = 56; // int | The display width for the SCORM package
@@ -394,7 +403,7 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     $config
 );
 $learningobjectid = 56; // int | The ID of the learning object
-$packagefile = "/path/to/file.txt"; // \SplFileObject | The .zip file of the SCORM package
+$packagefile = '/path/to/file.txt'; // \SplFileObject | The .zip file of the SCORM package
 $name = 'name_example'; // string | The name of the SCORM package
 $popup = 56; // int | Indicates if the SCORM package should open in a new window (1) or not (0)
 $width = 56; // int | The display width for the SCORM package
@@ -540,8 +549,8 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date (format: DD-MM-YYYY)
-$till = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date (format: DD-MM-YYYY)
+$from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The start date (format: DD-MM-YYYY)
+$till = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The end date (format: DD-MM-YYYY)
 $toolid = 56; // int | The identifier of the LTI tool (optional)
 
 try {
@@ -606,8 +615,8 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date (format: DD-MM-YYYY)
-$till = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date (format: DD-MM-YYYY)
+$from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The start date (format: DD-MM-YYYY)
+$till = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The end date (format: DD-MM-YYYY)
 $courseid = 56; // int | The identifier of the course (optional)
 
 try {
@@ -685,10 +694,10 @@ $provisioningmodelearner = 56; // int | The provisioning mode of the learner. De
 $gradesync = 56; // int | Whether grade sync is enabled. Grade synchronization (1=Yes, 0=No)
 $gradesynccompletion = 56; // int | Require course or activity completion prior to grade synchronisation (1=Yes, 0=No)
 $membersync = 56; // int | Whether member sync is enabled. User synchronisation (1=Yes, 0=No)
-$membersyncmode = 56; // int | User synchronisation mode (1=Enrol new and unenrol missing users, 2=Enrol new users, 3=Unenrol missing users)
+$membersyncmode = 56; // int | User synchronisation mode (1=Enrol new and unenrol missing users, 2=Enrol new users, 3=Unenrol missing      *          users)
 $enrolperiod = 56; // int | The duration of the enrolment (in seconds)
-$enrolstartdate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The enrolment start date (YYYY-MM-DDTHH:mm)
-$enrolenddate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The enrolment end date (YYYY-MM-DDTHH:mm)
+$enrolstartdate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The enrolment start date (YYYY-MM-DDTHH:mm)
+$enrolenddate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The enrolment end date (YYYY-MM-DDTHH:mm)
 
 try {
     $result = $apiInstance->courseToolAdd($courseid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
@@ -715,7 +724,7 @@ try {
 | **gradesync** | **int**| Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) | [optional] |
 | **gradesynccompletion** | **int**| Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) | [optional] |
 | **membersync** | **int**| Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) | [optional] |
-| **membersyncmode** | **int**| User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) | [optional] |
+| **membersyncmode** | **int**| User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing      *          users) | [optional] |
 | **enrolperiod** | **int**| The duration of the enrolment (in seconds) | [optional] |
 | **enrolstartdate** | **\DateTime**| The enrolment start date (YYYY-MM-DDTHH:mm) | [optional] |
 | **enrolenddate** | **\DateTime**| The enrolment end date (YYYY-MM-DDTHH:mm) | [optional] |
@@ -905,10 +914,10 @@ $provisioningmodelearner = 56; // int | The provisioning mode of the learner
 $gradesync = 56; // int | Whether grade sync is enabled. Grade synchronization (1=Yes, 0=No)
 $gradesynccompletion = 56; // int | Require course or activity completion prior to grade synchronisation (1=Yes, 0=No)
 $membersync = 56; // int | Whether member sync is enabled. User synchronisation (1=Yes, 0=No)
-$membersyncmode = 56; // int | User synchronisation mode (1=Enrol new and unenrol missing users, 2=Enrol new users, 3=Unenrol missing users)
+$membersyncmode = 56; // int | User synchronisation mode (1=Enrol new and unenrol missing users, 2=Enrol new users, 3=Unenrol      *           missing users)
 $enrolperiod = 56; // int | The duration of the enrolment (in seconds)
-$enrolstartdate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The enrolment start date (YYYY-MM-DDTHH:mm)
-$enrolenddate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The enrolment end date (YYYY-MM-DDTHH:mm)
+$enrolstartdate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The enrolment start date (YYYY-MM-DDTHH:mm)
+$enrolenddate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The enrolment end date (YYYY-MM-DDTHH:mm)
 
 try {
     $result = $apiInstance->courseToolUpdate($toolid, $ltiversion, $name, $publishmode, $learningobjectid, $maxenrolled, $roleinstructor, $rolelearner, $provisioningmodeinstructor, $provisioningmodelearner, $gradesync, $gradesynccompletion, $membersync, $membersyncmode, $enrolperiod, $enrolstartdate, $enrolenddate);
@@ -935,7 +944,7 @@ try {
 | **gradesync** | **int**| Whether grade sync is enabled. Grade synchronization (1&#x3D;Yes, 0&#x3D;No) | [optional] |
 | **gradesynccompletion** | **int**| Require course or activity completion prior to grade synchronisation (1&#x3D;Yes, 0&#x3D;No) | [optional] |
 | **membersync** | **int**| Whether member sync is enabled. User synchronisation (1&#x3D;Yes, 0&#x3D;No) | [optional] |
-| **membersyncmode** | **int**| User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol missing users) | [optional] |
+| **membersyncmode** | **int**| User synchronisation mode (1&#x3D;Enrol new and unenrol missing users, 2&#x3D;Enrol new users, 3&#x3D;Unenrol      *           missing users) | [optional] |
 | **enrolperiod** | **int**| The duration of the enrolment (in seconds) | [optional] |
 | **enrolstartdate** | **\DateTime**| The enrolment start date (YYYY-MM-DDTHH:mm) | [optional] |
 | **enrolenddate** | **\DateTime**| The enrolment end date (YYYY-MM-DDTHH:mm) | [optional] |
@@ -1005,6 +1014,477 @@ try {
 | **coursename** | **string**| The name of the course to be created | |
 | **courseid** | **int**| The unique identifier of the course to be deleted | |
 | **coursenameshort** | **string**| The name of the course to be created | [optional] |
+
+### Return type
+
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
+
+### Authorization
+
+[token](../../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `memberList()`
+
+```php
+memberList(): \LtiSaasApi\Model\MemberList200Response
+```
+
+Get a list of LTI system members that are unique on the system
+
+This endpoint retrieves a list of members that are unique on the system. The result is a list of      *     users with their respective information, which can be used for further operations or analysis.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: token
+$config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKey('Access-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Access-Token', 'Bearer');
+
+
+$apiInstance = new LtiSaasApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->memberList();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->memberList: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\LtiSaasApi\Model\MemberList200Response**](../Model/MemberList200Response.md)
+
+### Authorization
+
+[token](../../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `scormproxyAdd()`
+
+```php
+scormproxyAdd($name, $courseid, $objectid, $enrolment_duration, $enrolment_startdate, $enrolment_enddate, $max_enrolled_users, $domain_restrictions, $status): \LtiSaasApi\Model\ScormproxyAdd200Response
+```
+
+Create a new SCORM proxy wrapper
+
+Creates a new SCORM proxy wrapper for remote SCORM package delivery. Returns the wrapper ID and download URLs for different SCORM versions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: token
+$config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKey('Access-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Access-Token', 'Bearer');
+
+
+$apiInstance = new LtiSaasApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$name = 'name_example'; // string | Wrapper name
+$courseid = 56; // int | Course ID
+$objectid = 0; // int | Object ID / cmid (if provided, creates activity context)
+$enrolment_duration = 0; // int | Enrolment duration in days (0 = unlimited)
+$enrolment_startdate = '0'; // string | Enrolment start date (format: dd-mm-yyyy, 0 = no date)
+$enrolment_enddate = '0'; // string | Enrolment end date (format: dd-mm-yyyy, 0 = no date)
+$max_enrolled_users = 0; // int | Maximum enrolled users (0 = unlimited)
+$domain_restrictions = array('domain_restrictions_example'); // string[] | Array of allowed domains
+$status = 0; // int | Status: 0 = active, 1 = inactive
+
+try {
+    $result = $apiInstance->scormproxyAdd($name, $courseid, $objectid, $enrolment_duration, $enrolment_startdate, $enrolment_enddate, $max_enrolled_users, $domain_restrictions, $status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->scormproxyAdd: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **string**| Wrapper name | |
+| **courseid** | **int**| Course ID | |
+| **objectid** | **int**| Object ID / cmid (if provided, creates activity context) | [optional] [default to 0] |
+| **enrolment_duration** | **int**| Enrolment duration in days (0 &#x3D; unlimited) | [optional] [default to 0] |
+| **enrolment_startdate** | **string**| Enrolment start date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] [default to &#39;0&#39;] |
+| **enrolment_enddate** | **string**| Enrolment end date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] [default to &#39;0&#39;] |
+| **max_enrolled_users** | **int**| Maximum enrolled users (0 &#x3D; unlimited) | [optional] [default to 0] |
+| **domain_restrictions** | [**string[]**](../Model/string.md)| Array of allowed domains | [optional] |
+| **status** | **int**| Status: 0 &#x3D; active, 1 &#x3D; inactive | [optional] [default to 0] |
+
+### Return type
+
+[**\LtiSaasApi\Model\ScormproxyAdd200Response**](../Model/ScormproxyAdd200Response.md)
+
+### Authorization
+
+[token](../../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `scormproxyDelete()`
+
+```php
+scormproxyDelete($wrapperid): \LtiSaasApi\Model\CourseUpdate200Response
+```
+
+Delete a SCORM proxy wrapper
+
+Soft deletes a SCORM proxy wrapper by setting the timedeleted timestamp, status to inactive, and enddate to now.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: token
+$config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKey('Access-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Access-Token', 'Bearer');
+
+
+$apiInstance = new LtiSaasApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$wrapperid = 'wrapperid_example'; // string | Public wrapper identifier
+
+try {
+    $result = $apiInstance->scormproxyDelete($wrapperid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->scormproxyDelete: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wrapperid** | **string**| Public wrapper identifier | |
+
+### Return type
+
+[**\LtiSaasApi\Model\CourseUpdate200Response**](../Model/CourseUpdate200Response.md)
+
+### Authorization
+
+[token](../../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `scormproxyList()`
+
+```php
+scormproxyList($wrapperid, $courseid, $objectid): \LtiSaasApi\Model\ScormproxyList200Response
+```
+
+List SCORM proxy wrappers
+
+Retrieves a list of SCORM proxy wrappers with optional filtering by wrapper ID, course ID, or object ID.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: token
+$config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKey('Access-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Access-Token', 'Bearer');
+
+
+$apiInstance = new LtiSaasApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$wrapperid = 'wrapperid_example'; // string | Filter by wrapper ID
+$courseid = 56; // int | Course ID filter
+$objectid = 56; // int | Object ID / cmid filter (0 = course context, >0 = activity context)
+
+try {
+    $result = $apiInstance->scormproxyList($wrapperid, $courseid, $objectid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->scormproxyList: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wrapperid** | **string**| Filter by wrapper ID | [optional] |
+| **courseid** | **int**| Course ID filter | [optional] |
+| **objectid** | **int**| Object ID / cmid filter (0 &#x3D; course context, &gt;0 &#x3D; activity context) | [optional] |
+
+### Return type
+
+[**\LtiSaasApi\Model\ScormproxyList200Response**](../Model/ScormproxyList200Response.md)
+
+### Authorization
+
+[token](../../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `scormproxyRegistrationsByDay()`
+
+```php
+scormproxyRegistrationsByDay($from, $till, $wrapperid): \LtiSaasApi\Model\ScormproxyRegistrationsByDay200Response
+```
+
+Get SCORM proxy registration statistics by day
+
+Retrieves registration statistics grouped by date for analytics purposes. Can be filtered by wrapper ID.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: token
+$config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKey('Access-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Access-Token', 'Bearer');
+
+
+$apiInstance = new LtiSaasApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Start date (format: DD-MM-YYYY)
+$till = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | End date (format: DD-MM-YYYY)
+$wrapperid = 'wrapperid_example'; // string | Public wrapper identifier filter (optional)
+
+try {
+    $result = $apiInstance->scormproxyRegistrationsByDay($from, $till, $wrapperid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->scormproxyRegistrationsByDay: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **from** | **\DateTime**| Start date (format: DD-MM-YYYY) | |
+| **till** | **\DateTime**| End date (format: DD-MM-YYYY) | |
+| **wrapperid** | **string**| Public wrapper identifier filter (optional) | [optional] |
+
+### Return type
+
+[**\LtiSaasApi\Model\ScormproxyRegistrationsByDay200Response**](../Model/ScormproxyRegistrationsByDay200Response.md)
+
+### Authorization
+
+[token](../../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `scormproxyResults()`
+
+```php
+scormproxyResults($wrapperid, $userid): \LtiSaasApi\Model\ScormproxyResults200Response
+```
+
+Get CMI results for SCORM proxy registrations
+
+Retrieves CMI (Computer Managed Instruction) data for all registrations of a wrapper, optionally filtered by user ID.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: token
+$config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKey('Access-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Access-Token', 'Bearer');
+
+
+$apiInstance = new LtiSaasApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$wrapperid = 'wrapperid_example'; // string | Public wrapper identifier
+$userid = 56; // int | Moodle user ID filter
+
+try {
+    $result = $apiInstance->scormproxyResults($wrapperid, $userid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->scormproxyResults: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wrapperid** | **string**| Public wrapper identifier | |
+| **userid** | **int**| Moodle user ID filter | [optional] |
+
+### Return type
+
+[**\LtiSaasApi\Model\ScormproxyResults200Response**](../Model/ScormproxyResults200Response.md)
+
+### Authorization
+
+[token](../../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `scormproxyUpdate()`
+
+```php
+scormproxyUpdate($wrapperid, $name, $enrolment_duration, $enrolment_startdate, $enrolment_enddate, $max_enrolled_users, $domain_restrictions, $status): \LtiSaasApi\Model\CourseUpdate200Response
+```
+
+Update an existing SCORM proxy wrapper
+
+Updates an existing SCORM proxy wrapper. Only provided parameters will be updated.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: token
+$config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKey('Access-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Access-Token', 'Bearer');
+
+
+$apiInstance = new LtiSaasApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$wrapperid = 'wrapperid_example'; // string | Public wrapper identifier
+$name = 'name_example'; // string | New wrapper name
+$enrolment_duration = 0; // int | Enrolment duration in days (0 = unlimited)
+$enrolment_startdate = 'enrolment_startdate_example'; // string | Enrolment start date (format: dd-mm-yyyy, 0 = no date)
+$enrolment_enddate = 'enrolment_enddate_example'; // string | Enrolment end date (format: dd-mm-yyyy, 0 = no date)
+$max_enrolled_users = -1; // int | Maximum enrolled users (0 = unlimited, -1 = no change)
+$domain_restrictions = array('domain_restrictions_example'); // string[] | Array of allowed domains
+$status = -1; // int | Status: 0 = active, 1 = inactive, -1 = no change
+
+try {
+    $result = $apiInstance->scormproxyUpdate($wrapperid, $name, $enrolment_duration, $enrolment_startdate, $enrolment_enddate, $max_enrolled_users, $domain_restrictions, $status);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->scormproxyUpdate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wrapperid** | **string**| Public wrapper identifier | |
+| **name** | **string**| New wrapper name | [optional] |
+| **enrolment_duration** | **int**| Enrolment duration in days (0 &#x3D; unlimited) | [optional] [default to 0] |
+| **enrolment_startdate** | **string**| Enrolment start date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] |
+| **enrolment_enddate** | **string**| Enrolment end date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] |
+| **max_enrolled_users** | **int**| Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) | [optional] [default to -1] |
+| **domain_restrictions** | [**string[]**](../Model/string.md)| Array of allowed domains | [optional] |
+| **status** | **int**| Status: 0 &#x3D; active, 1 &#x3D; inactive, -1 &#x3D; no change | [optional] [default to -1] |
 
 ### Return type
 

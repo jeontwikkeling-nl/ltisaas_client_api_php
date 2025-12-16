@@ -62,7 +62,7 @@ $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKey('Access
 // $config = LtiSaasApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Access-Token', 'Bearer');
 
 
-$apiInstance = new LtiSaasApi\Api\CoursesApi(
+$apiInstance = new LtiSaasApi\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -75,46 +75,49 @@ try {
     $result = $apiInstance->courseAdd($coursename, $coursenameshort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CoursesApi->courseAdd: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->courseAdd: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
 
 ## API Endpoints
 
-All URIs are relative to *https://linqur45.web09.webv.nl/local/ltisaas/api.php/v0*
+All URIs are relative to *https://linqur45luuk.web09.webv.nl/local/ltisaas/api.php/v0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CoursesApi* | [**courseAdd**](docs/Api/CoursesApi.md#courseadd) | **GET** /course/add | Create a new course
-*CoursesApi* | [**courseDelete**](docs/Api/CoursesApi.md#coursedelete) | **GET** /course/delete | Delete an existing course by its ID
-*CoursesApi* | [**courseGradeSet**](docs/Api/CoursesApi.md#coursegradeset) | **POST** /course/grade | Set or reset a user&#39;s course grade
-*CoursesApi* | [**courseList**](docs/Api/CoursesApi.md#courselist) | **GET** /course/list | Retrieve all courses
-*CoursesApi* | [**courseUpdate**](docs/Api/CoursesApi.md#courseupdate) | **GET** /course/update | Update an existing course
-*LTIAnalyticsApi* | [**courseLtiRegistrationsByDay**](docs/Api/LTIAnalyticsApi.md#courseltiregistrationsbyday) | **GET** /course/lti/registrations_by_day | Get LTI registrations by day
-*LTIAnalyticsApi* | [**courseLtiRegistrationsSumByCourse**](docs/Api/LTIAnalyticsApi.md#courseltiregistrationssumbycourse) | **GET** /course/lti/registrations_sum_by_course | Get total LTI registrations per course
-*LTIToolsApi* | [**courseToolAdd**](docs/Api/LTIToolsApi.md#coursetooladd) | **GET** /course/tool/add | Add new tool to a course
-*LTIToolsApi* | [**courseToolDelete**](docs/Api/LTIToolsApi.md#coursetooldelete) | **GET** /course/tool/delete | Delete a specific course tool
-*LTIToolsApi* | [**courseToolList**](docs/Api/LTIToolsApi.md#coursetoollist) | **GET** /course/tool/list | List all LTI tools within a course
-*LTIToolsApi* | [**courseToolUpdate**](docs/Api/LTIToolsApi.md#coursetoolupdate) | **GET** /course/tool/update | Update a specific course tool
-*LearningObjectsApi* | [**courseLearningObjectDelete**](docs/Api/LearningObjectsApi.md#courselearningobjectdelete) | **GET** /course/learningobject/delete | Delete a specific learning object
-*LearningObjectsApi* | [**courseLearningObjectScromAdd**](docs/Api/LearningObjectsApi.md#courselearningobjectscromadd) | **POST** /course/learningobject/scrom/add | Add an SCORM package to a course
-*LearningObjectsApi* | [**courseLearningobjectList**](docs/Api/LearningObjectsApi.md#courselearningobjectlist) | **GET** /course/learningobject/list | Get learning objects for a course
-*LearningObjectsApi* | [**courseLearningobjectScormUpdate**](docs/Api/LearningObjectsApi.md#courselearningobjectscormupdate) | **POST** /course/learningobject/scrom/update | Update SCORM Learning Object
-*MembersApi* | [**memberList**](docs/Api/MembersApi.md#memberlist) | **GET** /member/list | Get a list of LTI system members that are unique on the system
-*TokensApi* | [**tokenAdd**](docs/Api/TokensApi.md#tokenadd) | **GET** /token/add | Add a new API token
-*TokensApi* | [**tokenDelete**](docs/Api/TokensApi.md#tokendelete) | **GET** /token/delete | Delete an API token
-*TokensApi* | [**tokenList**](docs/Api/TokensApi.md#tokenlist) | **GET** /token/list | Get list of API tokens
-*UsersApi* | [**userDelete**](docs/Api/UsersApi.md#userdelete) | **GET** /user/delete | Delete a user by ID
-*UsersApi* | [**userDeleteBulk**](docs/Api/UsersApi.md#userdeletebulk) | **GET** /user/delete_bulk | Delete multiple users by IDs
-*UsersApi* | [**userList**](docs/Api/UsersApi.md#userlist) | **GET** /user/list | Get list of users in a tool
+*DefaultApi* | [**courseAdd**](docs/Api/DefaultApi.md#courseadd) | **GET** /course/add | Create a new course
+*DefaultApi* | [**courseDelete**](docs/Api/DefaultApi.md#coursedelete) | **GET** /course/delete | Delete an existing course by its ID
+*DefaultApi* | [**courseLearningObjectDelete**](docs/Api/DefaultApi.md#courselearningobjectdelete) | **GET** /course/learningobject/delete | Delete a specific learning object
+*DefaultApi* | [**courseLearningObjectScromAdd**](docs/Api/DefaultApi.md#courselearningobjectscromadd) | **POST** /course/learningobject/scrom/add | Add an SCORM package to a course
+*DefaultApi* | [**courseLearningobjectList**](docs/Api/DefaultApi.md#courselearningobjectlist) | **GET** /course/learningobject/list | Get learning objects for a course
+*DefaultApi* | [**courseLearningobjectScormUpdate**](docs/Api/DefaultApi.md#courselearningobjectscormupdate) | **POST** /course/learningobject/scrom/update | Update SCORM Learning Object
+*DefaultApi* | [**courseList**](docs/Api/DefaultApi.md#courselist) | **GET** /course/list | Retrieve all courses
+*DefaultApi* | [**courseLtiRegistrationsByDay**](docs/Api/DefaultApi.md#courseltiregistrationsbyday) | **GET** /course/lti/registrations_by_day | Get LTI registrations by day
+*DefaultApi* | [**courseLtiRegistrationsSumByCourse**](docs/Api/DefaultApi.md#courseltiregistrationssumbycourse) | **GET** /course/lti/registrations_sum_by_course | Get total LTI registrations per course
+*DefaultApi* | [**courseToolAdd**](docs/Api/DefaultApi.md#coursetooladd) | **GET** /course/tool/add | Add new tool to a course
+*DefaultApi* | [**courseToolDelete**](docs/Api/DefaultApi.md#coursetooldelete) | **GET** /course/tool/delete | Delete a specific course tool
+*DefaultApi* | [**courseToolList**](docs/Api/DefaultApi.md#coursetoollist) | **GET** /course/tool/list | List all LTI tools within a course
+*DefaultApi* | [**courseToolUpdate**](docs/Api/DefaultApi.md#coursetoolupdate) | **GET** /course/tool/update | Update a specific course tool
+*DefaultApi* | [**courseUpdate**](docs/Api/DefaultApi.md#courseupdate) | **GET** /course/update | Update an existing course
+*DefaultApi* | [**memberList**](docs/Api/DefaultApi.md#memberlist) | **GET** /member/list | Get a list of LTI system members that are unique on the system
+*DefaultApi* | [**scormproxyAdd**](docs/Api/DefaultApi.md#scormproxyadd) | **POST** /scormproxy/add | Create a new SCORM proxy wrapper
+*DefaultApi* | [**scormproxyDelete**](docs/Api/DefaultApi.md#scormproxydelete) | **POST** /scormproxy/delete | Delete a SCORM proxy wrapper
+*DefaultApi* | [**scormproxyList**](docs/Api/DefaultApi.md#scormproxylist) | **GET** /scormproxy/list | List SCORM proxy wrappers
+*DefaultApi* | [**scormproxyRegistrationsByDay**](docs/Api/DefaultApi.md#scormproxyregistrationsbyday) | **GET** /scormproxy/registrations_by_day | Get SCORM proxy registration statistics by day
+*DefaultApi* | [**scormproxyResults**](docs/Api/DefaultApi.md#scormproxyresults) | **GET** /scormproxy/results | Get CMI results for SCORM proxy registrations
+*DefaultApi* | [**scormproxyUpdate**](docs/Api/DefaultApi.md#scormproxyupdate) | **POST** /scormproxy/update | Update an existing SCORM proxy wrapper
+*DefaultApi* | [**tokenAdd**](docs/Api/DefaultApi.md#tokenadd) | **GET** /token/add | Add a new API token
+*DefaultApi* | [**tokenDelete**](docs/Api/DefaultApi.md#tokendelete) | **GET** /token/delete | Delete an API token
+*DefaultApi* | [**tokenList**](docs/Api/DefaultApi.md#tokenlist) | **GET** /token/list | Get list of API tokens
+*DefaultApi* | [**userDelete**](docs/Api/DefaultApi.md#userdelete) | **GET** /user/delete | Delete a user by ID
+*DefaultApi* | [**userDeleteBulk**](docs/Api/DefaultApi.md#userdeletebulk) | **GET** /user/delete_bulk | Delete multiple users by IDs
+*DefaultApi* | [**userList**](docs/Api/DefaultApi.md#userlist) | **GET** /user/list | Get list of users in a tool
 
 ## Models
 
 - [CourseAdd200Response](docs/Model/CourseAdd200Response.md)
 - [CourseDelete200Response](docs/Model/CourseDelete200Response.md)
-- [CourseGradeSet200Response](docs/Model/CourseGradeSet200Response.md)
-- [CourseGradeSet400Response](docs/Model/CourseGradeSet400Response.md)
 - [CourseLearningObjectScromAdd200Response](docs/Model/CourseLearningObjectScromAdd200Response.md)
 - [CourseLearningobjectList200Response](docs/Model/CourseLearningobjectList200Response.md)
 - [CourseLearningobjectList200ResponseResultsInner](docs/Model/CourseLearningobjectList200ResponseResultsInner.md)
@@ -131,6 +134,17 @@ Class | Method | HTTP request | Description
 - [ErrorResponse](docs/Model/ErrorResponse.md)
 - [MemberList200Response](docs/Model/MemberList200Response.md)
 - [MemberList200ResponseResultsInner](docs/Model/MemberList200ResponseResultsInner.md)
+- [ScormproxyAdd200Response](docs/Model/ScormproxyAdd200Response.md)
+- [ScormproxyAdd200ResponseResults](docs/Model/ScormproxyAdd200ResponseResults.md)
+- [ScormproxyList200Response](docs/Model/ScormproxyList200Response.md)
+- [ScormproxyList200ResponseResultsInner](docs/Model/ScormproxyList200ResponseResultsInner.md)
+- [ScormproxyList200ResponseResultsInnerDownloadlink](docs/Model/ScormproxyList200ResponseResultsInnerDownloadlink.md)
+- [ScormproxyRegistrationsByDay200Response](docs/Model/ScormproxyRegistrationsByDay200Response.md)
+- [ScormproxyRegistrationsByDay200ResponseResultsInner](docs/Model/ScormproxyRegistrationsByDay200ResponseResultsInner.md)
+- [ScormproxyResults200Response](docs/Model/ScormproxyResults200Response.md)
+- [ScormproxyResults200ResponseResultsInner](docs/Model/ScormproxyResults200ResponseResultsInner.md)
+- [ScormproxyResults200ResponseResultsInnerCmiData](docs/Model/ScormproxyResults200ResponseResultsInnerCmiData.md)
+- [ScormproxyResults200ResponseResultsInnerCmiDataHistoryInner](docs/Model/ScormproxyResults200ResponseResultsInnerCmiDataHistoryInner.md)
 - [TokenAdd200Response](docs/Model/TokenAdd200Response.md)
 - [TokenList200Response](docs/Model/TokenList200Response.md)
 - [TokenList200ResponseResultsInner](docs/Model/TokenList200ResponseResultsInner.md)
@@ -165,5 +179,5 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `1.0`
-    - Generator version: `7.14.0`
+    - Generator version: `7.17.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
