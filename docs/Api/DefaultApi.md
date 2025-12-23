@@ -1094,7 +1094,7 @@ This endpoint does not need any parameter.
 ## `scormproxyAdd()`
 
 ```php
-scormproxyAdd($name, $courseid, $objectid, $enrolment_duration, $enrolment_startdate, $enrolment_enddate, $max_enrolled_users, $domain_restrictions, $status): \LtiSaasApi\Model\ScormproxyAdd200Response
+scormproxyAdd($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status): \LtiSaasApi\Model\ScormproxyAdd200Response
 ```
 
 Create a new SCORM proxy wrapper
@@ -1123,15 +1123,15 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
 $name = 'name_example'; // string | Wrapper name
 $courseid = 56; // int | Course ID
 $objectid = 0; // int | Object ID / cmid (if provided, creates activity context)
-$enrolment_duration = 0; // int | Enrolment duration in days (0 = unlimited)
-$enrolment_startdate = '0'; // string | Enrolment start date (format: dd-mm-yyyy, 0 = no date)
-$enrolment_enddate = '0'; // string | Enrolment end date (format: dd-mm-yyyy, 0 = no date)
-$max_enrolled_users = 0; // int | Maximum enrolled users (0 = unlimited)
-$domain_restrictions = array('domain_restrictions_example'); // string[] | Array of allowed domains
+$enrolmentduration = 0; // int | Enrolment duration in days (0 = unlimited)
+$enrolmentstartdate = '0'; // string | Enrolment start date (format: dd-mm-yyyy, 0 = no date)
+$enrolmentenddate = '0'; // string | Enrolment end date (format: dd-mm-yyyy, 0 = no date)
+$maxenrolledusers = 0; // int | Maximum enrolled users (0 = unlimited)
+$domainrestrictions = 'domainrestrictions_example'; // string | Comma-separated list of allowed domains (e.g. 'example.com,test.org')
 $status = 0; // int | Status: 0 = active, 1 = inactive
 
 try {
-    $result = $apiInstance->scormproxyAdd($name, $courseid, $objectid, $enrolment_duration, $enrolment_startdate, $enrolment_enddate, $max_enrolled_users, $domain_restrictions, $status);
+    $result = $apiInstance->scormproxyAdd($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->scormproxyAdd: ', $e->getMessage(), PHP_EOL;
@@ -1145,11 +1145,11 @@ try {
 | **name** | **string**| Wrapper name | |
 | **courseid** | **int**| Course ID | |
 | **objectid** | **int**| Object ID / cmid (if provided, creates activity context) | [optional] [default to 0] |
-| **enrolment_duration** | **int**| Enrolment duration in days (0 &#x3D; unlimited) | [optional] [default to 0] |
-| **enrolment_startdate** | **string**| Enrolment start date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] [default to &#39;0&#39;] |
-| **enrolment_enddate** | **string**| Enrolment end date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] [default to &#39;0&#39;] |
-| **max_enrolled_users** | **int**| Maximum enrolled users (0 &#x3D; unlimited) | [optional] [default to 0] |
-| **domain_restrictions** | [**string[]**](../Model/string.md)| Array of allowed domains | [optional] |
+| **enrolmentduration** | **int**| Enrolment duration in days (0 &#x3D; unlimited) | [optional] [default to 0] |
+| **enrolmentstartdate** | **string**| Enrolment start date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] [default to &#39;0&#39;] |
+| **enrolmentenddate** | **string**| Enrolment end date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] [default to &#39;0&#39;] |
+| **maxenrolledusers** | **int**| Maximum enrolled users (0 &#x3D; unlimited) | [optional] [default to 0] |
+| **domainrestrictions** | **string**| Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) | [optional] |
 | **status** | **int**| Status: 0 &#x3D; active, 1 &#x3D; inactive | [optional] [default to 0] |
 
 ### Return type
@@ -1162,7 +1162,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -1224,7 +1224,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -1430,7 +1430,7 @@ try {
 ## `scormproxyUpdate()`
 
 ```php
-scormproxyUpdate($wrapperid, $name, $enrolment_duration, $enrolment_startdate, $enrolment_enddate, $max_enrolled_users, $domain_restrictions, $status): \LtiSaasApi\Model\CourseUpdate200Response
+scormproxyUpdate($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Update an existing SCORM proxy wrapper
@@ -1458,15 +1458,15 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
 );
 $wrapperid = 'wrapperid_example'; // string | Public wrapper identifier
 $name = 'name_example'; // string | New wrapper name
-$enrolment_duration = 0; // int | Enrolment duration in days (0 = unlimited)
-$enrolment_startdate = 'enrolment_startdate_example'; // string | Enrolment start date (format: dd-mm-yyyy, 0 = no date)
-$enrolment_enddate = 'enrolment_enddate_example'; // string | Enrolment end date (format: dd-mm-yyyy, 0 = no date)
-$max_enrolled_users = -1; // int | Maximum enrolled users (0 = unlimited, -1 = no change)
-$domain_restrictions = array('domain_restrictions_example'); // string[] | Array of allowed domains
+$enrolmentduration = 0; // int | Enrolment duration in days (0 = unlimited)
+$enrolmentstartdate = 'enrolmentstartdate_example'; // string | Enrolment start date (format: dd-mm-yyyy, 0 = no date)
+$enrolmentenddate = 'enrolmentenddate_example'; // string | Enrolment end date (format: dd-mm-yyyy, 0 = no date)
+$maxenrolledusers = -1; // int | Maximum enrolled users (0 = unlimited, -1 = no change)
+$domainrestrictions = 'domainrestrictions_example'; // string | Comma-separated list of allowed domains (e.g. 'example.com,test.org')
 $status = -1; // int | Status: 0 = active, 1 = inactive, -1 = no change
 
 try {
-    $result = $apiInstance->scormproxyUpdate($wrapperid, $name, $enrolment_duration, $enrolment_startdate, $enrolment_enddate, $max_enrolled_users, $domain_restrictions, $status);
+    $result = $apiInstance->scormproxyUpdate($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->scormproxyUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1479,11 +1479,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **wrapperid** | **string**| Public wrapper identifier | |
 | **name** | **string**| New wrapper name | [optional] |
-| **enrolment_duration** | **int**| Enrolment duration in days (0 &#x3D; unlimited) | [optional] [default to 0] |
-| **enrolment_startdate** | **string**| Enrolment start date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] |
-| **enrolment_enddate** | **string**| Enrolment end date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] |
-| **max_enrolled_users** | **int**| Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) | [optional] [default to -1] |
-| **domain_restrictions** | [**string[]**](../Model/string.md)| Array of allowed domains | [optional] |
+| **enrolmentduration** | **int**| Enrolment duration in days (0 &#x3D; unlimited) | [optional] [default to 0] |
+| **enrolmentstartdate** | **string**| Enrolment start date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] |
+| **enrolmentenddate** | **string**| Enrolment end date (format: dd-mm-yyyy, 0 &#x3D; no date) | [optional] |
+| **maxenrolledusers** | **int**| Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) | [optional] [default to -1] |
+| **domainrestrictions** | **string**| Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) | [optional] |
 | **status** | **int**| Status: 0 &#x3D; active, 1 &#x3D; inactive, -1 &#x3D; no change | [optional] [default to -1] |
 
 ### Return type
@@ -1496,7 +1496,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
