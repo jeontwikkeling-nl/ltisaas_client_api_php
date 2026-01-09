@@ -100,7 +100,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'LTISaasClient V1.0.48';
+    protected $userAgent = 'LTISaasClient V1.0.49';
 
     /**
      * Debug switch (default set to false)
