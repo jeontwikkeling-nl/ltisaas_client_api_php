@@ -2,7 +2,7 @@
 
 
 
-All URIs are relative to https://linqur45luuk.web09.webv.nl/local/ltisaas/api.php/v0, except if the operation defines another base path.
+All URIs are relative to https://linqur45luuk2.web09.webv.nl/local/ltisaas/api.php/v0, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -1094,7 +1094,7 @@ This endpoint does not need any parameter.
 ## `scormproxyAdd()`
 
 ```php
-scormproxyAdd($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status): \LtiSaasApi\Model\ScormproxyAdd200Response
+scormproxyAdd($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize): \LtiSaasApi\Model\ScormproxyAdd200Response
 ```
 
 Create a new SCORM proxy wrapper
@@ -1129,9 +1129,10 @@ $enrolmentenddate = '0'; // string | Enrolment end date (format: dd-mm-yyyy, 0 =
 $maxenrolledusers = 0; // int | Maximum enrolled users (0 = unlimited)
 $domainrestrictions = 'domainrestrictions_example'; // string | Comma-separated list of allowed domains (e.g. 'example.com,test.org')
 $status = 0; // int | Status: 0 = active, 1 = inactive
+$anonymize = 0; // int | Anonymize user data: 0 = no, 1 = yes
 
 try {
-    $result = $apiInstance->scormproxyAdd($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status);
+    $result = $apiInstance->scormproxyAdd($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->scormproxyAdd: ', $e->getMessage(), PHP_EOL;
@@ -1151,6 +1152,7 @@ try {
 | **maxenrolledusers** | **int**| Maximum enrolled users (0 &#x3D; unlimited) | [optional] [default to 0] |
 | **domainrestrictions** | **string**| Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) | [optional] |
 | **status** | **int**| Status: 0 &#x3D; active, 1 &#x3D; inactive | [optional] [default to 0] |
+| **anonymize** | **int**| Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes | [optional] [default to 0] |
 
 ### Return type
 
@@ -1371,7 +1373,7 @@ scormproxyResults($wrapperid, $userid): \LtiSaasApi\Model\ScormproxyResults200Re
 
 Get CMI results for SCORM proxy registrations
 
-Retrieves CMI (Computer Managed Instruction) data for all registrations of a wrapper, optionally filtered by user ID.
+Retrieves CMI (Computer Managed Instruction) data for all registrations of a wrapper, optionally filtered by user ID. Returns attempt data with CMI fields that vary based on whether the wrapper is SCORM (cmi.core.* format) or xAPI/non-SCORM (cmi_* format).
 
 ### Example
 
@@ -1392,8 +1394,8 @@ $apiInstance = new LtiSaasApi\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$wrapperid = 'wrapperid_example'; // string | Public wrapper identifier
-$userid = 56; // int | Moodle user ID filter
+$wrapperid = sp-abc123xyz789; // string | Public wrapper identifier
+$userid = 123; // int | Moodle user ID filter (optional)
 
 try {
     $result = $apiInstance->scormproxyResults($wrapperid, $userid);
@@ -1408,7 +1410,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **wrapperid** | **string**| Public wrapper identifier | |
-| **userid** | **int**| Moodle user ID filter | [optional] |
+| **userid** | **int**| Moodle user ID filter (optional) | [optional] |
 
 ### Return type
 
@@ -1430,7 +1432,7 @@ try {
 ## `scormproxyUpdate()`
 
 ```php
-scormproxyUpdate($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status): \LtiSaasApi\Model\CourseUpdate200Response
+scormproxyUpdate($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize): \LtiSaasApi\Model\CourseUpdate200Response
 ```
 
 Update an existing SCORM proxy wrapper
@@ -1464,9 +1466,10 @@ $enrolmentenddate = 'enrolmentenddate_example'; // string | Enrolment end date (
 $maxenrolledusers = -1; // int | Maximum enrolled users (0 = unlimited, -1 = no change)
 $domainrestrictions = 'domainrestrictions_example'; // string | Comma-separated list of allowed domains (e.g. 'example.com,test.org')
 $status = -1; // int | Status: 0 = active, 1 = inactive, -1 = no change
+$anonymize = -1; // int | Anonymize user data: 0 = no, 1 = yes, -1 = no change
 
 try {
-    $result = $apiInstance->scormproxyUpdate($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status);
+    $result = $apiInstance->scormproxyUpdate($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->scormproxyUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1485,6 +1488,7 @@ try {
 | **maxenrolledusers** | **int**| Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) | [optional] [default to -1] |
 | **domainrestrictions** | **string**| Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) | [optional] |
 | **status** | **int**| Status: 0 &#x3D; active, 1 &#x3D; inactive, -1 &#x3D; no change | [optional] [default to -1] |
+| **anonymize** | **int**| Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes, -1 &#x3D; no change | [optional] [default to -1] |
 
 ### Return type
 

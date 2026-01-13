@@ -67,6 +67,7 @@ class ScormproxyList200ResponseResultsInner implements ModelInterface, ArrayAcce
         'maxenrolledusers' => 'int',
         'domainrestrictions' => 'string',
         'wrapperactive' => 'int',
+        'anonymize' => 'int',
         'userids' => 'int[]',
         'totalregistrations' => 'int',
         'downloadlink' => '\LtiSaasApi\Model\ScormproxyList200ResponseResultsInnerDownloadlink'
@@ -90,6 +91,7 @@ class ScormproxyList200ResponseResultsInner implements ModelInterface, ArrayAcce
         'maxenrolledusers' => null,
         'domainrestrictions' => null,
         'wrapperactive' => null,
+        'anonymize' => null,
         'userids' => null,
         'totalregistrations' => null,
         'downloadlink' => null
@@ -111,6 +113,7 @@ class ScormproxyList200ResponseResultsInner implements ModelInterface, ArrayAcce
         'maxenrolledusers' => false,
         'domainrestrictions' => false,
         'wrapperactive' => false,
+        'anonymize' => false,
         'userids' => false,
         'totalregistrations' => false,
         'downloadlink' => false
@@ -212,6 +215,7 @@ class ScormproxyList200ResponseResultsInner implements ModelInterface, ArrayAcce
         'maxenrolledusers' => 'maxenrolledusers',
         'domainrestrictions' => 'domainrestrictions',
         'wrapperactive' => 'wrapperactive',
+        'anonymize' => 'anonymize',
         'userids' => 'userids',
         'totalregistrations' => 'totalregistrations',
         'downloadlink' => 'downloadlink'
@@ -233,6 +237,7 @@ class ScormproxyList200ResponseResultsInner implements ModelInterface, ArrayAcce
         'maxenrolledusers' => 'setMaxenrolledusers',
         'domainrestrictions' => 'setDomainrestrictions',
         'wrapperactive' => 'setWrapperactive',
+        'anonymize' => 'setAnonymize',
         'userids' => 'setUserids',
         'totalregistrations' => 'setTotalregistrations',
         'downloadlink' => 'setDownloadlink'
@@ -254,6 +259,7 @@ class ScormproxyList200ResponseResultsInner implements ModelInterface, ArrayAcce
         'maxenrolledusers' => 'getMaxenrolledusers',
         'domainrestrictions' => 'getDomainrestrictions',
         'wrapperactive' => 'getWrapperactive',
+        'anonymize' => 'getAnonymize',
         'userids' => 'getUserids',
         'totalregistrations' => 'getTotalregistrations',
         'downloadlink' => 'getDownloadlink'
@@ -326,6 +332,7 @@ class ScormproxyList200ResponseResultsInner implements ModelInterface, ArrayAcce
         $this->setIfExists('maxenrolledusers', $data ?? [], null);
         $this->setIfExists('domainrestrictions', $data ?? [], null);
         $this->setIfExists('wrapperactive', $data ?? [], null);
+        $this->setIfExists('anonymize', $data ?? [], null);
         $this->setIfExists('userids', $data ?? [], null);
         $this->setIfExists('totalregistrations', $data ?? [], null);
         $this->setIfExists('downloadlink', $data ?? [], null);
@@ -639,6 +646,33 @@ class ScormproxyList200ResponseResultsInner implements ModelInterface, ArrayAcce
             throw new \InvalidArgumentException('non-nullable wrapperactive cannot be null');
         }
         $this->container['wrapperactive'] = $wrapperactive;
+
+        return $this;
+    }
+
+    /**
+     * Gets anonymize
+     *
+     * @return int|null
+     */
+    public function getAnonymize()
+    {
+        return $this->container['anonymize'];
+    }
+
+    /**
+     * Sets anonymize
+     *
+     * @param int|null $anonymize Anonymize user data: 0 = no, 1 = yes
+     *
+     * @return self
+     */
+    public function setAnonymize($anonymize)
+    {
+        if (is_null($anonymize)) {
+            throw new \InvalidArgumentException('non-nullable anonymize cannot be null');
+        }
+        $this->container['anonymize'] = $anonymize;
 
         return $this;
     }

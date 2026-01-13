@@ -1,6 +1,6 @@
 <?php
 /**
- * ScormproxyResults200ResponseResultsInner
+ * ScormproxyResults200ResponseResultsInnerAttemptsInner
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \LtiSaasApi\ObjectSerializer;
 
 /**
- * ScormproxyResults200ResponseResultsInner Class Doc Comment
+ * ScormproxyResults200ResponseResultsInnerAttemptsInner Class Doc Comment
  *
  * @category Class
  * @package  LtiSaasApi
@@ -40,7 +40,7 @@ use \LtiSaasApi\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ScormproxyResults200ResponseResultsInnerAttemptsInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
       *
       * @var string
       */
-    protected static $openAPIModelName = 'scormproxyResults_200_response_results_inner';
+    protected static $openAPIModelName = 'scormproxyResults_200_response_results_inner_attempts_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,8 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'userid' => 'int',
-        'wrapperid' => 'string',
-        'registrationid' => 'string',
-        'is_scorm' => 'bool',
-        'attempts' => '\LtiSaasApi\Model\ScormproxyResults200ResponseResultsInnerAttemptsInner[]'
+        'attempt' => 'int',
+        'cmi_data' => 'object'
     ];
 
     /**
@@ -72,11 +69,8 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'userid' => null,
-        'wrapperid' => null,
-        'registrationid' => null,
-        'is_scorm' => null,
-        'attempts' => null
+        'attempt' => null,
+        'cmi_data' => null
     ];
 
     /**
@@ -85,11 +79,8 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'userid' => false,
-        'wrapperid' => false,
-        'registrationid' => false,
-        'is_scorm' => false,
-        'attempts' => false
+        'attempt' => false,
+        'cmi_data' => false
     ];
 
     /**
@@ -178,11 +169,8 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'userid' => 'userid',
-        'wrapperid' => 'wrapperid',
-        'registrationid' => 'registrationid',
-        'is_scorm' => 'is_scorm',
-        'attempts' => 'attempts'
+        'attempt' => 'attempt',
+        'cmi_data' => 'cmi_data'
     ];
 
     /**
@@ -191,11 +179,8 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'userid' => 'setUserid',
-        'wrapperid' => 'setWrapperid',
-        'registrationid' => 'setRegistrationid',
-        'is_scorm' => 'setIsScorm',
-        'attempts' => 'setAttempts'
+        'attempt' => 'setAttempt',
+        'cmi_data' => 'setCmiData'
     ];
 
     /**
@@ -204,11 +189,8 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'userid' => 'getUserid',
-        'wrapperid' => 'getWrapperid',
-        'registrationid' => 'getRegistrationid',
-        'is_scorm' => 'getIsScorm',
-        'attempts' => 'getAttempts'
+        'attempt' => 'getAttempt',
+        'cmi_data' => 'getCmiData'
     ];
 
     /**
@@ -268,11 +250,8 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('userid', $data ?? [], null);
-        $this->setIfExists('wrapperid', $data ?? [], null);
-        $this->setIfExists('registrationid', $data ?? [], null);
-        $this->setIfExists('is_scorm', $data ?? [], null);
-        $this->setIfExists('attempts', $data ?? [], null);
+        $this->setIfExists('attempt', $data ?? [], null);
+        $this->setIfExists('cmi_data', $data ?? [], null);
     }
 
     /**
@@ -302,20 +281,11 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
-        if ($this->container['userid'] === null) {
-            $invalidProperties[] = "'userid' can't be null";
+        if ($this->container['attempt'] === null) {
+            $invalidProperties[] = "'attempt' can't be null";
         }
-        if ($this->container['wrapperid'] === null) {
-            $invalidProperties[] = "'wrapperid' can't be null";
-        }
-        if ($this->container['registrationid'] === null) {
-            $invalidProperties[] = "'registrationid' can't be null";
-        }
-        if ($this->container['is_scorm'] === null) {
-            $invalidProperties[] = "'is_scorm' can't be null";
-        }
-        if ($this->container['attempts'] === null) {
-            $invalidProperties[] = "'attempts' can't be null";
+        if ($this->container['cmi_data'] === null) {
+            $invalidProperties[] = "'cmi_data' can't be null";
         }
         return $invalidProperties;
     }
@@ -333,136 +303,55 @@ class ScormproxyResults200ResponseResultsInner implements ModelInterface, ArrayA
 
 
     /**
-     * Gets userid
+     * Gets attempt
      *
      * @return int
      */
-    public function getUserid()
+    public function getAttempt()
     {
-        return $this->container['userid'];
+        return $this->container['attempt'];
     }
 
     /**
-     * Sets userid
+     * Sets attempt
      *
-     * @param int $userid Moodle user ID
+     * @param int $attempt Attempt number (1-based)
      *
      * @return self
      */
-    public function setUserid($userid)
+    public function setAttempt($attempt)
     {
-        if (is_null($userid)) {
-            throw new \InvalidArgumentException('non-nullable userid cannot be null');
+        if (is_null($attempt)) {
+            throw new \InvalidArgumentException('non-nullable attempt cannot be null');
         }
-        $this->container['userid'] = $userid;
+        $this->container['attempt'] = $attempt;
 
         return $this;
     }
 
     /**
-     * Gets wrapperid
+     * Gets cmi_data
      *
-     * @return string
+     * @return object
      */
-    public function getWrapperid()
+    public function getCmiData()
     {
-        return $this->container['wrapperid'];
+        return $this->container['cmi_data'];
     }
 
     /**
-     * Sets wrapperid
+     * Sets cmi_data
      *
-     * @param string $wrapperid Public wrapper identifier
+     * @param object $cmi_data CMI data object. Field names vary: SCORM uses cmi.core.* format (e.g. cmi.core.lesson_status), non-SCORM uses cmi_* format (e.g. cmi_completion_status). May be empty if user hasn't interacted with content yet.
      *
      * @return self
      */
-    public function setWrapperid($wrapperid)
+    public function setCmiData($cmi_data)
     {
-        if (is_null($wrapperid)) {
-            throw new \InvalidArgumentException('non-nullable wrapperid cannot be null');
+        if (is_null($cmi_data)) {
+            throw new \InvalidArgumentException('non-nullable cmi_data cannot be null');
         }
-        $this->container['wrapperid'] = $wrapperid;
-
-        return $this;
-    }
-
-    /**
-     * Gets registrationid
-     *
-     * @return string
-     */
-    public function getRegistrationid()
-    {
-        return $this->container['registrationid'];
-    }
-
-    /**
-     * Sets registrationid
-     *
-     * @param string $registrationid Unique registration identifier
-     *
-     * @return self
-     */
-    public function setRegistrationid($registrationid)
-    {
-        if (is_null($registrationid)) {
-            throw new \InvalidArgumentException('non-nullable registrationid cannot be null');
-        }
-        $this->container['registrationid'] = $registrationid;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_scorm
-     *
-     * @return bool
-     */
-    public function getIsScorm()
-    {
-        return $this->container['is_scorm'];
-    }
-
-    /**
-     * Sets is_scorm
-     *
-     * @param bool $is_scorm Whether this is a SCORM wrapper (true) or xAPI/non-SCORM (false)
-     *
-     * @return self
-     */
-    public function setIsScorm($is_scorm)
-    {
-        if (is_null($is_scorm)) {
-            throw new \InvalidArgumentException('non-nullable is_scorm cannot be null');
-        }
-        $this->container['is_scorm'] = $is_scorm;
-
-        return $this;
-    }
-
-    /**
-     * Gets attempts
-     *
-     * @return \LtiSaasApi\Model\ScormproxyResults200ResponseResultsInnerAttemptsInner[]
-     */
-    public function getAttempts()
-    {
-        return $this->container['attempts'];
-    }
-
-    /**
-     * Sets attempts
-     *
-     * @param \LtiSaasApi\Model\ScormproxyResults200ResponseResultsInnerAttemptsInner[] $attempts Array of user attempts with CMI data. SCORM wrappers may have multiple attempts, non-SCORM typically have one.
-     *
-     * @return self
-     */
-    public function setAttempts($attempts)
-    {
-        if (is_null($attempts)) {
-            throw new \InvalidArgumentException('non-nullable attempts cannot be null');
-        }
-        $this->container['attempts'] = $attempts;
+        $this->container['cmi_data'] = $cmi_data;
 
         return $this;
     }

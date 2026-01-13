@@ -1,6 +1,6 @@
 <?php
 /**
- * ScormproxyResults200ResponseResultsInnerTest
+ * ScormproxyResults200ResponseResultsInnerAttemptsInnerTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace LtiSaasApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ScormproxyResults200ResponseResultsInnerTest Class Doc Comment
+ * ScormproxyResults200ResponseResultsInnerAttemptsInnerTest Class Doc Comment
  *
  * @category    Class
- * @description ScormproxyResults200ResponseResultsInner
+ * @description ScormproxyResults200ResponseResultsInnerAttemptsInner
  * @package     LtiSaasApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ScormproxyResults200ResponseResultsInnerTest extends TestCase
+class ScormproxyResults200ResponseResultsInnerAttemptsInnerTest extends TestCase
 {
 
     /**
@@ -71,54 +71,27 @@ class ScormproxyResults200ResponseResultsInnerTest extends TestCase
     }
 
     /**
-     * Test "ScormproxyResults200ResponseResultsInner"
+     * Test "ScormproxyResults200ResponseResultsInnerAttemptsInner"
      */
-    public function testScormproxyResults200ResponseResultsInner()
+    public function testScormproxyResults200ResponseResultsInnerAttemptsInner()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "userid"
+     * Test attribute "attempt"
      */
-    public function testPropertyUserid()
+    public function testPropertyAttempt()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "wrapperid"
+     * Test attribute "cmi_data"
      */
-    public function testPropertyWrapperid()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "registrationid"
-     */
-    public function testPropertyRegistrationid()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "is_scorm"
-     */
-    public function testPropertyIsScorm()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "attempts"
-     */
-    public function testPropertyAttempts()
+    public function testPropertyCmiData()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

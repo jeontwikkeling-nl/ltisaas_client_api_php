@@ -32,8 +32,7 @@ docs/Model/ScormproxyRegistrationsByDay200Response.md
 docs/Model/ScormproxyRegistrationsByDay200ResponseResultsInner.md
 docs/Model/ScormproxyResults200Response.md
 docs/Model/ScormproxyResults200ResponseResultsInner.md
-docs/Model/ScormproxyResults200ResponseResultsInnerCmiData.md
-docs/Model/ScormproxyResults200ResponseResultsInnerCmiDataHistoryInner.md
+docs/Model/ScormproxyResults200ResponseResultsInnerAttemptsInner.md
 docs/Model/TokenAdd200Response.md
 docs/Model/TokenList200Response.md
 docs/Model/TokenList200ResponseResultsInner.md
@@ -73,8 +72,7 @@ lib/Model/ScormproxyRegistrationsByDay200Response.php
 lib/Model/ScormproxyRegistrationsByDay200ResponseResultsInner.php
 lib/Model/ScormproxyResults200Response.php
 lib/Model/ScormproxyResults200ResponseResultsInner.php
-lib/Model/ScormproxyResults200ResponseResultsInnerCmiData.php
-lib/Model/ScormproxyResults200ResponseResultsInnerCmiDataHistoryInner.php
+lib/Model/ScormproxyResults200ResponseResultsInnerAttemptsInner.php
 lib/Model/TokenAdd200Response.php
 lib/Model/TokenList200Response.php
 lib/Model/TokenList200ResponseResultsInner.php
@@ -108,8 +106,7 @@ test/Model/ScormproxyList200ResponseResultsInnerTest.php
 test/Model/ScormproxyList200ResponseTest.php
 test/Model/ScormproxyRegistrationsByDay200ResponseResultsInnerTest.php
 test/Model/ScormproxyRegistrationsByDay200ResponseTest.php
-test/Model/ScormproxyResults200ResponseResultsInnerCmiDataHistoryInnerTest.php
-test/Model/ScormproxyResults200ResponseResultsInnerCmiDataTest.php
+test/Model/ScormproxyResults200ResponseResultsInnerAttemptsInnerTest.php
 test/Model/ScormproxyResults200ResponseResultsInnerTest.php
 test/Model/ScormproxyResults200ResponseTest.php
 test/Model/TokenAdd200ResponseTest.php

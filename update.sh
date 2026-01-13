@@ -7,7 +7,7 @@ set -e  # Exit on any error
 
 # Configuration
 PROJECT_NAME="ltisaas_client_api_php"
-API_ENDPOINT="https://linqur45luuk.web09.webv.nl/local/ltisaas/docs.php"
+API_ENDPOINT="https://linqur45luuk2.web09.webv.nl/local/ltisaas/docs.php"
 OUTPUT_DIR="/tmp/ltisaas_client"
 
 # Colors for output

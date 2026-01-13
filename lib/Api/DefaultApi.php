@@ -5533,15 +5533,16 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited) (optional, default to 0)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive (optional, default to 0)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyAdd'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \LtiSaasApi\Model\ScormproxyAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
-    public function scormproxyAdd($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
+    public function scormproxyAdd($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, $anonymize = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
     {
-        list($response) = $this->scormproxyAddWithHttpInfo($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $contentType);
+        list($response) = $this->scormproxyAddWithHttpInfo($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize, $contentType);
         return $response;
     }
 
@@ -5559,15 +5560,16 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited) (optional, default to 0)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive (optional, default to 0)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyAdd'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \LtiSaasApi\Model\ScormproxyAdd200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function scormproxyAddWithHttpInfo($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
+    public function scormproxyAddWithHttpInfo($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, $anonymize = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
     {
-        $request = $this->scormproxyAddRequest($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $contentType);
+        $request = $this->scormproxyAddRequest($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5680,14 +5682,15 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited) (optional, default to 0)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive (optional, default to 0)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function scormproxyAddAsync($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
+    public function scormproxyAddAsync($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, $anonymize = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
     {
-        return $this->scormproxyAddAsyncWithHttpInfo($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $contentType)
+        return $this->scormproxyAddAsyncWithHttpInfo($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5709,15 +5712,16 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited) (optional, default to 0)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive (optional, default to 0)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function scormproxyAddAsyncWithHttpInfo($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
+    public function scormproxyAddAsyncWithHttpInfo($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, $anonymize = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
     {
         $returnType = '\LtiSaasApi\Model\ScormproxyAdd200Response';
-        $request = $this->scormproxyAddRequest($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $contentType);
+        $request = $this->scormproxyAddRequest($name, $courseid, $objectid, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5767,12 +5771,13 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited) (optional, default to 0)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive (optional, default to 0)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function scormproxyAddRequest($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
+    public function scormproxyAddRequest($name, $courseid, $objectid = 0, $enrolmentduration = 0, $enrolmentstartdate = '0', $enrolmentenddate = '0', $maxenrolledusers = 0, $domainrestrictions = null, $status = 0, $anonymize = 0, string $contentType = self::contentTypes['scormproxyAdd'][0])
     {
 
         // verify the required parameter 'name' is set
@@ -5788,6 +5793,7 @@ class DefaultApi
                 'Missing the required parameter $courseid when calling scormproxyAdd'
             );
         }
+
 
 
 
@@ -5820,6 +5826,7 @@ class DefaultApi
             'maxenrolledusers' => $maxenrolledusers,
             'domainrestrictions' => $domainrestrictions,
             'status' => $status,
+            'anonymize' => $anonymize,
         ]);
 
         $formParams = $formDataProcessor->flatten($formData);
@@ -6857,7 +6864,7 @@ class DefaultApi
      * Get CMI results for SCORM proxy registrations
      *
      * @param  string $wrapperid Public wrapper identifier (required)
-     * @param  int|null $userid Moodle user ID filter (optional)
+     * @param  int|null $userid Moodle user ID filter (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyResults'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6876,7 +6883,7 @@ class DefaultApi
      * Get CMI results for SCORM proxy registrations
      *
      * @param  string $wrapperid Public wrapper identifier (required)
-     * @param  int|null $userid Moodle user ID filter (optional)
+     * @param  int|null $userid Moodle user ID filter (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyResults'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response or if the response body is not in the expected format
@@ -7004,7 +7011,7 @@ class DefaultApi
      * Get CMI results for SCORM proxy registrations
      *
      * @param  string $wrapperid Public wrapper identifier (required)
-     * @param  int|null $userid Moodle user ID filter (optional)
+     * @param  int|null $userid Moodle user ID filter (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyResults'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7026,7 +7033,7 @@ class DefaultApi
      * Get CMI results for SCORM proxy registrations
      *
      * @param  string $wrapperid Public wrapper identifier (required)
-     * @param  int|null $userid Moodle user ID filter (optional)
+     * @param  int|null $userid Moodle user ID filter (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyResults'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7077,7 +7084,7 @@ class DefaultApi
      * Create request for operation 'scormproxyResults'
      *
      * @param  string $wrapperid Public wrapper identifier (required)
-     * @param  int|null $userid Moodle user ID filter (optional)
+     * @param  int|null $userid Moodle user ID filter (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyResults'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7195,15 +7202,16 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) (optional, default to -1)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive, -1 &#x3D; no change (optional, default to -1)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes, -1 &#x3D; no change (optional, default to -1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyUpdate'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse
      */
-    public function scormproxyUpdate($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
+    public function scormproxyUpdate($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, $anonymize = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
     {
-        list($response) = $this->scormproxyUpdateWithHttpInfo($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $contentType);
+        list($response) = $this->scormproxyUpdateWithHttpInfo($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize, $contentType);
         return $response;
     }
 
@@ -7220,15 +7228,16 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) (optional, default to -1)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive, -1 &#x3D; no change (optional, default to -1)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes, -1 &#x3D; no change (optional, default to -1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyUpdate'] to see the possible values for this operation
      *
      * @throws \LtiSaasApi\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \LtiSaasApi\Model\CourseUpdate200Response|\LtiSaasApi\Model\ErrorResponse|\LtiSaasApi\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function scormproxyUpdateWithHttpInfo($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
+    public function scormproxyUpdateWithHttpInfo($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, $anonymize = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
     {
-        $request = $this->scormproxyUpdateRequest($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $contentType);
+        $request = $this->scormproxyUpdateRequest($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7340,14 +7349,15 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) (optional, default to -1)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive, -1 &#x3D; no change (optional, default to -1)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes, -1 &#x3D; no change (optional, default to -1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function scormproxyUpdateAsync($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
+    public function scormproxyUpdateAsync($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, $anonymize = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
     {
-        return $this->scormproxyUpdateAsyncWithHttpInfo($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $contentType)
+        return $this->scormproxyUpdateAsyncWithHttpInfo($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7368,15 +7378,16 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) (optional, default to -1)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive, -1 &#x3D; no change (optional, default to -1)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes, -1 &#x3D; no change (optional, default to -1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function scormproxyUpdateAsyncWithHttpInfo($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
+    public function scormproxyUpdateAsyncWithHttpInfo($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, $anonymize = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
     {
         $returnType = '\LtiSaasApi\Model\CourseUpdate200Response';
-        $request = $this->scormproxyUpdateRequest($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $contentType);
+        $request = $this->scormproxyUpdateRequest($wrapperid, $name, $enrolmentduration, $enrolmentstartdate, $enrolmentenddate, $maxenrolledusers, $domainrestrictions, $status, $anonymize, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7425,12 +7436,13 @@ class DefaultApi
      * @param  int|null $maxenrolledusers Maximum enrolled users (0 &#x3D; unlimited, -1 &#x3D; no change) (optional, default to -1)
      * @param  string|null $domainrestrictions Comma-separated list of allowed domains (e.g. &#39;example.com,test.org&#39;) (optional)
      * @param  int|null $status Status: 0 &#x3D; active, 1 &#x3D; inactive, -1 &#x3D; no change (optional, default to -1)
+     * @param  int|null $anonymize Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes, -1 &#x3D; no change (optional, default to -1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scormproxyUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function scormproxyUpdateRequest($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
+    public function scormproxyUpdateRequest($wrapperid, $name = null, $enrolmentduration = 0, $enrolmentstartdate = null, $enrolmentenddate = null, $maxenrolledusers = -1, $domainrestrictions = null, $status = -1, $anonymize = -1, string $contentType = self::contentTypes['scormproxyUpdate'][0])
     {
 
         // verify the required parameter 'wrapperid' is set
@@ -7439,6 +7451,7 @@ class DefaultApi
                 'Missing the required parameter $wrapperid when calling scormproxyUpdate'
             );
         }
+
 
 
 
@@ -7470,6 +7483,7 @@ class DefaultApi
             'maxenrolledusers' => $maxenrolledusers,
             'domainrestrictions' => $domainrestrictions,
             'status' => $status,
+            'anonymize' => $anonymize,
         ]);
 
         $formParams = $formDataProcessor->flatten($formData);

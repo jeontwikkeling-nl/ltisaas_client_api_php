@@ -82,7 +82,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://linqur45luuk.web09.webv.nl/local/ltisaas/api.php/v0*
+All URIs are relative to *https://linqur45luuk2.web09.webv.nl/local/ltisaas/api.php/v0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -143,8 +143,7 @@ Class | Method | HTTP request | Description
 - [ScormproxyRegistrationsByDay200ResponseResultsInner](docs/Model/ScormproxyRegistrationsByDay200ResponseResultsInner.md)
 - [ScormproxyResults200Response](docs/Model/ScormproxyResults200Response.md)
 - [ScormproxyResults200ResponseResultsInner](docs/Model/ScormproxyResults200ResponseResultsInner.md)
-- [ScormproxyResults200ResponseResultsInnerCmiData](docs/Model/ScormproxyResults200ResponseResultsInnerCmiData.md)
-- [ScormproxyResults200ResponseResultsInnerCmiDataHistoryInner](docs/Model/ScormproxyResults200ResponseResultsInnerCmiDataHistoryInner.md)
+- [ScormproxyResults200ResponseResultsInnerAttemptsInner](docs/Model/ScormproxyResults200ResponseResultsInnerAttemptsInner.md)
 - [TokenAdd200Response](docs/Model/TokenAdd200Response.md)
 - [TokenList200Response](docs/Model/TokenList200Response.md)
 - [TokenList200ResponseResultsInner](docs/Model/TokenList200ResponseResultsInner.md)

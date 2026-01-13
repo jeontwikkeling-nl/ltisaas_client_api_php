@@ -170,6 +170,15 @@ class ScormproxyList200ResponseResultsInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "anonymize"
+     */
+    public function testPropertyAnonymize()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "userids"
      */
     public function testPropertyUserids()

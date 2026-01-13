@@ -93,14 +93,14 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://linqur45luuk.web09.webv.nl/local/ltisaas/api.php/v0';
+    protected $host = 'https://linqur45luuk2.web09.webv.nl/local/ltisaas/api.php/v0';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
      *
      * @var string
      */
-    protected $userAgent = 'LTISaasClient V1.0.53';
+    protected $userAgent = 'LTISaasClient V1.0.54';
 
     /**
      * Debug switch (default set to false)
@@ -534,7 +534,7 @@ class Configuration
                 "variables" => [
                     "domain" => [
                         "description" => "No description provided",
-                        "default_value" => "https://linqur45luuk.web09.webv.nl",
+                        "default_value" => "https://linqur45luuk2.web09.webv.nl",
                     ]
                 ]
             ],
@@ -544,7 +544,7 @@ class Configuration
                 "variables" => [
                     "domain" => [
                         "description" => "No description provided",
-                        "default_value" => "https://linqur45luuk.web09.webv.nl",
+                        "default_value" => "https://linqur45luuk2.web09.webv.nl",
                     ]
                 ]
             ]

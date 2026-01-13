@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **maxenrolledusers** | **int** |  | [optional]
 **domainrestrictions** | **string** |  | [optional]
 **wrapperactive** | **int** | 0 &#x3D; active, 1 &#x3D; inactive | [optional]
+**anonymize** | **int** | Anonymize user data: 0 &#x3D; no, 1 &#x3D; yes | [optional]
 **userids** | **int[]** |  | [optional]
 **totalregistrations** | **int** |  | [optional]
 **downloadlink** | [**\LtiSaasApi\Model\ScormproxyList200ResponseResultsInnerDownloadlink**](ScormproxyList200ResponseResultsInnerDownloadlink.md) |  | [optional]
